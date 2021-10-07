@@ -147,7 +147,7 @@ const Nav = forwardRef((props, ref) => {
         top: '-1vh',
         height: 0,
         left: x.interpolate({ range: [0, 1], output: ['100vw', '0vw'] }),
-        opacity: x.interpolate({ range: [0, 1], output: [0, 0.95] })
+        opacity: 1//x.interpolate({ range: [0, 1], output: [0, 0.95] })
       }}>
         <Card onMouseUp={() => {
           props.updateAppState(false);
