@@ -83,7 +83,7 @@ const Home = forwardRef((props, ref) => {
               }
             }}>
               <CardActionArea>
-                <button style={{ height: '100%', width: '100%', fontSize: '5vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', borderWidth: "2vh", borderColor: 'lightgreen' }}>Getting Started</button>
+                <button style={{ height: '100%', width: '100%', fontSize: '5vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', borderWidth: "2vh", borderColor: 'lightgreen' }}>Instructions</button>
               </CardActionArea>
             </Card>
           </Grid>

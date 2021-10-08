@@ -92,7 +92,7 @@ const Nav = forwardRef((props, ref) => {
                     <Card style={{ borderRadius: '20px' }}>
                       <CardActionArea>
                         <div style={{ color: 'black', fontSize: '4vh' }}>
-                          Getting Started
+                          Instructions
                         </div>
                       </CardActionArea>
                     </Card>
@@ -209,7 +209,7 @@ const Nav = forwardRef((props, ref) => {
                   }}>
                     <CardActionArea>
                       <div style={{ color: 'black', fontSize: '4vh', textDecoration: 'none' }}>
-                        Getting Started
+                        Instructions
                       </div>
                     </CardActionArea>
                   </Card>
