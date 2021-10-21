@@ -182,10 +182,10 @@ const Settings = forwardRef((props, ref) => {
                                 <Grid item xs={1} />
                                 <Grid item xs={2} />
                                 <Grid item xs={4}>
-                                    <h1 style={{ fontSize: fSize, margin: fMargin, cursor: 'default', userSelect: 'none' }}>a</h1>
+                                    <h1 style={{ fontSize: fSize, margin: fMargin, paddingTop: 70, cursor: 'default', userSelect: 'none' }}>a</h1>
                                 </Grid>
                                 <Grid item xs={4}>
-                                    <h1 style={{ fontSize: fSize, margin: fMargin, cursor: 'default', userSelect: 'none' }}>A</h1>
+                                    <h1 style={{ fontSize: fSize, margin: fMargin, paddingTop: 70, cursor: 'default', userSelect: 'none' }}>A</h1>
                                 </Grid>
                                 <Grid item xs={2} />
                             </Grid>

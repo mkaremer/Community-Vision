@@ -32,7 +32,7 @@ const Nav = forwardRef((props, ref) => {
   // const [volume] = useState(() => initial('volume'));
   // const [backgroundColor, setBackgroundColor] = useState(() => initial('backgroundColor'));
   // const [fontColor, setFontColor] = useState(() => initial('fontColor'));
-  var navbarColor = '#f8ac2e'
+  var navbarColor = '#FFFFFF'
 
   const dropdownRef = useRef();
 
@@ -77,9 +77,9 @@ const Nav = forwardRef((props, ref) => {
                 <Grid item xs={2} />
                 <Grid item xs={2}>
                   <Link style={{ textDecoration: 'none' }} to="/about">
-                    <Card style={{ borderRadius: '20px' }}>
+                    <Card style={{ borderRadius: '20px', backgroundColor: '#21AAA4' }}>
                       <CardActionArea>
-                        <div style={{ color: 'black', fontSize: '4vh' }}>
+                        <div style={{ color: 'white', fontSize: '4vh' }}>
                           About
                         </div>
                       </CardActionArea>
@@ -89,9 +89,9 @@ const Nav = forwardRef((props, ref) => {
                 <Grid item xs={1} />
                 <Grid item xs={2}>
                   <Link style={{ textDecoration: 'none' }} to="/GettingStarted">
-                    <Card style={{ borderRadius: '20px' }}>
+                    <Card style={{ borderRadius: '20px', backgroundColor: '#21AAA4' }}>
                       <CardActionArea>
-                        <div style={{ color: 'black', fontSize: '4vh' }}>
+                        <div style={{ color: 'white', fontSize: '4vh' }}>
                           Instructions
                         </div>
                       </CardActionArea>
@@ -101,9 +101,9 @@ const Nav = forwardRef((props, ref) => {
                 <Grid item xs={1} />
                 <Grid item xs={2}>
                   <Link style={{ textDecoration: 'none' }} to="/games">
-                    <Card style={{ borderRadius: '20px' }}>
+                    <Card style={{ borderRadius: '20px', backgroundColor: '#21AAA4' }}>
                       <CardActionArea>
-                        <div style={{ color: 'black', fontSize: '4vh' }}>
+                        <div style={{ color: 'white', fontSize: '4vh' }}>
                           Games
                         </div>
                       </CardActionArea>
@@ -123,7 +123,9 @@ const Nav = forwardRef((props, ref) => {
           cursor: 'pointer',
           userSelect: 'none',
           display: 'flex',
-          justifyContent: 'center'
+          justifyContent: 'center',
+          backgroundColor: '#21AAA4',
+          color: 'white'
         }}
           onMouseUp={() => {
             if (window.location.href.slice(-8) !== 'settings') {
@@ -215,7 +217,7 @@ const Nav = forwardRef((props, ref) => {
                   </Card>
                 </Grid>
                 <Grid item xs={4}>
-                  <Card style={{ borderRadius: '20px' }} onMouseUp={() => {
+                  <Card style={{ borderRadius: '20px'}} onMouseUp={() => {
                     moveTo('/games');
                     toggle(!dropdownState);
                   }}>

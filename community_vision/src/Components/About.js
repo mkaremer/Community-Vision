@@ -28,9 +28,9 @@ const About = forwardRef((props, ref) => {
       width: '100vw',
       color: fontColor,
     }}>
-      <h1 style={{ fontWeight: 900, textSize: "60px" }}>Who We Are</h1>
+      <h1 style={{ fontWeight: 900, textSize: "60px", marginTop: "50px" }}>Who We Are</h1>
 
-      <p style={{paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "20px"}} >The Community Vision Assistive Technology (AT) Lab is an education and 
+      <p style={{paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px"}} >The Community Vision Assistive Technology (AT) Lab is an education and
       resource center in Portland, Oregon that promotes accessibility & inclusion
       in our community. We collaborate with people with disabilities, families, 
       caregivers, professionals, and community partners. We want more people to 
@@ -38,24 +38,24 @@ const About = forwardRef((props, ref) => {
       Trainings & Workshops, Social Groups, a free Loan Closet, Equipment, Scholarships
       and more. </p>
 
-      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "20px"}}>To learn more, visit us at: </p>
-      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "20px"}}><a href="https://cv-atlab.org/" target="_blank">www.cv-atlab.org</a></p>
-      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "20px"}}>or</p>
-      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "20px"}}><a href="http://www.facebook.com/CVATLab" target="_blank">www.facebook.com/CVATLab</a></p>
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "25px"}}>To learn more, visit us at: </p>
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "25px"}}><a href="https://cv-atlab.org/" target="_blank">www.cv-atlab.org</a></p>
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "25px"}}>or</p>
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "25px"}}><a href="http://www.facebook.com/CVATLab" target="_blank">www.facebook.com/CVATLab</a></p>
 
       <h2 style={{ fontWeight: 900, fontSize: "30px" }}>Why Morse?</h2>
 
 
-      <p style={{paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "20px"}}>Morse code represents numbers and letters using dots, dashes, and spaces and
+      <p style={{paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px"}}>Morse code represents numbers and letters using dots, dashes, and spaces and
         was invented in the 1800s to use on a telegraph machine. It was later used as a 
         communication method for some people who did not have speech in the early 1970s. 
         The technology began to improve in the 1990s and is now being used on mobile devices.
         It has even caught the eye of Google in their <u>Hello Morse</u> project.
       </p>
 
-      <img src={morse} alt="Morse" id="morseimage" width="500" height="333"></img>
+      <img src={morse} alt="Photo of someone using a morse code interface" id="morseimage" width="500" height="333"></img>
 
-      <p style={{paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "20px"}}>Children are now being included in the Morse conversation. Many children with 
+      <p style={{paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px"}}>Children are now being included in the Morse conversation. Many children with
         physical disabilities, especially those who use adaptive switches, have difficulty
         accessing the alphabet and therefore, are not often taught the skills they need to 
         read and write. Morse code offers a quicker way to access the alphabet with the use
