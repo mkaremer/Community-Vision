@@ -26,7 +26,7 @@ const GettingStarted = forwardRef((props, ref) => {
       color: fontColor,
 
     }}>
-      <h1 style={{ fontWeight: 900, fontSize: "50px" }}>Typing with Morse on this Website</h1>
+      <h1 style={{ fontWeight: 900, fontSize: "50px", paddingTop: '20px' }}>Typing with Morse on this Website</h1>
 
       <h2 style={{ fontWeight: 900, fontSize: "30px", textAlign: "left", paddingLeft: "10vw" }}>How to type with Morse on this Website:</h2>
 

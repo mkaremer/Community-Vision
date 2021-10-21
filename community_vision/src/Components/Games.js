@@ -46,17 +46,17 @@ const Games = forwardRef((props, ref) => {
     }}>
       <Container maxWidth='x1' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh' }}>
         <Grid container justify='left' space={4}>
-         <Grid item xs={8} justify='left' style={{ height: '40%', paddingBottom: '6vh' }}>
+         <Grid item xs={8} justify='left' style={{ height: '40%', paddingBottom: '6vh', paddingTop: '3vh'}}>
           {/*button directs to the feedback form */}
             <Card style={{ minHeight: '100%', width: 250 }} onMouseUp={() => {
                window.open('https://docs.google.com/forms/d/1-Fy6sjP-xcLqWLefGCBUbdbZIKBPwEkvyng9boBpO58/edit', '_blank');
             }}>
               <CardActionArea>
-                <button style={{ height: '100%', width: '100%', fontSize: '5vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', borderColor: 'yellow', borderWidth: "2vh" }}>Give us Feedback!</button>
+                <button style={{ height: '100%', width: '100%', fontSize: '4vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', borderColor: '#21AAA4', borderWidth: "2vh" }}>Give us Feedback!</button>
               </CardActionArea>
             </Card>
           </Grid>
-        <h1 style={{ fontSize: '8vh', color: fontColor, position: 'absolute', left: '45%', padding: 0, margin: '1vh', userSelect: 'none', cursor: 'default' }}>Games</h1>
+        <h1 style={{ fontSize: '8vh', color: fontColor, position: 'absolute', left: '45%', padding: 0, paddingTop: '20px', margin: '1vh', userSelect: 'none', cursor: 'default' }}>Games</h1>
       </Grid>
       </Container>
 
@@ -114,7 +114,9 @@ const Games = forwardRef((props, ref) => {
           userSelect: 'none',
           cursor: 'pointer',
           marginBottom: "5vh",
-          backgroundColor: 'white'
+          backgroundColor: '#21AAA4',
+          borderColor: '#21AAA4',
+          color: 'white',
         }}>Go Back to Home</button>
       </Link>
     </div>
