@@ -19,9 +19,10 @@ import correctFX from "../Assets/Sounds/correct.mp3"
 
 
 var t;
-var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var textIndex = 0;
-
+//list to keep track of inputted letters
+var list = [];
 
 function showImage() {
     var x = document.getElementById("tutorialImage");
@@ -74,7 +75,7 @@ function updateTutorial() {
     }
 }
 
-const LearnAlphabet = forwardRef((props, ref) => {
+const ChooseYourLetters = forwardRef((props, ref) => {
 
     const history = useHistory();
     function backToGames() {
@@ -246,7 +247,7 @@ const LearnAlphabet = forwardRef((props, ref) => {
                                         <h1 style={{
                                             marginBottom: '0vh',
                                             fontSize: '8vh'
-                                        }}>Learn Morse Alphabet
+                                        }}>Choose Your Letters
                                         </h1>
                                         <br />
                                         <p style={{
@@ -254,8 +255,43 @@ const LearnAlphabet = forwardRef((props, ref) => {
                                             paddingLeft: '2vw',
                                             paddingRight: '2vw',
                                             fontSize: '4vh'
-                                        }}>Look for the dot ('space') and dash ('enter') patterns to make a letter
+                                        }}>Use dot ('space') and dash ('enter') to make letters
                                         </p>
+                                    </Card>
+                                </Grid>
+                                <br />
+                                <Grid container direction='column'>
+                                    <Card>
+                                    <button id = "a" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
+                                            onMouseDown={function () {
+                                               var a= "A";
+                                               list.push(a);
+                                            }}>
+                                            A
+                                        </button>
+                                        <button id = "b" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
+                                            onMouseDown={function () {
+                                               var b= "B";
+                                               list.push(b);
+                                            }}>
+                                            B
+                                        </button> 
+                                    </Card>
+                                    <Card>
+                                    <button id = "c" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
+                                            onMouseDown={function () {
+                                               var c= "C";
+                                               list.push(c);
+                                            }}>
+                                            C
+                                        </button>
+                                        <button id = "d" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
+                                            onMouseDown={function () {
+                                               var d= "D";
+                                               list.push(d);
+                                            }}>
+                                            D
+                                        </button> 
                                     </Card>
                                 </Grid>
                                 <br />
@@ -520,4 +556,4 @@ const RadioContent = () => {
     );
 };
 
-export default LearnAlphabet;
+export default ChooseYourLetters;
