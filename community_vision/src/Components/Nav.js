@@ -58,12 +58,12 @@ const Nav = forwardRef((props, ref) => {
         display: 'flex',
         justifContent: 'space-around',
         alignItems: 'center',
-        minHeight: '10vh',
+        minHeight: '14vh',
         background: navbarColor,
         color: 'white'
       }}>
         <Link to="/">
-          <img style={{ height: '8vh', cursor: 'pointer', userSelect: 'none', paddingLeft: '0.25vw' }} src={logo} alt={logo}></img>
+          <img style={{ height: '9vh', cursor: 'pointer', userSelect: 'none', paddingLeft: '1.5vw' }} src={logo} alt={logo}></img>
         </Link>
         <div style={{
           width: '100%',
@@ -119,7 +119,7 @@ const Nav = forwardRef((props, ref) => {
           borderRadius: '10px',
           height: '9.25vh',
           width: '9.25vh',
-          right: '0.25vw',
+          right: '1.5vw',
           cursor: 'pointer',
           userSelect: 'none',
           display: 'flex',
