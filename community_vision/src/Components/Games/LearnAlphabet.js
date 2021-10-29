@@ -19,7 +19,7 @@ import correctFX from "../Assets/Sounds/correct.mp3"
 
 
 var t;
-var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //CHANGE ME
 var textIndex = 0;
 
 
@@ -74,7 +74,7 @@ function updateTutorial() {
     }
 }
 
-const LearnAlphabet = forwardRef((props, ref) => {
+const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
 
     const history = useHistory();
     function backToGames() {
@@ -520,4 +520,4 @@ const RadioContent = () => {
     );
 };
 
-export default LearnAlphabet;
+export default LearnAlphabet; //CHANGE ME

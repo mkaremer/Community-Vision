@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Grid from '@material-ui/core/Grid';
-
 import LearnAlphabetIMG from "./Games/LearnAlphabet.jpg" //test image (pig)
 import LearnABCIMG from "./Games/appleR.jpg"
 import buttonsImg from "./Games/buttonsR.jpg"
@@ -62,6 +61,9 @@ const Games = forwardRef((props, ref) => {
 
       <Container maxWidth='xl' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh' }}>
         <Grid container justify='center' spacing={2}>
+        <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
+            <GameSelection name='Dots' img={LearnABCIMG} link='/dots' difficulty='Level 1'/>
+          </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
             <GameSelection name='Explore Dot and Dash' img={buttonsImg} link='/buttons' difficulty='Level 1' />
           </Grid>
@@ -84,7 +86,7 @@ const Games = forwardRef((props, ref) => {
             <GameSelection name='Learn Words' img={LearnABCIMG} link='/learnWordBeginner' difficulty='Level 2' />
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
-            <GameSelection name='Choose Your Letters' img={LearnABCIMG} link='/ChooseYourLetters' difficulty='Level 2' />
+            <GameSelection name='Choose Your Letters' img={LearnABCIMG} link='/ChooseYourLetters' difficulty='Level 2'/>
           </Grid>
           {/* <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
             <GameSelection name='Custom Words' img={LearnABCIMG} link='/preCustomWords' difficulty='Level 2' />

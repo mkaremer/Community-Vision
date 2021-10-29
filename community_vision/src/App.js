@@ -7,6 +7,7 @@ import About from './Components/About';
 import GettingStarted from './Components/GettingStarted';
 import SettingsPage from './Components/SettingsPage'
 import LearnAlphabet from './Components/Games/LearnAlphabet';
+import Dots from './Components/Games/Dots';
 import ChooseYourLetters from './Components/Games/ChooseYourLetters';
 import LearnWordAdvanced from './Components/Games/LearnWord/LearnWordAdvanced';
 import LearnWordBeginner from './Components/Games/LearnWord/LearnWordBeginner';
@@ -58,6 +59,9 @@ function App() {
           </Route>
           <Route path="/chooseYourLetters">
             <ChooseYourLetters ref={currentRef} />
+          </Route>
+          <Route path="/dots">
+            <Dots ref={currentRef} />
           </Route>
           <Route path="/learnWordBeginner">
             <LearnWordBeginner ref={currentRef} />

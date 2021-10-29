@@ -3,7 +3,7 @@ import '../../App.css';
 import Grid from '@material-ui/core/Grid';
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import { Container, List, ListItemAvatar } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import { useSpring, animated } from 'react-spring';
 import { charToMorse, morseToChar } from "./charMorseConv";
 import useSound from 'use-sound';
@@ -19,14 +19,9 @@ import correctFX from "../Assets/Sounds/correct.mp3"
 
 
 var t;
-//var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var list = "EHIS";
 var textIndex = 0;
-//list to keep track of inputted letters
-var list = [];
 
-function setToZero() {
-    list =[];
-}
 
 function showImage() {
     var x = document.getElementById("tutorialImage");
@@ -79,7 +74,7 @@ function updateTutorial() {
     }
 }
 
-const ChooseYourLetters = forwardRef((props, ref) => {
+const Dots = forwardRef((props, ref) => {
 
     const history = useHistory();
     function backToGames() {
@@ -212,7 +207,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
     )
 
     return (
-        setToZero(),
         <div style={{
             backgroundColor: backgroundColor,
             height: '90vh',
@@ -252,7 +246,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                         <h1 style={{
                                             marginBottom: '0vh',
                                             fontSize: '8vh'
-                                        }}>Choose Your Letters
+                                        }}>Learn Dots
                                         </h1>
                                         <br />
                                         <p style={{
@@ -260,215 +254,8 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             paddingLeft: '2vw',
                                             paddingRight: '2vw',
                                             fontSize: '4vh'
-                                        }}>Use dot ('space') and dash ('enter') to make letters
+                                        }}>Use the dot ('space') to make a letter
                                         </p>
-                                    </Card>
-                                </Grid>
-                                <br />
-                                <Grid item style={{ userSelect: 'none', cursor: 'default' }}>
-                                    <Card id= "listDisplay">
-                                        <p style={{
-                                            marginTop: '0vh',
-                                            paddingLeft: '2vw',
-                                            paddingRight: '2vw',
-                                            fontSize: '4vh'
-                                        }}> <ul> {list} </ul>
-                                        {/*<ul> {list.map((list) => (<li>{list}</li> ))} </ul> */}
-                                        </p>
-                                    </Card>
-                                </Grid>
-                                <br />
-                                <Grid container direction='column'>
-                                    <Card id = "row1">
-                                    <button id = "a" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var a= "A";
-                                               list.push(a);
-                                               console.log(list);
-                                            }}>
-                                            A
-                                        </button>
-                                    <button id = "b" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var b= "B";
-                                               list.push(b);
-                                               console.log(list);
-                                            }}>
-                                            B
-                                        </button> 
-                                    <button id = "c" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var c= "C";
-                                               list.push(c);
-                                               console.log(list);
-                                            }}>
-                                            C
-                                        </button>
-                                    <button id = "d" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var d= "D";
-                                               list.push(d);
-                                            }}>
-                                            D
-                                        </button> 
-                                    <button id = "e" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var e= "E";
-                                               list.push(e);
-                                            }}>
-                                            E
-                                        </button>
-                                    <button id = "f" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var f= "F";
-                                               list.push(f);
-                                            }}>
-                                            F
-                                    </button>
-                                    <button id = "g" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var g= "G";
-                                               list.push(g);
-                                            }}>
-                                            G
-                                    </button>
-                                    <button id = "h" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var h= "H";
-                                               list.push(h);
-                                            }}>
-                                            H
-                                    </button> 
-                                    <button id = "i" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var i= "I";
-                                               list.push(i);
-                                            }}>
-                                            I
-                                        </button>
-                                    </Card>
-                                    <Card id = "row2">
-                                    <button id = "j" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var j= "J";
-                                               list.push(j);
-                                            }}>
-                                            J
-                                        </button> 
-                                    <button id = "k" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var k= "K";
-                                               list.push(k);
-                                            }}>
-                                            K
-                                        </button>
-                                    <button id = "l" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var l= "L";
-                                               list.push(l);
-                                            }}>
-                                            L
-                                        </button> 
-                                    <button id = "m" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var m= "M";
-                                               list.push(m);
-                                            }}>
-                                            M
-                                        </button>
-                                    <button id = "n" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var n= "N";
-                                               list.push(n);
-                                            }}>
-                                            N
-                                    </button>
-                                    <button id = "o" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var o= "O";
-                                               list.push(o);
-                                            }}>
-                                            O
-                                    </button>
-                                    <button id = "p" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var p= "P";
-                                               list.push(p);
-                                            }}>
-                                            P
-                                        </button>
-                                    <button id = "q" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var q= "Q";
-                                               list.push(q);
-                                            }}>
-                                            Q
-                                        </button> 
-                                    </Card>
-                                    <Card id= "row3">
-                                    <button id = "r" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var r= "R";
-                                               list.push(r);
-                                            }}>
-                                            R
-                                        </button>
-                                    <button id = "s" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var s= "S";
-                                               list.push(s);
-                                            }}>
-                                            S
-                                        </button> 
-                                    <button id = "t" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var t= "T";
-                                               list.push(t);
-                                            }}>
-                                            T
-                                        </button>
-                                    <button id = "u" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var u= "U";
-                                               list.push(u);
-                                            }}>
-                                            U
-                                    </button>
-                                    <button id = "v" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var v= "V";
-                                               list.push(v);
-                                            }}>
-                                            V
-                                    </button>
-                                    <button id = "w" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var w= "W";
-                                               list.push(w);
-                                            }}>
-                                            W
-                                    </button> 
-                                    <button id = "x" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var x= "X";
-                                               list.push(x);
-                                            }}>
-                                            X
-                                    </button>
-                                    <button id = "y" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var y= "Y";
-                                               list.push(y);
-                                            }}>
-                                            Y
-                                    </button>
-                                    <button id = "z" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               var z= "Z";
-                                               list.push(z);
-                                            }}>
-                                            Z
-                                    </button> 
                                     </Card>
                                 </Grid>
                                 <br />
@@ -733,4 +520,4 @@ const RadioContent = () => {
     );
 };
 
-export default ChooseYourLetters;
+export default Dots;
