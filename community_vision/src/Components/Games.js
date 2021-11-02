@@ -4,19 +4,22 @@ import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Grid from '@material-ui/core/Grid';
+
 import LearnAlphabetIMG from "./Games/LearnAlphabet.jpg" //test image (pig)
-import LearnABCIMG from "./Games/appleR.jpg"
-import buttonsImg from "./Games/buttonsR.jpg"
-import needleImg from "./Games/needleR.jpg"
-import sandBocWords from "./Games/sandboxWordR.jpg"
-import stackABC from "./Games/stack_abcR.jpg"
-import abceyes from "./Games/abc_eyesR.jpg"
-import unicycleImg from "./Games/unicycleR.jpg"
-import alphabetIMG from "./Games/abcR.jpg"
-import sandboxIMG from "./Games/sandbox1R.jpg"
-import numbersIMG from "./Games/numbersR.jpg"
-import raceLevel4 from "./Games/racezR.jpg"
-import raceLevel3 from "./Games/raceqR.jpg"
+import dotsIMG from "./Games/Icons/dots.jpg"
+import buttonsImg from "./Games/Icons/explore dot and dash.jpg"
+import alphabetIMG from "./Games/Icons/learn morse patterns.jpg"
+import abceyes from "./Games/Icons/learn morse alphabet.jpg"
+import numbersIMG from "./Games/Icons/learn morse numbers.jpg"
+import sandboxIMG from "./Games/Icons/sandbox letters.jpg"
+import sandBocWords from "./Games/Icons/sandbox words.jpg"
+import LearnABCIMG from "./Games/Icons/learn words.jpg"
+import chooseLettersIMG from "./Games/Icons/choose your letters.jpg"
+import needleImg from "./Games/Icons/learn words 2.jpg"
+import raceLevel3 from "./Games/Icons/alphabet race game.jpg"
+import stackABC from "./Games/Icons/learn morse alphabet 2.jpg"
+import unicycleImg from "./Games/Icons/learn words 3.jpg"
+import raceLevel4 from "./Games/Icons/alphabet race game 2.jpg"
 import { initial } from "./Games/Common/Functions"
 import { Container } from '@material-ui/core';
 
@@ -62,7 +65,7 @@ const Games = forwardRef((props, ref) => {
       <Container maxWidth='xl' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh' }}>
         <Grid container justify='center' spacing={2}>
         <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
-            <GameSelection name='Dots' img={LearnABCIMG} link='/dots' difficulty='Level 1'/>
+            <GameSelection name='Dots' img={dotsIMG} link='/dots' difficulty='Level 1'/>
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
             <GameSelection name='Explore Dot and Dash' img={buttonsImg} link='/buttons' difficulty='Level 1' />
@@ -86,7 +89,7 @@ const Games = forwardRef((props, ref) => {
             <GameSelection name='Learn Words' img={LearnABCIMG} link='/learnWordBeginner' difficulty='Level 2' />
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
-            <GameSelection name='Choose Your Letters' img={LearnABCIMG} link='/ChooseYourLetters' difficulty='Level 2'/>
+            <GameSelection name='Choose Your Letters' img={chooseLettersIMG} link='/ChooseYourLetters' difficulty='Level 2'/>
           </Grid>
           {/* <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
             <GameSelection name='Custom Words' img={LearnABCIMG} link='/preCustomWords' difficulty='Level 2' />
