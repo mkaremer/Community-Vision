@@ -49,20 +49,12 @@ const Games = forwardRef((props, ref) => {
       <Container maxWidth='x1' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh' }}>
         <Grid container justify='left' space={4}>
          <Grid item xs={8} justify='left' style={{ height: '40%', paddingBottom: '6vh', paddingTop: '3vh'}}>
-          {/*button directs to the feedback form */}
-            <Card style={{ minHeight: '100%', width: 250 }} onMouseUp={() => {
-               window.open('https://docs.google.com/forms/d/1-Fy6sjP-xcLqWLefGCBUbdbZIKBPwEkvyng9boBpO58/edit', '_blank');
-            }}>
-              <CardActionArea>
-                <button style={{ height: '100%', width: '100%', fontSize: '4vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', borderColor: '#21AAA4', borderWidth: "2vh" }}>Give us Feedback!</button>
-              </CardActionArea>
-            </Card>
           </Grid>
-        <h1 style={{ fontSize: '8vh', color: fontColor, position: 'absolute', left: '45%', padding: 0, paddingTop: '20px', margin: '1vh', userSelect: 'none', cursor: 'default' }}>Games</h1>
+        <h1 style={{ fontSize: '8vh', color: fontColor, position: 'absolute', left: '42%', padding: 0, paddingTop: '20px', paddingBottom: '50px', margin: '1vh', userSelect: 'none', cursor: 'default' }}>Games</h1>
       </Grid>
       </Container>
 
-      <Container maxWidth='xl' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh' }}>
+      <Container maxWidth='xl' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh', paddingTop: '3vh' }}>
         <Grid container justify='center' spacing={2}>
         <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
             <GameSelection name='Dots' img={dotsIMG} link='/dots' difficulty='Level 1'/>
@@ -126,6 +118,24 @@ const Games = forwardRef((props, ref) => {
           borderColor: '#21AAA4',
           color: 'white',
         }}>Go Back to Home</button>
+      </Link>
+
+      <Link className='nav-link' to="/" style={{
+        backgroundColor: backgroundColor
+      }} onMouseUp={() => {
+               window.open('https://docs.google.com/forms/d/1-Fy6sjP-xcLqWLefGCBUbdbZIKBPwEkvyng9boBpO58/edit', '_blank');
+            }}>
+        <button style={{
+          width: '40vw',
+          fontSize: '5vh',
+          fontWeight: 900,
+          userSelect: 'none',
+          cursor: 'pointer',
+          marginBottom: "5vh",
+          backgroundColor: '#21AAA4',
+          borderColor: '#21AAA4',
+          color: 'white',
+        }}>Give us Feedback!</button>
       </Link>
     </div>
 
