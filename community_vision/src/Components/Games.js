@@ -152,8 +152,8 @@ class GameSelection extends React.Component {
               <div style={{ width: '100%', paddingTop: '66.66%' }}>
                 <img style={{ width: '100%', margin: '0%', padding: '0%', position: 'absolute', left: '0', top: '0' }} src={this.props.img} type="image/png" alt={LearnAlphabetIMG}/* this should be the default for if we don't have an image source*/ />
               </div>
-              <p style={{ color: 'black', fontWeight: 'bold', margin: 0, padding: 0, display: 'block', backgroundColor: color, fontSize: '2.5vh' }} >{this.props.name}</p>
-              <div style={{ backgroundColor: color }}>
+              <p style={{ color: 'black', fontWeight: 'bold', margin: 0, padding: 0, display: 'block', backgroundColor: 'white', fontSize: '2.5vh' }} >{this.props.name}</p>
+              <div style={{ backgroundColor: 'white' }}>
                 <text style={{ color: 'black', fontWeight: 'bold', fontSize: '1.75vh' }}>{this.props.difficulty}</text>
               </div>
             </CardActionArea>
