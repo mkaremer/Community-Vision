@@ -19,14 +19,25 @@ import correctFX from "../Assets/Sounds/correct.mp3"
 
 
 var t;
-//var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var textIndex = 0;
 //list to keep track of inputted letters
 var list = [];
 
+//to set inputted letters back to none, in array and display
 function setToZero() {
     list =[];
+    var myUl =  document.getElementById("myList");
+    myUl.innerHTML = "";
 }
+
+//function to add inputted letters to display
+function addToDisplayList(ltr){
+    var li = document.createElement('li');
+    var myUl = document.getElementById("myList");
+    li.appendChild(document.createTextNode(ltr));
+    myUl.appendChild(li);
+}
+
 
 function showImage() {
     var x = document.getElementById("tutorialImage");
@@ -212,7 +223,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
     )
 
     return (
-        setToZero(),
         <div style={{
             backgroundColor: backgroundColor,
             height: '90vh',
@@ -272,8 +282,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             paddingLeft: '2vw',
                                             paddingRight: '2vw',
                                             fontSize: '4vh'
-                                        }}> <ul> {list} </ul>
-                                        {/*<ul> {list.map((list) => (<li>{list}</li> ))} </ul> */}
+                                        }}> <ul id="myList"> </ul>
                                         </p>
                                     </Card>
                                 </Grid>
@@ -282,31 +291,32 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <Card id = "row1">
                                     <button id = "a" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
-                                               var a= "A";
-                                               list.push(a);
-                                               console.log(list);
+                                                var a= "A";
+                                                addToDisplayList(a);
+                                                list.push(a);
                                             }}>
                                             A
                                         </button>
                                     <button id = "b" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var b= "B";
+                                               addToDisplayList(b);
                                                list.push(b);
-                                               console.log(list);
                                             }}>
                                             B
                                         </button> 
                                     <button id = "c" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var c= "C";
+                                               addToDisplayList(c);
                                                list.push(c);
-                                               console.log(list);
                                             }}>
                                             C
                                         </button>
                                     <button id = "d" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var d= "D";
+                                               addToDisplayList(d);
                                                list.push(d);
                                             }}>
                                             D
@@ -314,6 +324,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "e" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var e= "E";
+                                               addToDisplayList(e);
                                                list.push(e);
                                             }}>
                                             E
@@ -321,6 +332,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "f" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var f= "F";
+                                               addToDisplayList(f);
                                                list.push(f);
                                             }}>
                                             F
@@ -328,6 +340,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "g" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var g= "G";
+                                               addToDisplayList(g);
                                                list.push(g);
                                             }}>
                                             G
@@ -335,6 +348,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "h" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var h= "H";
+                                               addToDisplayList(h);
                                                list.push(h);
                                             }}>
                                             H
@@ -342,6 +356,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "i" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var i= "I";
+                                               addToDisplayList(i);
                                                list.push(i);
                                             }}>
                                             I
@@ -351,6 +366,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "j" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var j= "J";
+                                               addToDisplayList(j);
                                                list.push(j);
                                             }}>
                                             J
@@ -358,6 +374,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "k" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var k= "K";
+                                               addToDisplayList(k);
                                                list.push(k);
                                             }}>
                                             K
@@ -365,6 +382,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "l" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var l= "L";
+                                               addToDisplayList(l);
                                                list.push(l);
                                             }}>
                                             L
@@ -372,6 +390,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "m" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var m= "M";
+                                               addToDisplayList(m);
                                                list.push(m);
                                             }}>
                                             M
@@ -379,6 +398,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "n" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var n= "N";
+                                               addToDisplayList(n);
                                                list.push(n);
                                             }}>
                                             N
@@ -386,6 +406,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "o" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var o= "O";
+                                               addToDisplayList(o);
                                                list.push(o);
                                             }}>
                                             O
@@ -393,6 +414,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "p" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var p= "P";
+                                               addToDisplayList(p);
                                                list.push(p);
                                             }}>
                                             P
@@ -400,6 +422,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "q" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var q= "Q";
+                                               addToDisplayList(q);
                                                list.push(q);
                                             }}>
                                             Q
@@ -409,6 +432,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "r" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var r= "R";
+                                               addToDisplayList(r);
                                                list.push(r);
                                             }}>
                                             R
@@ -416,6 +440,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "s" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var s= "S";
+                                               addToDisplayList(s);
                                                list.push(s);
                                             }}>
                                             S
@@ -423,6 +448,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "t" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var t= "T";
+                                               addToDisplayList(t);
                                                list.push(t);
                                             }}>
                                             T
@@ -430,6 +456,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "u" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var u= "U";
+                                               addToDisplayList(u);
                                                list.push(u);
                                             }}>
                                             U
@@ -437,6 +464,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "v" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var v= "V";
+                                               addToDisplayList(v);
                                                list.push(v);
                                             }}>
                                             V
@@ -444,6 +472,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "w" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var w= "W";
+                                               addToDisplayList(w);
                                                list.push(w);
                                             }}>
                                             W
@@ -451,6 +480,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "x" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var x= "X";
+                                               addToDisplayList(x);
                                                list.push(x);
                                             }}>
                                             X
@@ -458,6 +488,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "y" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var y= "Y";
+                                               addToDisplayList(y);
                                                list.push(y);
                                             }}>
                                             Y
@@ -465,6 +496,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     <button id = "z" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                var z= "Z";
+                                               addToDisplayList(z);
                                                list.push(z);
                                             }}>
                                             Z
