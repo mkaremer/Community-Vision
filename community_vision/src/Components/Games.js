@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 
 import LearnAlphabetIMG from "./Games/LearnAlphabet.jpg" //test image (pig)
 import dotsIMG from "./Games/Icons/dots.jpg"
+import dashIMG from "./Games/Icons/dash.png"
 import buttonsImg from "./Games/Icons/explore dot and dash.jpg"
 import alphabetIMG from "./Games/Icons/learn morse patterns.jpg"
 import abceyes from "./Games/Icons/learn morse alphabet.jpg"
@@ -60,7 +61,7 @@ const Games = forwardRef((props, ref) => {
             <GameSelection name='Dots' img={dotsIMG} link='/dots' difficulty='Level 1'/>
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
-            <GameSelection name='Dashes' img={dotsIMG} link='/dashes' difficulty='Level 1'/>
+            <GameSelection name='Dashes' img={dashIMG} link='/dashes' difficulty='Level 1'/>
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
             <GameSelection name='Explore Dot and Dash' img={buttonsImg} link='/buttons' difficulty='Level 1' />
