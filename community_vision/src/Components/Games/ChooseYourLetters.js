@@ -33,11 +33,11 @@ function setToZero() {
 //function to add inputted letters to display
 function addToDisplayList(ltr){
     var li = document.createElement('li');
+    li.style.display = "inline";
     var myUl = document.getElementById("myList");
     li.appendChild(document.createTextNode(ltr));
     myUl.appendChild(li);
 }
-
 
 function showImage() {
     var x = document.getElementById("tutorialImage");
@@ -272,6 +272,12 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             fontSize: '4vh'
                                         }}>Use dot ('space') and dash ('enter') to make letters
                                         </p>
+                                        <button id = "clear" style={{ fontSize: '8vh', height: '100%', cursor: 'pointer' }}
+                                            onMouseDown={function () {
+                                               setToZero();
+                                            }}>
+                                            CLEAR
+                                        </button>
                                     </Card>
                                 </Grid>
                                 <br />
@@ -282,7 +288,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             paddingLeft: '2vw',
                                             paddingRight: '2vw',
                                             fontSize: '4vh'
-                                        }}> <ul id="myList"> </ul>
+                                        }}> <ul id="myList" style={{"list-style-type":'none', margin: 0, padding: 0}}> </ul>
                                         </p>
                                     </Card>
                                 </Grid>
