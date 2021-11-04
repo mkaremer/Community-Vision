@@ -8,6 +8,7 @@ import GettingStarted from './Components/GettingStarted';
 import SettingsPage from './Components/SettingsPage'
 import LearnAlphabet from './Components/Games/LearnAlphabet';
 import Dots from './Components/Games/Dots';
+import Dashes from './Components/Games/Dashes';
 import ChooseYourLetters from './Components/Games/ChooseYourLetters';
 import LearnWordAdvanced from './Components/Games/LearnWord/LearnWordAdvanced';
 import LearnWordBeginner from './Components/Games/LearnWord/LearnWordBeginner';
@@ -62,6 +63,9 @@ function App() {
           </Route>
           <Route path="/dots">
             <Dots ref={currentRef} />
+          </Route>
+          <Route path="/dashes">
+            <Dashes ref={currentRef} />
           </Route>
           <Route path="/learnWordBeginner">
             <LearnWordBeginner ref={currentRef} />

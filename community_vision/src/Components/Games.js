@@ -60,6 +60,9 @@ const Games = forwardRef((props, ref) => {
             <GameSelection name='Dots' img={dotsIMG} link='/dots' difficulty='Level 1'/>
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
+            <GameSelection name='Dashes' img={dotsIMG} link='/dashes' difficulty='Level 1'/>
+          </Grid>
+          <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
             <GameSelection name='Explore Dot and Dash' img={buttonsImg} link='/buttons' difficulty='Level 1' />
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>

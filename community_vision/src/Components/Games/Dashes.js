@@ -19,7 +19,7 @@ import correctFX from "../Assets/Sounds/correct.mp3"
 
 
 var t;
-var list = "EISH";
+var list = "TMO";
 var textIndex = 0;
 
 
@@ -74,7 +74,7 @@ function updateTutorial() {
     }
 }
 
-const Dots = forwardRef((props, ref) => {
+const Dashes = forwardRef((props, ref) => {
 
     const history = useHistory();
     function backToGames() {
@@ -246,7 +246,7 @@ const Dots = forwardRef((props, ref) => {
                                         <h1 style={{
                                             marginBottom: '0vh',
                                             fontSize: '8vh'
-                                        }}>Learn Dots
+                                        }}>Learn Dashes
                                         </h1>
                                         <br />
                                         <p style={{
@@ -254,7 +254,7 @@ const Dots = forwardRef((props, ref) => {
                                             paddingLeft: '2vw',
                                             paddingRight: '2vw',
                                             fontSize: '4vh'
-                                        }}>Use the dot ('space') to make a letter
+                                        }}>Use the dash ('enter') to make a letter
                                         </p>
                                     </Card>
                                 </Grid>
@@ -316,7 +316,7 @@ const Dots = forwardRef((props, ref) => {
                                             paddingRight: '2vw',
                                             fontSize: '8vh',
                                             marginBottom: '0vh'
-                                        }}>You have learned the dots in Morse.
+                                        }}>You have learned the dashes in Morse.
                                         </p>
                                     </Card>
                                 </Grid>
@@ -520,4 +520,4 @@ const RadioContent = () => {
     );
 };
 
-export default Dots;
+export default Dashes;
