@@ -2,6 +2,8 @@ import React, { useState, forwardRef, useImperativeHandle } from 'react';
 import '../App.css';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
+import studentPhoto from '../Components/Assets/Images/student.png'
+import Brandon_reg from '../Components/Assets/Fonts/Brandon_reg.otf'
 import { initial } from "./Games/Common/Functions";
 import { CardActionArea } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
@@ -43,10 +45,11 @@ const Home = forwardRef((props, ref) => {
         alignItems: 'center'
       }}>
         {/* title */}
+
         <h1 style={{
           fontSize: '10vh',
+          font: Brandon_reg,
           color: fontColor,
-          //color: '#003087',
           bottom: '-1vh',
           userSelect: 'none',
           cursor: 'default',
@@ -63,7 +66,10 @@ const Home = forwardRef((props, ref) => {
               Welcome to Community Vision Morse Code Games!
               </h1>
           </Grid>
-          <Grid item xs={8} style={{ height: '20%', paddingBottom: '6vh' }}>
+
+          <img src={studentPhoto} alt='Photo of a student using playmorse.com' id='studentPhoto' height='333'></img>
+
+          <Grid item xs={8} style={{ height: '20%', paddingBottom: '6vh', paddingTop: '6vh' }}>
             {/* directs it to the about page */}
             <Card style={{ minHeight: '100%' }} onMouseUp={() => {
               if (!dropdown) {
@@ -71,7 +77,7 @@ const Home = forwardRef((props, ref) => {
               }
             }}>
               <CardActionArea>
-                <button style={{ height: '100%', width: '100%', fontSize: '5vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', borderWidth: "2vh", borderColor: "red" }}>About</button>
+                <button style={{ height: '100%', width: '100%', fontSize: '5vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', backgroundColor: '#eb6253', color: 'white', borderColor: '#eb6253' }}>About</button>
               </CardActionArea>
             </Card>
           </Grid>
@@ -83,7 +89,7 @@ const Home = forwardRef((props, ref) => {
               }
             }}>
               <CardActionArea>
-                <button style={{ height: '100%', width: '100%', fontSize: '5vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', borderWidth: "2vh", borderColor: 'lightgreen' }}>Instructions</button>
+                <button style={{ height: '100%', width: '100%', fontSize: '5vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', backgroundColor: '#78c04b', color: 'white', borderColor: '#78c04b'  }}>Instructions</button>
               </CardActionArea>
             </Card>
           </Grid>
@@ -95,7 +101,7 @@ const Home = forwardRef((props, ref) => {
               }
             }}>
               <CardActionArea>
-                <button style={{ height: '100%', width: '100%', fontSize: '5vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', borderColor: 'blue', borderWidth: "2vh" }}>Play Games!</button>
+                <button style={{ height: '100%', width: '100%', fontSize: '5vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', backgroundColor: '#21aaa4', color: 'white', borderColor: '#21aaa4' }}>Play Games!</button>
               </CardActionArea>
             </Card>
           </Grid>
@@ -107,7 +113,7 @@ const Home = forwardRef((props, ref) => {
               }
             }}>
               <CardActionArea>
-                <button style={{ height: '100%', width: '100%', fontSize: '5vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', borderColor: 'yellow', borderWidth: "2vh" }}>Give us Feedback!</button>
+                <button style={{ height: '100%', width: '100%', fontSize: '5vh', fontWeight: 900, userSelect: 'none', cursor: 'pointer', backgroundColor: '#3b63a2', color: 'white', borderColor: '#3b63a2'}}>Give us Feedback!</button>
               </CardActionArea>
             </Card>
           </Grid>
