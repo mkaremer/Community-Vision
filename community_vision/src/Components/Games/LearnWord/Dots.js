@@ -138,11 +138,11 @@ const Dots = forwardRef((props, ref) => {
                     //Move to the next word
                     setTimeout(() => {
                         // clearTimeout(t);
-                        if(gameIndex < 3) {
+                        if(gameIndex < 11) {
                             setGameIndex(prevState => prevState + 1);
                         }
                         else {
-                            setGameIndex(3);
+                            setGameIndex(11);
                             setFinished(true);
                         }
                         setOutput('');
