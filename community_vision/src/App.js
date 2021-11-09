@@ -7,8 +7,8 @@ import About from './Components/About';
 import GettingStarted from './Components/GettingStarted';
 import SettingsPage from './Components/SettingsPage'
 import LearnAlphabet from './Components/Games/LearnAlphabet';
-import Dots from './Components/Games/Dots';
-import Dashes from './Components/Games/Dashes';
+import Dots from './Components/Games/LearnWord/Dots';
+import Dashes from './Components/Games/LearnWord/Dashes';
 import ChooseYourLetters from './Components/Games/ChooseYourLetters';
 import LearnWordAdvanced from './Components/Games/LearnWord/LearnWordAdvanced';
 import LearnWordBeginner from './Components/Games/LearnWord/LearnWordBeginner';
