@@ -25,6 +25,10 @@ import AlphabetRacePractice from './Components/Games/AlphabetRacePractice';
 import PreCustomWords from './Components/Games/PreCustomWords'
 import CustomWords2 from './Components/Games/CustomWords2'
 import { initial } from "./Components/Games/Common/Functions";
+import GamesBasics from "./Components/GamesBasics";
+import GamesLetters from "./Components/GamesLetters";
+import GamesThemes from "./Components/GamesThemes";
+import GamesWords from "./Components/GamesWords";
 
 function App() {
   const [backgroundColor, setBackgroundColor] = useState(() => initial('backgroundColor'));
@@ -48,6 +52,18 @@ function App() {
           </Route>
           <Route path="/games">
             <Games ref={currentRef} />
+          </Route>
+          <Route path="/GamesBasics">
+            <GamesBasics ref={currentRef} />
+          </Route>
+          <Route path="/GamesLetters">
+            <GamesLetters ref={currentRef} />
+          </Route>
+          <Route path="/GamesThemes">
+            <GamesThemes ref={currentRef} />
+          </Route>
+          <Route path="/GamesWords">
+            <GamesWords ref={currentRef} />
           </Route>
           <Route path="/about">
             <About ref={currentRef} />

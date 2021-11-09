@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Grid from '@material-ui/core/Grid';
-
 import LearnAlphabetIMG from "./Games/LearnAlphabet.jpg" //test image (pig)
 import dotsIMG from "./Games/Icons/dots.jpg"
 import dashIMG from "./Games/Icons/dash.png"
@@ -24,7 +23,7 @@ import raceLevel4 from "./Games/Icons/alphabet race game 2.jpg"
 import { initial } from "./Games/Common/Functions"
 import { Container } from '@material-ui/core';
 
-const Games = forwardRef((props, ref) => {
+const GamesThemes = forwardRef((props, ref) => {
   const [backgroundColor, setBackgroundColor] = useState(() => initial('backgroundColor'));
   const [fontColor, setFontColor] = useState(() => initial('fontColor'));
   useImperativeHandle(
@@ -51,75 +50,21 @@ const Games = forwardRef((props, ref) => {
         <Grid container justify='left' space={4}>
          <Grid item xs={8} justify='left' style={{ height: '40%', paddingBottom: '6vh', paddingTop: '3vh'}}>
           </Grid>
-        <h1 style={{ fontSize: '8vh', color: fontColor, position: 'absolute', left: '42%', padding: 0, paddingTop: '20px', paddingBottom: '50px', margin: '1vh', userSelect: 'none', cursor: 'default' }}>Games</h1>
+        <h1 style={{ fontSize: '8vh', color: fontColor, position: 'absolute', left: '42%', padding: 0, paddingTop: '20px', paddingBottom: '50px', margin: '1vh', userSelect: 'none', cursor: 'default' }}>Themed Games</h1>
       </Grid>
       </Container>
 
-
-      <Link className='nav-link' to="/GamesBasics" style={{
-        backgroundColor: backgroundColor
-      }}>
-        <button style={{
-          width: '40vw',
-          fontSize: '5vh',
-          fontWeight: 900,
-          userSelect: 'none',
-          cursor: 'pointer',
-          marginBottom: "5vh",
-          backgroundColor: '#0cbfe9',
-          borderColor: '#21AAA4',
-          color: 'white',
-        }}>Learn Morse Basics</button>
-      </Link>
-
-      <Link className='nav-link' to="/GamesLetters" style={{
-        backgroundColor: backgroundColor
-      }}>
-        <button style={{
-          width: '40vw',
-          fontSize: '5vh',
-          fontWeight: 900,
-          userSelect: 'none',
-          cursor: 'pointer',
-          marginBottom: "5vh",
-          backgroundColor: '#0cbfe9',
-          borderColor: '#21AAA4',
-          color: 'white',
-        }}>Learn Morse Letters and Numbers</button>
-      </Link>
-
-      <Link className='nav-link' to="/GamesThemes" style={{
-        backgroundColor: backgroundColor
-      }}>
-        <button style={{
-          width: '40vw',
-          fontSize: '5vh',
-          fontWeight: 900,
-          userSelect: 'none',
-          cursor: 'pointer',
-          marginBottom: "5vh",
-          backgroundColor: '#0cbfe9',
-          borderColor: '#21AAA4',
-          color: 'white',
-        }}>Themed Morse Games</button>
-      </Link>
-
-      <Link className='nav-link' to="/GamesWords" style={{
-        backgroundColor: backgroundColor
-      }}>
-        <button style={{
-          width: '40vw',
-          fontSize: '5vh',
-          fontWeight: 900,
-          userSelect: 'none',
-          cursor: 'pointer',
-          marginBottom: "5vh",
-          backgroundColor: '#0cbfe9',
-          borderColor: '#21AAA4',
-          color: 'white',
-        }}>Learn Morse Words</button>
-      </Link>
-
+      <Container maxWidth='xl' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh', paddingTop: '3vh' }}>
+        <Grid container justify='center' spacing={2}>
+        <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
+            <GameSelection name='Alphabet Race Game' img={raceLevel3} link='/alphabetRacePractice' difficulty='Level 3' />
+          </Grid>
+        <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
+            <GameSelection name='Alphabet Race Game' img={raceLevel4} link='/alphabetRace' difficulty='Level 4' />
+          </Grid>
+          
+        </Grid>
+      </Container>
       <Link className='nav-link' to="/" style={{
         backgroundColor: backgroundColor
       }}>
@@ -190,4 +135,4 @@ class GameSelection extends React.Component {
   }
 }
 
-export default Games;
+export default GamesThemes;
