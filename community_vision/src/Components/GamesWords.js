@@ -23,6 +23,10 @@ import raceLevel4 from "./Games/Icons/alphabet race game 2.jpg"
 import { initial } from "./Games/Common/Functions"
 import { Container } from '@material-ui/core';
 
+/**
+ * This file is the menu of games for
+ * Learn Morse Words 
+ */
 const GamesWords = forwardRef((props, ref) => {
   const [backgroundColor, setBackgroundColor] = useState(() => initial('backgroundColor'));
   const [fontColor, setFontColor] = useState(() => initial('fontColor'));
@@ -50,7 +54,7 @@ const GamesWords = forwardRef((props, ref) => {
         <Grid container justify='left' space={4}>
          <Grid item xs={8} justify='left' style={{ height: '40%', paddingBottom: '6vh', paddingTop: '3vh'}}>
           </Grid>
-        <h1 style={{ fontSize: '8vh', color: fontColor, position: 'absolute', left: '42%', padding: 0, paddingTop: '20px', paddingBottom: '50px', margin: '1vh', userSelect: 'none', cursor: 'default' }}>Learn Morse Words</h1>
+        <h1 style={{ fontSize: '8vh', color: fontColor, position: 'absolute', left: '32%', padding: 0, paddingTop: '20px', paddingBottom: '50px', margin: '1vh', userSelect: 'none', cursor: 'default' }}>Learn Morse Words</h1>
       </Grid>
       </Container>
       <Container maxWidth='xl' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh', paddingTop: '3vh' }}>
@@ -105,35 +109,32 @@ const GamesWords = forwardRef((props, ref) => {
 })
 
 class GameSelection extends React.Component {
-  render() {
-    var color;
-    if (this.props.difficulty === 'Level 4') {
-      color = '#FF0000'
-    } else if (this.props.difficulty === 'Level 3') {
-      color = 'yellow'
-    } else if (this.props.difficulty === 'Level 2') {
-      color = '#39ff14'
-    } else if (this.props.difficulty === 'Level 1') {
-      color = '#0cbfe9'
+    render() {
+     /* var color;
+      if (this.props.difficulty === 'Level 4') {
+        color = '#FF0000'
+      } else if (this.props.difficulty === 'Level 3') {
+        color = 'yellow'
+      } else if (this.props.difficulty === 'Level 2') {
+        color = '#39ff14'
+      } else if (this.props.difficulty === 'Level 1') {
+        color = '#0cbfe9'
+      } */
+      return (
+        <div>
+          <Link style={{ textDecoration: 'none' }} to={this.props.link}>
+            <Card>
+              <CardActionArea>
+                <div style={{ width: '100%', paddingTop: '66.66%' }}>
+                  <img style={{ width: '100%', margin: '0%', padding: '0%', position: 'absolute', left: '0', top: '0' }} src={this.props.img} type="image/png" alt={LearnAlphabetIMG}/* this should be the default for if we don't have an image source*/ />
+                </div>
+                <p style={{ color: 'black', fontWeight: 'bold', margin: 0, padding: 0, display: 'block', backgroundColor: 'white', fontSize: '2.5vh' }} >{this.props.name}</p>
+              </CardActionArea>
+            </Card>
+          </Link>
+        </div>
+      )
     }
-    return (
-      <div>
-        <Link style={{ textDecoration: 'none' }} to={this.props.link}>
-          <Card>
-            <CardActionArea>
-              <div style={{ width: '100%', paddingTop: '66.66%' }}>
-                <img style={{ width: '100%', margin: '0%', padding: '0%', position: 'absolute', left: '0', top: '0' }} src={this.props.img} type="image/png" alt={LearnAlphabetIMG}/* this should be the default for if we don't have an image source*/ />
-              </div>
-              <p style={{ color: 'black', fontWeight: 'bold', margin: 0, padding: 0, display: 'block', backgroundColor: 'white', fontSize: '2.5vh' }} >{this.props.name}</p>
-              <div style={{ backgroundColor: 'white' }}>
-                <text style={{ color: 'black', fontWeight: 'bold', fontSize: '1.75vh' }}>{this.props.difficulty}</text>
-              </div>
-            </CardActionArea>
-          </Card>
-        </Link>
-      </div>
-    )
   }
-}
 
 export default GamesWords;

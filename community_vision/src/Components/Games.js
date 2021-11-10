@@ -24,6 +24,9 @@ import raceLevel4 from "./Games/Icons/alphabet race game 2.jpg"
 import { initial } from "./Games/Common/Functions"
 import { Container } from '@material-ui/core';
 
+/**
+ * This file is the menu of links to the game categories 
+ */
 const Games = forwardRef((props, ref) => {
   const [backgroundColor, setBackgroundColor] = useState(() => initial('backgroundColor'));
   const [fontColor, setFontColor] = useState(() => initial('fontColor'));
@@ -55,70 +58,78 @@ const Games = forwardRef((props, ref) => {
       </Grid>
       </Container>
 
-
-      <Link className='nav-link' to="/GamesBasics" style={{
-        backgroundColor: backgroundColor
-      }}>
-        <button style={{
-          width: '40vw',
-          fontSize: '5vh',
-          fontWeight: 900,
-          userSelect: 'none',
-          cursor: 'pointer',
-          marginBottom: "5vh",
-          backgroundColor: '#0cbfe9',
-          borderColor: '#21AAA4',
-          color: 'white',
-        }}>Learn Morse Basics</button>
-      </Link>
-
-      <Link className='nav-link' to="/GamesLetters" style={{
-        backgroundColor: backgroundColor
-      }}>
-        <button style={{
-          width: '40vw',
-          fontSize: '5vh',
-          fontWeight: 900,
-          userSelect: 'none',
-          cursor: 'pointer',
-          marginBottom: "5vh",
-          backgroundColor: '#0cbfe9',
-          borderColor: '#21AAA4',
-          color: 'white',
-        }}>Learn Morse Letters and Numbers</button>
-      </Link>
-
-      <Link className='nav-link' to="/GamesThemes" style={{
-        backgroundColor: backgroundColor
-      }}>
-        <button style={{
-          width: '40vw',
-          fontSize: '5vh',
-          fontWeight: 900,
-          userSelect: 'none',
-          cursor: 'pointer',
-          marginBottom: "5vh",
-          backgroundColor: '#0cbfe9',
-          borderColor: '#21AAA4',
-          color: 'white',
-        }}>Themed Morse Games</button>
-      </Link>
-
-      <Link className='nav-link' to="/GamesWords" style={{
-        backgroundColor: backgroundColor
-      }}>
-        <button style={{
-          width: '40vw',
-          fontSize: '5vh',
-          fontWeight: 900,
-          userSelect: 'none',
-          cursor: 'pointer',
-          marginBottom: "5vh",
-          backgroundColor: '#0cbfe9',
-          borderColor: '#21AAA4',
-          color: 'white',
-        }}>Learn Morse Words</button>
-      </Link>
+      <Container maxWidth='xl' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh', paddingTop: '3vh' }}>
+        <div justify='center' spacing={2} style={{ display: 'grid', 'grid-template-columns' : 'auto auto', 'justify-content' : 'space-around' }}>
+          <div>
+            <Link className='nav-link' to="/GamesBasics" style={{
+              backgroundColor: backgroundColor}}>
+              <button style={{
+                width: '20vw',
+                height: '20vw',
+                fontSize: '5vh',
+                fontWeight: 900,
+                userSelect: 'none',
+                cursor: 'pointer',
+                marginBottom: "5vh",
+                backgroundColor: '#0cbfe9',
+                borderColor: '#21AAA4',
+                color: 'white',
+              }}>Learn Morse Basics</button>
+            </Link>
+          </div>
+          <div>
+            <Link className='nav-link' to="/GamesLetters" style={{
+              backgroundColor: backgroundColor}}>
+              <button style={{
+                width: '20vw',
+                height: '20vw',
+                fontSize: '5vh',
+                fontWeight: 900,
+                userSelect: 'none',
+                cursor: 'pointer',
+                marginBottom: "5vh",
+                backgroundColor: '#0cbfe9',
+                borderColor: '#21AAA4',
+                color: 'white',
+              }}>Learn Morse Letters and Numbers</button>
+            </Link>
+          </div>
+          <div>
+            <Link className='nav-link' to="/GamesBasics" style={{
+              backgroundColor: backgroundColor}}>
+              <button style={{
+                width: '20vw',
+                height: '20vw',
+                fontSize: '5vh',
+                fontWeight: 900,
+                userSelect: 'none',
+                cursor: 'pointer',
+                marginBottom: "5vh",
+                backgroundColor: '#0cbfe9',
+                borderColor: '#21AAA4',
+                color: 'white',
+              }}>Learn Morse Basics</button>
+            </Link>
+          </div>
+          <div>
+            <Link className='nav-link' to="/GamesLetters" style={{
+              backgroundColor: backgroundColor}}>
+              <button style={{
+                width: '20vw',
+                height: '20vw',
+                fontSize: '5vh',
+                fontWeight: 900,
+                userSelect: 'none',
+                cursor: 'pointer',
+                marginBottom: "5vh",
+                backgroundColor: '#0cbfe9',
+                borderColor: '#21AAA4',
+                color: 'white',
+              }}>Learn Morse Letters and Numbers</button>
+            </Link>
+          </div>
+        </div>
+      </Container>
 
       <Link className='nav-link' to="/" style={{
         backgroundColor: backgroundColor
@@ -158,36 +169,6 @@ const Games = forwardRef((props, ref) => {
   );
 })
 
-class GameSelection extends React.Component {
-  render() {
-    var color;
-    if (this.props.difficulty === 'Level 4') {
-      color = '#FF0000'
-    } else if (this.props.difficulty === 'Level 3') {
-      color = 'yellow'
-    } else if (this.props.difficulty === 'Level 2') {
-      color = '#39ff14'
-    } else if (this.props.difficulty === 'Level 1') {
-      color = '#0cbfe9'
-    }
-    return (
-      <div>
-        <Link style={{ textDecoration: 'none' }} to={this.props.link}>
-          <Card>
-            <CardActionArea>
-              <div style={{ width: '100%', paddingTop: '66.66%' }}>
-                <img style={{ width: '100%', margin: '0%', padding: '0%', position: 'absolute', left: '0', top: '0' }} src={this.props.img} type="image/png" alt={LearnAlphabetIMG}/* this should be the default for if we don't have an image source*/ />
-              </div>
-              <p style={{ color: 'black', fontWeight: 'bold', margin: 0, padding: 0, display: 'block', backgroundColor: 'white', fontSize: '2.5vh' }} >{this.props.name}</p>
-              <div style={{ backgroundColor: 'white' }}>
-                <text style={{ color: 'black', fontWeight: 'bold', fontSize: '1.75vh' }}>{this.props.difficulty}</text>
-              </div>
-            </CardActionArea>
-          </Card>
-        </Link>
-      </div>
-    )
-  }
-}
+
 
 export default Games;
