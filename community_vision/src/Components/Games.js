@@ -71,8 +71,8 @@ const Games = forwardRef((props, ref) => {
                 userSelect: 'none',
                 cursor: 'pointer',
                 marginBottom: "5vh",
-                backgroundColor: '#0cbfe9',
-                borderColor: '#21AAA4',
+                backgroundColor: '#eb6253',
+                borderColor: '#eb6253',
                 color: 'white',
               }}>Learn Morse Basics</button>
             </Link>
@@ -88,7 +88,7 @@ const Games = forwardRef((props, ref) => {
                 userSelect: 'none',
                 cursor: 'pointer',
                 marginBottom: "5vh",
-                backgroundColor: '#0cbfe9',
+                backgroundColor: '#21aaa4',
                 borderColor: '#21AAA4',
                 color: 'white',
               }}>Learn Morse Letters and Numbers</button>
@@ -105,8 +105,8 @@ const Games = forwardRef((props, ref) => {
                 userSelect: 'none',
                 cursor: 'pointer',
                 marginBottom: "5vh",
-                backgroundColor: '#0cbfe9',
-                borderColor: '#21AAA4',
+                backgroundColor: '#78c04b',
+                borderColor: '#78c04b',
                 color: 'white',
               }}>Learn Morse Words</button>
             </Link>
@@ -122,8 +122,8 @@ const Games = forwardRef((props, ref) => {
                 userSelect: 'none',
                 cursor: 'pointer',
                 marginBottom: "5vh",
-                backgroundColor: '#0cbfe9',
-                borderColor: '#21AAA4',
+                backgroundColor: '#3b63a2',
+                borderColor: '#3b63a2',
                 color: 'white',
               }}>Themed Morse Games</button>
             </Link>
