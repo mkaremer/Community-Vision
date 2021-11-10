@@ -31,16 +31,16 @@ import GamesThemes from "./Components/GamesThemes";
 import GamesWords from "./Components/GamesWords";
 
 function App() {
-  const [backgroundColor, setBackgroundColor] = useState(() => initial('backgroundColor'));
+  const [backgroundColor, setBackgroundColor] = useState(() => '#e8e8e8');
   const currentRef = useRef();
   const navRef = useRef();
   const updatePage = (value) => {
     currentRef.current.update(value);
-    setBackgroundColor(initial('backgroundColor'));
+    setBackgroundColor('#e8e8e8');
   }
   const updateNav = (value) => {
     navRef.current.update();
-    setBackgroundColor(initial('backgroundColor'));
+    setBackgroundColor('#e8e8e8');
   }
   return (
     <Router>

@@ -28,14 +28,14 @@ import { Container } from '@material-ui/core';
  * This file is the menu of links to the game categories 
  */
 const Games = forwardRef((props, ref) => {
-  const [backgroundColor, setBackgroundColor] = useState(() => initial('backgroundColor'));
-  const [fontColor, setFontColor] = useState(() => initial('fontColor'));
+  const [backgroundColor, setBackgroundColor] = useState(() => '#e8e8e8');
+  const [fontColor, setFontColor] = useState(() => 'black');
   useImperativeHandle(
     ref,
     () => ({
       update() {
-        setBackgroundColor(initial('backgroundColor'));
-        setFontColor(initial('fontColor'));
+        setBackgroundColor('#e8e8e8');
+        setFontColor('black');
       }
     }),
   )

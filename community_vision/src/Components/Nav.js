@@ -159,7 +159,8 @@ const Nav = forwardRef((props, ref) => {
             fontSize: '10vh',
             position: 'absolute',
             background: 'white',
-            top: '-10vh',
+            top: '-15vh',
+            height: '15vh',
             width: '100%',
             zIndex: 5,
             cursor: 'pointer',
@@ -176,7 +177,8 @@ const Nav = forwardRef((props, ref) => {
           <CardActionArea style={{
             fontSize: '10vh',
             position: 'absolute',
-            top: '-10vh',
+            top: '-15vh',
+            height: '15vh',
             width: '100%',
             zIndex: 5,
             cursor: 'pointer',
@@ -185,7 +187,6 @@ const Nav = forwardRef((props, ref) => {
           }}>
             <img style={{ height: '8vh' }} src={pic} alt={pic}></img>
             Settings
-            <div style={{ textAlign: 'right' }}>X</div>
           </CardActionArea>
         </Card>
         <Grid container style={{ paddingTop: '1.25vh', zIndex: 6 }}>

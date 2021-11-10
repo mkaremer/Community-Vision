@@ -15,16 +15,16 @@ const Home = forwardRef((props, ref) => {
     history.push(input);
   }
 
-  const [backgroundColor, setBackgroundColor] = useState(() => initial('backgroundColor'));
-  const [fontColor, setFontColor] = useState(() => initial('fontColor'));
+  const [backgroundColor, setBackgroundColor] = useState(() => '#e8e8e8');
+  const [fontColor, setFontColor] = useState(() => 'black');
   const [dropdown, setDropdown] = useState(false);
 
   useImperativeHandle(
     ref,
     () => ({
       update(value) {
-        setBackgroundColor(initial('backgroundColor'));
-        setFontColor(initial('fontColor'));
+        setBackgroundColor('#e8e8e8');
+        setFontColor('black');
         setDropdown(value);
       }
     }),

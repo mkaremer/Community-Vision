@@ -8,14 +8,14 @@ import { Link } from 'react-router-dom';
 //Help received from https://www.reddit.com/r/reactjs/comments/f4bpgf/automatic_versioning_from_run_build_create_react/
 
 const About = forwardRef((props, ref) => {
-  const [backgroundColor, setBackgroundColor] = useState(() => initial('backgroundColor'));
-  const [fontColor, setFontColor] = useState(() => initial('fontColor'));
+  const [backgroundColor, setBackgroundColor] = useState(() => '#e8e8e8');
+  const [fontColor, setFontColor] = useState(() => 'black');
   useImperativeHandle(
     ref,
     () => ({
       update() {
-        setBackgroundColor(initial('backgroundColor'));
-        setFontColor(initial('fontColor'));
+        setBackgroundColor('#e8e8e8');
+        setFontColor('black');
       }
     }),
   )
