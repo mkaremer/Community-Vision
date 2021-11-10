@@ -95,7 +95,7 @@ const Games = forwardRef((props, ref) => {
             </Link>
           </div>
           <div>
-            <Link className='nav-link' to="/GamesBasics" style={{
+            <Link className='nav-link' to="/GamesWords" style={{
               backgroundColor: backgroundColor}}>
               <button style={{
                 width: '20vw',
@@ -108,11 +108,11 @@ const Games = forwardRef((props, ref) => {
                 backgroundColor: '#0cbfe9',
                 borderColor: '#21AAA4',
                 color: 'white',
-              }}>Learn Morse Basics</button>
+              }}>Learn Morse Words</button>
             </Link>
           </div>
           <div>
-            <Link className='nav-link' to="/GamesLetters" style={{
+            <Link className='nav-link' to="/GamesThemes" style={{
               backgroundColor: backgroundColor}}>
               <button style={{
                 width: '20vw',
@@ -125,7 +125,7 @@ const Games = forwardRef((props, ref) => {
                 backgroundColor: '#0cbfe9',
                 borderColor: '#21AAA4',
                 color: 'white',
-              }}>Learn Morse Letters and Numbers</button>
+              }}>Themed Morse Games</button>
             </Link>
           </div>
         </div>
