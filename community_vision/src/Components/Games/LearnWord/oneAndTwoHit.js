@@ -12,9 +12,9 @@ import Tutorial from './WordGameTutorial';
 import EndGame from './EndGame';
 import Picture from './Picture';
 import {BackButton} from "../Common/Functions";
-import gameDataDashes from "./WordsGameDataDashes";
+import gameDataOneAndTwoHit from "./WordsGameDataOneAndTwoHit";
 import sounds from "../LetterSounds";
-import StartScreen from "./LearnWordsStartDashes";
+import StartScreen from "./LearnWordsStartOneAndTwoHit";
 import correctFX from "../../Assets/Sounds/correct.mp3";
 import { useHistory } from "react-router-dom";
 
@@ -72,10 +72,10 @@ const oneAndTwoHit = forwardRef((props, ref) => {
     var [start, setStart] = useState(true);
 
     //Get the image source
-    var img = gameDataDashes[gameIndex].imgSrc;
+    var img = gameDataOneAndTwoHit[gameIndex].imgSrc;
 
     //Word that the user needs to type
-    var currentWord = gameDataDashes[gameIndex].word;
+    var currentWord = gameDataOneAndTwoHit[gameIndex].word;
 
     //Current letter to be type(first letter)
     var currentLetter = currentWord[0];
@@ -90,6 +90,7 @@ const oneAndTwoHit = forwardRef((props, ref) => {
     const [backgroundColor, setBackgroundColor] = useState(() => initial('backgroundColor'));
     const [dashButtonColor, setDashButtonColor] = useState(() => initial('dashButtonColor'));
     const [dotButtonColor, setDotButtonColor] = useState(() => initial('dotButtonColor'));
+    const [oneAndHitButtonColor, setOneAndTwoHitButtonColor] = useState(() => initial('oneAndHitButtonColor'));
     const [fontColor, setFontColor] = useState(() => initial('fontColor'));
     const resetTimer = speed*1000; //reset timer in milliseconds
     const [sizeAdjust, setSizeAdjust] = useState(() => initial(3))
@@ -99,7 +100,7 @@ const oneAndTwoHit = forwardRef((props, ref) => {
     const notCurrLetterSize = (size - sizeAdjust - 7) + 'vh';
 
     //Get the sound of current word
-    var soundSrc = gameDataDashes[gameIndex].soundSrc;
+    var soundSrc = gameDataOneAndTwoHit[gameIndex].soundSrc;
     //Get the sound of current letter
     var letterSoundSrc = sounds[currentLetter];
 
@@ -109,6 +110,7 @@ const oneAndTwoHit = forwardRef((props, ref) => {
     const [playCorrectSoundFX] = useSound(correctFX, {volume: volume / 100});
     const [playDash] = useSound(dashSound, {volume: volume/100});
     const [playDot] = useSound(dotSound, {volume: volume/100});
+    const [playOneAndTwoHit] = useSound(dotSound, {volume: volume/100});
 
     //Reset input after 1.5 second if no new input is being enter
     clearTimeout(t);
@@ -198,6 +200,7 @@ const oneAndTwoHit = forwardRef((props, ref) => {
                 setBackgroundColor(initial('backgroundColor'));
                 setDashButtonColor(initial('dashButtonColor'));
                 setDotButtonColor(initial('dotButtonColor'));
+                setOneAndTwoHitButtonColor(initial('oneAndTwoHitButtonColor'));
                 setFontColor(initial('fontColor'));
             }
         }),
