@@ -97,7 +97,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
         history.push("/games");
     }
 
-    var [index, setIndex] = useState(0);
+    var [index, setIndex] = useState(-1);
     var currentLetter = list[index];
     var currentMorse = charToMorse(currentLetter);
     var [input, setInput] = useState('');
