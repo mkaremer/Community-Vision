@@ -21,7 +21,18 @@ import correctFX from "../Assets/Sounds/correct.mp3"
 var t;
 var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //CHANGE ME
 var textIndex = 0;
+var promptsCheck = false;
 
+
+//function setMorseBlank(promptsCheck) {
+//  document.getElementById("sampleMorseCode")= {morsePrompt};
+//}
+//if(document.querySelector('input[name="prompts"]:checked').value == "true"){
+    promptsCheck= true;
+//}
+//if(document.querySelector('input[name="prompts"]:checked').value == "false"){
+ //   promptsCheck= false;
+//}
 
 function showImage() {
     var x = document.getElementById("tutorialImage");
@@ -259,6 +270,29 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                     </Card>
                                 </Grid>
                                 <br />
+                                <Grid >
+                                   {/*} <Card> 
+                                        <input type="radio" id="yesPrompts" name= "prompts" value= "true"></input>
+                                        <label for= "yesPrompts" >Prompts</label>
+                                    </Card>
+                                    <Card> 
+                                        <input type="radio" id="noPrompts" name= "prompts" value= "false"></input>
+                                        <label for= "noPrompts" >No Prompts</label>
+                                    </Card>
+                                    */}
+                                <button id = "yesPrompts" onMouseDown={function () {
+                                                    promptsCheck = true;
+                                                    }}>
+                                                    Prompts                   
+                                    </button>
+                                    <button id = "noPrompts" onMouseDown={function () {
+                                                    promptsCheck = false;
+                                                    }}>
+                                                    No Prompts                   
+                                                </button>
+                                                
+                                </Grid>
+                                <br />    
                                 <Grid item style={{ userSelect: 'none' }}>
                                     <Card>
                                         <button id = "start" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
@@ -368,8 +402,8 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                         pointer: 'default',
                         userSelect: 'none',
                         opacity: x.interpolate({ range: [0, 1], output: [0, 1] }),
-                        marginBottom: '0vh'
-                    }}>{currentMorse}</animated.p>
+                        marginBottom: '0vh',
+                    }}><b>{promptsCheck ? currentMorse : ""} </b></animated.p>
                 </div>
             </div>
             <div style={{ gridArea: 'middle' }}>
@@ -460,10 +494,11 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                         </Grid>
                     </Grid>
                 </Container>
-            </div>
-        </div>
+            </div>   
+        </div> 
     );
 })
+
 
 const Radio = () => {
     const [isToggled, setToggle] = useState(false);
