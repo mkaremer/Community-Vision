@@ -16,23 +16,22 @@ import { useHistory } from "react-router-dom";
 import { Transition } from 'react-spring/renderprops';
 import sounds from "./LetterSounds";
 import correctFX from "../Assets/Sounds/correct.mp3"
+import { CollectionsBookmarkRounded } from '@material-ui/icons';
 
 
 var t;
 var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //CHANGE ME
 var textIndex = 0;
-var promptsCheck = false;
+var promptsCheck = true;
 
-
-//function setMorseBlank(promptsCheck) {
-//  document.getElementById("sampleMorseCode")= {morsePrompt};
-//}
-//if(document.querySelector('input[name="prompts"]:checked').value == "true"){
-    promptsCheck= true;
-//}
-//if(document.querySelector('input[name="prompts"]:checked').value == "false"){
- //   promptsCheck= false;
-//}
+function promptButtonClick (clicked, notClicked){
+    document.getElementById(clicked).style.fontSize = '5vh';
+    document.getElementById(clicked).style.backgroundColor = 'White';
+    document.getElementById(clicked).style.outlineColor = 'Red';
+    document.getElementById(notClicked).style.outlineColor = "Grey";
+    document.getElementById(notClicked).style.fontSize = '4vh';
+    document.getElementById(notClicked).style.backgroundColor = 'Grey';
+}
 
 function showImage() {
     var x = document.getElementById("tutorialImage");
@@ -267,30 +266,31 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                             fontSize: '4vh'
                                         }}>Look for the dot ('space') and dash ('enter') patterns to make a letter
                                         </p>
+                                        <p style={{
+                                            marginTop: '0vh',
+                                            paddingLeft: '2vw',
+                                            paddingRight: '2vw',
+                                            fontSize: '4vh'
+                                        }}>Please select Prompts (less difficulty) or No Prompts (more difficulty)
+                                        </p>
                                     </Card>
                                 </Grid>
                                 <br />
                                 <Grid >
-                                   {/*} <Card> 
-                                        <input type="radio" id="yesPrompts" name= "prompts" value= "true"></input>
-                                        <label for= "yesPrompts" >Prompts</label>
-                                    </Card>
-                                    <Card> 
-                                        <input type="radio" id="noPrompts" name= "prompts" value= "false"></input>
-                                        <label for= "noPrompts" >No Prompts</label>
-                                    </Card>
-                                    */}
-                                <button id = "yesPrompts" onMouseDown={function () {
-                                                    promptsCheck = true;
-                                                    }}>
-                                                    Prompts                   
+                                    <button id = "yesPrompts" style={{ border: 'none','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                    onMouseDown={function () {
+                                        promptsCheck = true;
+                                        promptButtonClick("yesPrompts","noPrompts");
+                                        }}>
+                                        Prompts                   
                                     </button>
-                                    <button id = "noPrompts" onMouseDown={function () {
-                                                    promptsCheck = false;
-                                                    }}>
-                                                    No Prompts                   
-                                                </button>
-                                                
+                                    
+                                    <button id = "noPrompts" style={{ border: 'none', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                        promptsCheck = false;
+                                        promptButtonClick("noPrompts","yesPrompts");
+                                        }}>
+                                        No Prompts                   
+                                    </button>        
                                 </Grid>
                                 <br />    
                                 <Grid item style={{ userSelect: 'none' }}>
