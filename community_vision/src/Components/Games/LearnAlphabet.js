@@ -21,16 +21,34 @@ import { CollectionsBookmarkRounded } from '@material-ui/icons';
 
 var t;
 var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //CHANGE ME
+var orderedList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var tempList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var textIndex = 0;
 var promptsCheck = true;
+var scrambleCheck = false;
+var currentChar= "";
 
-function promptButtonClick (clicked, notClicked){
+function buttonClick (clicked, notClicked){
     document.getElementById(clicked).style.fontSize = '5vh';
     document.getElementById(clicked).style.backgroundColor = 'White';
     document.getElementById(clicked).style.outlineColor = 'Red';
     document.getElementById(notClicked).style.outlineColor = "Grey";
     document.getElementById(notClicked).style.fontSize = '4vh';
     document.getElementById(notClicked).style.backgroundColor = 'Grey';
+}
+
+function scramble (){
+    list = "ZYX";
+        {/*var result = [];
+        while(tempList != ""){
+            currentChar = tempList.charAt(Math.floor(Math.random() * tempList.length));
+            tempList.replace(currentChar,"");
+            result += currentChar;
+        }
+    list= result;*/}
+}
+function inOrder (){
+    list= orderedList;
 }
 
 function showImage() {
@@ -276,21 +294,37 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                     </Card>
                                 </Grid>
                                 <br />
-                                <Grid >
-                                    <button id = "yesPrompts" style={{ border: 'none','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                <Grid> 
+                                    <button id = "yesPrompts" style={{ border: 'none','margin-right':'30px', 'margin-bottom':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
                                     onMouseDown={function () {
                                         promptsCheck = true;
-                                        promptButtonClick("yesPrompts","noPrompts");
+                                        buttonClick("yesPrompts","noPrompts");
                                         }}>
                                         Prompts                   
                                     </button>
-                                    
-                                    <button id = "noPrompts" style={{ border: 'none', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+
+                                    <button id = "noPrompts" style={{ border: 'none','margin-right':'100px', 'margin-bottom':'30px',fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
                                         promptsCheck = false;
-                                        promptButtonClick("noPrompts","yesPrompts");
+                                        buttonClick("noPrompts","yesPrompts");
                                         }}>
                                         No Prompts                   
-                                    </button>        
+                                    </button> 
+                                    <button id = "yesScramble" style={{ border: 'none','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                    onMouseDown={function () {
+                                        scrambleCheck = true;
+                                        buttonClick("yesScramble","noScramble");
+                                        scramble();
+                                        }}>
+                                        Scramble                  
+                                    </button>
+
+                                    <button id = "noScramble" style={{ border: 'none', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                        scrambleCheck = false;
+                                        buttonClick("noScramble","yesScramble");
+                                        inOrder();
+                                        }}>
+                                        In order                   
+                                    </button>   
                                 </Grid>
                                 <br />    
                                 <Grid item style={{ userSelect: 'none' }}>
