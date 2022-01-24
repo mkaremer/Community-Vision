@@ -38,14 +38,13 @@ function buttonClick (clicked, notClicked){
 }
 
 function scramble (){
-    list = "ZYX";
-        {/*var result = [];
+        var result = [];
         while(tempList != ""){
             currentChar = tempList.charAt(Math.floor(Math.random() * tempList.length));
-            tempList.replace(currentChar,"");
+            tempList = tempList.replace(currentChar,'');
             result += currentChar;
         }
-    list= result;*/}
+    list= result;
 }
 function inOrder (){
     list= orderedList;
