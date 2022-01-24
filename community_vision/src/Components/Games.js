@@ -9,6 +9,7 @@ import LearnAlphabetIMG from "./Games/LearnAlphabet.jpg" //test image (pig)
 import dotsIMG from "./Games/Icons/dots.jpg"
 import dashIMG from "./Games/Icons/dash.png"
 import hitIMG from "./Games/Icons/hitIMG.png"
+import threeHitIMG from "./Games/Icons/hitIMG.png" 
 import buttonsImg from "./Games/Icons/explore dot and dash.jpg"
 import alphabetIMG from "./Games/Icons/learn morse patterns.jpg"
 import abceyes from "./Games/Icons/learn morse alphabet.jpg"
