@@ -316,7 +316,7 @@ const OneAndTwoHit = forwardRef((props, ref) => { //CHANGE ME
                                             paddingRight: '2vw',
                                             fontSize: '8vh',
                                             marginBottom: '0vh'
-                                        }}>You have learned the alphabet in Morse.
+                                        }}>You have learned the alphabet with 1 or 2 hits in Morse.
                                         </p>
                                     </Card>
                                 </Grid>
