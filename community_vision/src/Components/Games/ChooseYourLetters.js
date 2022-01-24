@@ -23,12 +23,42 @@ var textIndex = 0;
 //list to keep track of inputted letters
 var list = [];
 var orderedList = [];
+var promptsCheck = true;
 
 //to set inputted letters back to none, in array and display
 function setToZero() {
+    orderedList = [];
     list =[];
     var myUl =  document.getElementById("myList");
     myUl.innerHTML = "";
+}
+
+{/*document.getElementById("first").ontransitionstart = () => {
+    setToZero();
+}*/}
+
+function buttonClick (clicked, notClicked){
+    document.getElementById(clicked).style.fontSize = '5vh';
+    document.getElementById(clicked).style.backgroundColor = 'White';
+    document.getElementById(clicked).style.outlineColor = 'Red';
+    document.getElementById(notClicked).style.outlineColor = "Grey";
+    document.getElementById(notClicked).style.fontSize = '4vh';
+    document.getElementById(notClicked).style.backgroundColor = 'Grey';
+}
+
+function scramble (){
+    var tempList = orderedList.join('');
+    var result = [];
+    var currentChar;
+    while(tempList != ""){
+        currentChar = tempList.charAt(Math.floor(Math.random() * tempList.length));
+        tempList = tempList.replace(currentChar,'');
+        result += currentChar;
+    }
+list= result;
+}
+function inOrder (){
+list= orderedList;
 }
 
 //function to add inputted letters to display
@@ -486,6 +516,37 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     </button> 
                                     </Card>
                                 </Grid>
+                                <br/>
+                                <Grid> 
+                                    <button id = "yesPrompts" style={{ border: 'none','margin-right':'30px', 'margin-bottom':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                    onMouseDown={function () {
+                                        promptsCheck = true;
+                                        buttonClick("yesPrompts","noPrompts");
+                                        }}>
+                                        Prompts                   
+                                    </button>
+
+                                    <button id = "noPrompts" style={{ border: 'none','margin-right':'100px', 'margin-bottom':'30px',fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                        promptsCheck = false;
+                                        buttonClick("noPrompts","yesPrompts");
+                                        }}>
+                                        No Prompts                   
+                                    </button> 
+                                    <button id = "yesScramble" style={{ border: 'none','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                    onMouseDown={function () {
+                                        buttonClick("yesScramble","noScramble");
+                                        scramble();
+                                        }}>
+                                        Scramble                  
+                                    </button>
+
+                                    <button id = "noScramble" style={{ border: 'none', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                        buttonClick("noScramble","yesScramble");
+                                        inOrder();
+                                        }}>
+                                        In order                   
+                                    </button>   
+                                </Grid>
                                 <br />
                                 <Grid item style={{ userSelect: 'none' }}>
                                     <Card>
@@ -597,7 +658,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                         userSelect: 'none',
                         opacity: x.interpolate({ range: [0, 1], output: [0, 1] }),
                         marginBottom: '0vh'
-                    }}>{currentMorse}</animated.p>
+                    }}>{promptsCheck ? currentMorse : ""}</animated.p>
                 </div>
             </div>
             <div style={{ gridArea: 'middle' }}>

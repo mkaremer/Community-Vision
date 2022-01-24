@@ -22,11 +22,9 @@ import { CollectionsBookmarkRounded } from '@material-ui/icons';
 var t;
 var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //CHANGE ME
 var orderedList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var tempList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var textIndex = 0;
 var promptsCheck = true;
-var scrambleCheck = false;
-var currentChar= "";
+
 
 function buttonClick (clicked, notClicked){
     document.getElementById(clicked).style.fontSize = '5vh';
@@ -38,6 +36,8 @@ function buttonClick (clicked, notClicked){
 }
 
 function scramble (){
+        var currentChar= "";
+        var tempList = orderedList;
         var result = [];
         while(tempList != ""){
             currentChar = tempList.charAt(Math.floor(Math.random() * tempList.length));
@@ -310,7 +310,6 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                     </button> 
                                     <button id = "yesScramble" style={{ border: 'none','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
                                     onMouseDown={function () {
-                                        scrambleCheck = true;
                                         buttonClick("yesScramble","noScramble");
                                         scramble();
                                         }}>
@@ -318,7 +317,6 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                     </button>
 
                                     <button id = "noScramble" style={{ border: 'none', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
-                                        scrambleCheck = false;
                                         buttonClick("noScramble","yesScramble");
                                         inOrder();
                                         }}>
