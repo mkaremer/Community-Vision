@@ -8,7 +8,7 @@ Community Vision Morse Code Website
 
 Version 1.2
 
-Prepared by Joshua Henderson, Malie Lundstrom, Moses Karemera and Haley Welliver
+Prepared by Joshua Henderson, Malia Lundstrom, Moses Karemera and Haley Welliver
 
 University of Portland
 
