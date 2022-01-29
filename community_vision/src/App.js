@@ -9,7 +9,7 @@ import SettingsPage from './Components/SettingsPage'
 import LearnAlphabet from './Components/Games/LearnAlphabet';
 import Dots from './Components/Games/LearnWord/Dots';
 import Dashes from './Components/Games/LearnWord/Dashes';
-import oneAndTwoHit from './Components/Games/LearnWord/oneAndTwoHit';
+import OneAndTwoHit from './Components/Games/oneAndTwoHit';
 import ChooseYourLetters from './Components/Games/ChooseYourLetters';
 import LearnWordAdvanced from './Components/Games/LearnWord/LearnWordAdvanced';
 import LearnWordBeginner from './Components/Games/LearnWord/LearnWordBeginner';
@@ -75,6 +75,9 @@ function App() {
           <Route path="/learnAlphabet">
             <LearnAlphabet ref={currentRef} />
           </Route>
+          <Route path="/oneAndTwoHit">
+            <OneAndTwoHit ref={currentRef} />
+          </Route>
           <Route path="/chooseYourLetters">
             <ChooseYourLetters ref={currentRef} />
           </Route>
@@ -83,9 +86,6 @@ function App() {
           </Route>
           <Route path="/dashes">
             <Dashes ref={currentRef} />
-          </Route>
-          <Route path="/oneAndTwoHit">
-            <oneAndTwoHit ref={currentRef} />
           </Route>
           <Route path="/learnWordBeginner">
             <LearnWordBeginner ref={currentRef} />

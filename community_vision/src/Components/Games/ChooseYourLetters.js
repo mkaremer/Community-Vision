@@ -22,16 +22,49 @@ var t;
 var textIndex = 0;
 //list to keep track of inputted letters
 var list = [];
+var orderedList = [];
+var promptsCheck = true;
 
 //to set inputted letters back to none, in array and display
 function setToZero() {
+    orderedList = [];
     list =[];
     var myUl =  document.getElementById("myList");
     myUl.innerHTML = "";
 }
 
+{/*document.getElementById("first").ontransitionstart = () => {
+    setToZero();
+}*/}
+
+function buttonClick (clicked, notClicked){
+    document.getElementById(clicked).style.fontSize = '5vh';
+    document.getElementById(clicked).style.backgroundColor = 'White';
+    document.getElementById(clicked).style.outlineColor = 'Red';
+    document.getElementById(notClicked).style.outlineColor = "Grey";
+    document.getElementById(notClicked).style.fontSize = '4vh';
+    document.getElementById(notClicked).style.backgroundColor = 'Grey';
+}
+
+function scramble (){
+    var tempList = orderedList.join('');
+    var result = [];
+    var currentChar;
+    while(tempList != ""){
+        currentChar = tempList.charAt(Math.floor(Math.random() * tempList.length));
+        tempList = tempList.replace(currentChar,'');
+        result += currentChar;
+    }
+list= result;
+}
+function inOrder (){
+list= orderedList;
+}
+
 //function to add inputted letters to display
 function addToDisplayList(ltr){
+    list.push(ltr);
+    orderedList.push(ltr);
     var li = document.createElement('li');
     li.style.display = "inline";
     var myUl = document.getElementById("myList");
@@ -299,7 +332,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                 var a= "A";
                                                 addToDisplayList(a);
-                                                list.push(a);
                                             }}>
                                             A
                                         </button>
@@ -307,7 +339,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var b= "B";
                                                addToDisplayList(b);
-                                               list.push(b);
                                             }}>
                                             B
                                         </button> 
@@ -315,7 +346,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var c= "C";
                                                addToDisplayList(c);
-                                               list.push(c);
                                             }}>
                                             C
                                         </button>
@@ -323,7 +353,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var d= "D";
                                                addToDisplayList(d);
-                                               list.push(d);
                                             }}>
                                             D
                                         </button> 
@@ -331,7 +360,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var e= "E";
                                                addToDisplayList(e);
-                                               list.push(e);
                                             }}>
                                             E
                                         </button>
@@ -339,7 +367,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var f= "F";
                                                addToDisplayList(f);
-                                               list.push(f);
                                             }}>
                                             F
                                     </button>
@@ -347,7 +374,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var g= "G";
                                                addToDisplayList(g);
-                                               list.push(g);
                                             }}>
                                             G
                                     </button>
@@ -355,7 +381,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var h= "H";
                                                addToDisplayList(h);
-                                               list.push(h);
                                             }}>
                                             H
                                     </button> 
@@ -363,7 +388,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var i= "I";
                                                addToDisplayList(i);
-                                               list.push(i);
                                             }}>
                                             I
                                         </button>
@@ -373,7 +397,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var j= "J";
                                                addToDisplayList(j);
-                                               list.push(j);
                                             }}>
                                             J
                                         </button> 
@@ -381,7 +404,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var k= "K";
                                                addToDisplayList(k);
-                                               list.push(k);
                                             }}>
                                             K
                                         </button>
@@ -389,7 +411,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var l= "L";
                                                addToDisplayList(l);
-                                               list.push(l);
                                             }}>
                                             L
                                         </button> 
@@ -397,7 +418,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var m= "M";
                                                addToDisplayList(m);
-                                               list.push(m);
                                             }}>
                                             M
                                         </button>
@@ -405,7 +425,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var n= "N";
                                                addToDisplayList(n);
-                                               list.push(n);
                                             }}>
                                             N
                                     </button>
@@ -413,7 +432,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var o= "O";
                                                addToDisplayList(o);
-                                               list.push(o);
                                             }}>
                                             O
                                     </button>
@@ -421,7 +439,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var p= "P";
                                                addToDisplayList(p);
-                                               list.push(p);
                                             }}>
                                             P
                                         </button>
@@ -429,7 +446,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var q= "Q";
                                                addToDisplayList(q);
-                                               list.push(q);
                                             }}>
                                             Q
                                         </button> 
@@ -439,7 +455,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var r= "R";
                                                addToDisplayList(r);
-                                               list.push(r);
                                             }}>
                                             R
                                         </button>
@@ -447,7 +462,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var s= "S";
                                                addToDisplayList(s);
-                                               list.push(s);
                                             }}>
                                             S
                                         </button> 
@@ -455,7 +469,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var t= "T";
                                                addToDisplayList(t);
-                                               list.push(t);
                                             }}>
                                             T
                                         </button>
@@ -463,7 +476,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var u= "U";
                                                addToDisplayList(u);
-                                               list.push(u);
                                             }}>
                                             U
                                     </button>
@@ -471,7 +483,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var v= "V";
                                                addToDisplayList(v);
-                                               list.push(v);
                                             }}>
                                             V
                                     </button>
@@ -479,7 +490,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var w= "W";
                                                addToDisplayList(w);
-                                               list.push(w);
                                             }}>
                                             W
                                     </button> 
@@ -487,7 +497,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var x= "X";
                                                addToDisplayList(x);
-                                               list.push(x);
                                             }}>
                                             X
                                     </button>
@@ -495,7 +504,6 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var y= "Y";
                                                addToDisplayList(y);
-                                               list.push(y);
                                             }}>
                                             Y
                                     </button>
@@ -503,11 +511,41 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             onMouseDown={function () {
                                                var z= "Z";
                                                addToDisplayList(z);
-                                               list.push(z);
                                             }}>
                                             Z
                                     </button> 
                                     </Card>
+                                </Grid>
+                                <br/>
+                                <Grid> 
+                                    <button id = "yesPrompts" style={{ border: 'none','margin-right':'30px', 'margin-bottom':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                    onMouseDown={function () {
+                                        promptsCheck = true;
+                                        buttonClick("yesPrompts","noPrompts");
+                                        }}>
+                                        Prompts                   
+                                    </button>
+
+                                    <button id = "noPrompts" style={{ border: 'none','margin-right':'100px', 'margin-bottom':'30px',fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                        promptsCheck = false;
+                                        buttonClick("noPrompts","yesPrompts");
+                                        }}>
+                                        No Prompts                   
+                                    </button> 
+                                    <button id = "yesScramble" style={{ border: 'none','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                    onMouseDown={function () {
+                                        buttonClick("yesScramble","noScramble");
+                                        scramble();
+                                        }}>
+                                        Scramble                  
+                                    </button>
+
+                                    <button id = "noScramble" style={{ border: 'none', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                        buttonClick("noScramble","yesScramble");
+                                        inOrder();
+                                        }}>
+                                        In order                   
+                                    </button>   
                                 </Grid>
                                 <br />
                                 <Grid item style={{ userSelect: 'none' }}>
@@ -620,7 +658,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                         userSelect: 'none',
                         opacity: x.interpolate({ range: [0, 1], output: [0, 1] }),
                         marginBottom: '0vh'
-                    }}>{currentMorse}</animated.p>
+                    }}>{promptsCheck ? currentMorse : ""}</animated.p>
                 </div>
             </div>
             <div style={{ gridArea: 'middle' }}>
