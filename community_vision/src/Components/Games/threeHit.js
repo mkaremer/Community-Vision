@@ -246,7 +246,7 @@ const ThreeHits = forwardRef((props, ref) => { //CHANGE ME
                                         <h1 style={{
                                             marginBottom: '0vh',
                                             fontSize: '8vh'
-                                        }}>Learn Morse Alphaphet With 1 or 2 Hits
+                                        }}>Learn Morse Alphaphet With 3 Hits
                                         </h1>
                                         <br />
                                         <p style={{
@@ -316,7 +316,7 @@ const ThreeHits = forwardRef((props, ref) => { //CHANGE ME
                                             paddingRight: '2vw',
                                             fontSize: '8vh',
                                             marginBottom: '0vh'
-                                        }}>You have learned the alphabet with 1 or 2 hits in Morse.
+                                        }}>You have learned the alphabet with 3 hits in Morse.
                                         </p>
                                     </Card>
                                 </Grid>
