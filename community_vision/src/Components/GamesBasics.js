@@ -8,6 +8,8 @@ import LearnAlphabetIMG from "./Games/LearnAlphabet.jpg" //test image (pig)
 import dotsIMG from "./Games/Icons/dots.jpg"
 import dashIMG from "./Games/Icons/dash.png"
 import hitIMG from "./Games/Icons/hitIMG.png"
+import hit3IMG from "./Games/Icons/hit3IMG.png"
+import hit4IMG from "./Games/Icons/hit4IMG.png"
 import buttonsImg from "./Games/Icons/explore dot and dash.jpg"
 import alphabetIMG from "./Games/Icons/learn morse patterns.jpg"
 import abceyes from "./Games/Icons/learn morse alphabet.jpg"
@@ -69,6 +71,12 @@ const GamesBasics = forwardRef((props, ref) => {
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
             <GameSelection name='1 and 2 Hit Letters' img={hitIMG} link='/oneAndTwoHit' difficulty='Level 1'/>
+          </Grid>
+          <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
+            <GameSelection name='3 Hit Letters' img={hit3IMG} link='/threeHit' difficulty='Level 1'/>
+          </Grid>
+          <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
+            <GameSelection name='4 Hit Letters' img={hit4IMG} link='/fourHit' difficulty='Level 1'/>
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
             <GameSelection name='Explore Dot and Dash' img={buttonsImg} link='/butto' difficulty='Level 1' />

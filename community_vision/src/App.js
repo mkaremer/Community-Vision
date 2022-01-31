@@ -10,7 +10,8 @@ import LearnAlphabet from './Components/Games/LearnAlphabet';
 import Dots from './Components/Games/LearnWord/Dots';
 import Dashes from './Components/Games/LearnWord/Dashes';
 import OneAndTwoHit from './Components/Games/oneAndTwoHit';
-import ThreeHits from './Components/Games/threeHits';
+import ThreeHit from './Components/Games/threeHit';
+import FourHit from './Components/Games/fourHit';
 import ChooseYourLetters from './Components/Games/ChooseYourLetters';
 import LearnWordAdvanced from './Components/Games/LearnWord/LearnWordAdvanced';
 import LearnWordBeginner from './Components/Games/LearnWord/LearnWordBeginner';
@@ -79,8 +80,11 @@ function App() {
           <Route path="/oneAndTwoHit">
             <OneAndTwoHit ref={currentRef} />
           </Route>
-          <Route path="/threeHits">
-            <ThreeHits ref={currentRef} />
+          <Route path="/threeHit">
+            <ThreeHit ref={currentRef} />
+          </Route>
+          <Route path="/fourHit">
+            <FourHit ref={currentRef} />
           </Route>
           <Route path="/chooseYourLetters">
             <ChooseYourLetters ref={currentRef} />
