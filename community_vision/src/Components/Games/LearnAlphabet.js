@@ -16,12 +16,39 @@ import { useHistory } from "react-router-dom";
 import { Transition } from 'react-spring/renderprops';
 import sounds from "./LetterSounds";
 import correctFX from "../Assets/Sounds/correct.mp3"
+import { CollectionsBookmarkRounded } from '@material-ui/icons';
 
 
 var t;
 var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //CHANGE ME
+var orderedList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var textIndex = 0;
+var promptsCheck = true;
 
+
+function buttonClick (clicked, notClicked){
+    document.getElementById(clicked).style.fontSize = '5vh';
+    document.getElementById(clicked).style.backgroundColor = 'White';
+    document.getElementById(clicked).style.outlineColor = 'Red';
+    document.getElementById(notClicked).style.outlineColor = "Grey";
+    document.getElementById(notClicked).style.fontSize = '4vh';
+    document.getElementById(notClicked).style.backgroundColor = 'Grey';
+}
+
+function scramble (){
+        var currentChar= "";
+        var tempList = orderedList;
+        var result = [];
+        while(tempList != ""){
+            currentChar = tempList.charAt(Math.floor(Math.random() * tempList.length));
+            tempList = tempList.replace(currentChar,'');
+            result += currentChar;
+        }
+    list= result;
+}
+function inOrder (){
+    list= orderedList;
+}
 
 function showImage() {
     var x = document.getElementById("tutorialImage");
@@ -256,9 +283,47 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                             fontSize: '4vh'
                                         }}>Look for the dot ('space') and dash ('enter') patterns to make a letter
                                         </p>
+                                        <p style={{
+                                            marginTop: '0vh',
+                                            paddingLeft: '2vw',
+                                            paddingRight: '2vw',
+                                            fontSize: '4vh'
+                                        }}>Please select Prompts (less difficulty) or No Prompts (more difficulty)
+                                        </p>
                                     </Card>
                                 </Grid>
                                 <br />
+                                <Grid> 
+                                    <button id = "yesPrompts" style={{ border: 'none','margin-right':'30px', 'margin-bottom':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                    onMouseDown={function () {
+                                        promptsCheck = true;
+                                        buttonClick("yesPrompts","noPrompts");
+                                        }}>
+                                        Prompts                   
+                                    </button>
+
+                                    <button id = "noPrompts" style={{ border: 'none','margin-right':'100px', 'margin-bottom':'30px',fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                        promptsCheck = false;
+                                        buttonClick("noPrompts","yesPrompts");
+                                        }}>
+                                        No Prompts                   
+                                    </button> 
+                                    <button id = "yesScramble" style={{ border: 'none','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                    onMouseDown={function () {
+                                        buttonClick("yesScramble","noScramble");
+                                        scramble();
+                                        }}>
+                                        Scramble                  
+                                    </button>
+
+                                    <button id = "noScramble" style={{ border: 'none', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                        buttonClick("noScramble","yesScramble");
+                                        inOrder();
+                                        }}>
+                                        In order                   
+                                    </button>   
+                                </Grid>
+                                <br />    
                                 <Grid item style={{ userSelect: 'none' }}>
                                     <Card>
                                         <button id = "start" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
@@ -368,8 +433,8 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                         pointer: 'default',
                         userSelect: 'none',
                         opacity: x.interpolate({ range: [0, 1], output: [0, 1] }),
-                        marginBottom: '0vh'
-                    }}>{currentMorse}</animated.p>
+                        marginBottom: '0vh',
+                    }}><b>{promptsCheck ? currentMorse : ""} </b></animated.p>
                 </div>
             </div>
             <div style={{ gridArea: 'middle' }}>
@@ -460,10 +525,11 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                         </Grid>
                     </Grid>
                 </Container>
-            </div>
-        </div>
+            </div>   
+        </div> 
     );
 })
+
 
 const Radio = () => {
     const [isToggled, setToggle] = useState(false);
