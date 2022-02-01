@@ -112,9 +112,65 @@ import xraySnd from "./WordSound/xray.flac"
 import yellowSnd from "./WordSound/yellow.flac"
 import zebraSnd from "./WordSound/zebra.flac"
 
+import astronautSnd from "./WordSound/astronaut.mp3"
+import bearSnd from "./WordSound/bear.mp3"
+import cakeSnd from "./WordSound/cake.mp3"
+import drumSnd from "./WordSound/drum.mp3"
+import eatSnd from "./WordSound/eat.mp3"
+import fishSnd from "./WordSound/fish.mp3"
+import grapesSnd from "./WordSound/grape.mp3"
+import handSnd from "./WordSound/hand.mp3"
+import iglooSnd from "./WordSound/igloo.mp3"
+import jacketSnd from "./WordSound/jacket.mp3"
+import kickSnd from "./WordSound/kick.mp3"
+import lemonSnd from "./WordSound/lemon.mp3"
+import milkSnd from "./WordSound/milk.mp3"
+import nutSnd from "./WordSound/nut.mp3"
+import orangeSnd from "./WordSound/orange.mp3"
+import pumpkinSnd from "./WordSound/pumpkin.mp3"
+import quiltSnd from "./WordSound/quilt.mp3"
+import rainSnd from "./WordSound/rain.mp3"
+import starSnd from "./WordSound/star.mp3"
+import turtleSnd from "./WordSound/turtle.mp3"
+import umbrellaSnd from "./WordSound/umbrella.mp3"
+import vanSnd from "./WordSound/van.mp3"
+import whaleSnd from "./WordSound/whale.mp3"
+import foxSnd from "./WordSound/fox.mp3"
+import yarnSnd from "./WordSound/yarn.mp3"
+import zipperSnd from "./WordSound/zipper.mp3"
+
+import antSnd from "./WordSound/ant.wav"
+import ballSnd from "./WordSound/ball.mp3"
+import carSnd from "./WordSound/car.mp3"
+import duckSnd from "./WordSound/duck.mp3"
+//import earthSnd from "./WordSound/earth.mp3"
+import frogSnd from "./WordSound/frog.mp3"
+import goatSnd from "./WordSound/goat.mp3"
+import homeSnd from "./WordSound/home.mp3"
+import iceSnd from "./WordSound/ice.mp3"
+import jetSnd from "./WordSound/jet.mp3"
+import kiteSnd from "./WordSound/kite.mp3"
+import ladderSnd from "./WordSound/ladder.mp3"
+import monkeySnd from "./WordSound/monkey.mp3"
+import nestSnd from "./WordSound/nest.mp3"
+import octopusSnd from "./WordSound/octupus.mp3"
+import pigSnd from "./WordSound/pig.mp3"
+import quietSnd from "./WordSound/quiet.mp3"
+import rabbitSnd from "./WordSound/rabbit.mp3"
+import snakeSnd from "./WordSound/snake.mp3"
+import truckSnd from "./WordSound/truck.mp3"
+import unicornSnd from "./WordSound/unicorn.mp3"
+import vacuumSnd from "./WordSound/vacuum.mp3"
+import wormSnd from "./WordSound/worm.mp3"
+import xylophoneSnd from "./WordSound/xylophone.mp3"
+//import yoyoSnd from "./WordSound/yoyo.mp3"
+import zooSnd from "./WordSound/zoo.mp3"
+
 //data to use for learn words
 const gameData = [
     //SET ONE
+    {word: "ANT", imgSrc: antImg, soundSrc: antSnd},
+
     {word: "APPLE", imgSrc: appleImg, soundSrc: appleSnd},
     {word: "BOOKS", imgSrc: booksImg, soundSrc: booksSnd},
     {word: "CAT", imgSrc: catImg, soundSrc: catSnd},
@@ -142,59 +198,58 @@ const gameData = [
     {word: "YELLOW", imgSrc: yellowImg, soundSrc: yellowSnd},
     {word: "ZEBRA", imgSrc: zebraImg, soundSrc: zebraSnd},
     //SET TWO
-    {word: "ANT", imgSrc: antImg, soundSrc: appleSnd},
-    {word: "BALL", imgSrc: ballImg, soundSrc: appleSnd},
-    {word: "CAR", imgSrc: carImg, soundSrc: appleSnd},
-    {word: "DUCK", imgSrc: duckImg, soundSrc: appleSnd},
-    {word: "EMAIL", imgSrc: emailImg, soundSrc: appleSnd},
-    {word: "FROG", imgSrc: frogImg, soundSrc: appleSnd},
-    {word: "GOAT", imgSrc: goatImg, soundSrc: appleSnd},
-    {word: "HOME", imgSrc: homeImg, soundSrc: appleSnd},
-    {word: "ICE", imgSrc: iceImg, soundSrc: appleSnd},
-    {word: "JET", imgSrc: jetImg, soundSrc: appleSnd},
-    {word: "KITE", imgSrc: kiteImg, soundSrc: appleSnd},
-    {word: "LADDER", imgSrc: ladderImg, soundSrc: appleSnd},
-    {word: "MONKEY", imgSrc: monkeyImg, soundSrc: appleSnd},
-    {word: "NUT", imgSrc: nutImg, soundSrc: appleSnd},
-    {word: "OCTOPUS", imgSrc: octopusImg, soundSrc: appleSnd},
-    {word: "PIG", imgSrc: pigImg, soundSrc: appleSnd},
-    {word: "QUIET", imgSrc: quietImg, soundSrc: appleSnd},
-    {word: "RABBIT", imgSrc: rabbitImg, soundSrc: appleSnd},
-    {word: "SNAKE", imgSrc: snakeImg, soundSrc: appleSnd},
-    {word: "TRUCK", imgSrc: truckImg, soundSrc: appleSnd},
-    {word: "UNICORN", imgSrc: unicornImg, soundSrc: appleSnd},
-    {word: "VACUUM", imgSrc: vacuumImg, soundSrc: appleSnd},
-    {word: "WORM", imgSrc: wormImg, soundSrc: appleSnd},
-    {word: "XYLOPHONE", imgSrc: xylophoneImg, soundSrc: appleSnd},
-    //{word: "YO-YO", imgSrc: yoyoImg, soundSrc: appleSnd},
-    //{word: "ZOO", imgSrc: zooImg, soundSrc: appleSnd}
+    {word: "BALL", imgSrc: ballImg, soundSrc: ballSnd},
+    {word: "CAR", imgSrc: carImg, soundSrc: carSnd},
+    {word: "DUCK", imgSrc: duckImg, soundSrc: duckSnd},
+    //{word: "EARTH", imgSrc: earthImg, soundSrc: earthSnd},
+    {word: "FROG", imgSrc: frogImg, soundSrc: frogSnd},
+    {word: "GOAT", imgSrc: goatImg, soundSrc: goatSnd},
+    {word: "HOME", imgSrc: homeImg, soundSrc: homeSnd},
+    {word: "ICE", imgSrc: iceImg, soundSrc: iceSnd},
+    {word: "JET", imgSrc: jetImg, soundSrc: jetSnd},
+    {word: "KITE", imgSrc: kiteImg, soundSrc: kiteSnd},
+    {word: "LADDER", imgSrc: ladderImg, soundSrc: ladderSnd},
+    {word: "MONKEY", imgSrc: monkeyImg, soundSrc: monkeySnd},
+    {word: "NEST", imgSrc: nestImg, soundSrc: nestSnd},
+    {word: "OCTOPUS", imgSrc: octopusImg, soundSrc: octopusSnd},
+    {word: "PIG", imgSrc: pigImg, soundSrc: pigSnd},
+    {word: "QUIET", imgSrc: quietImg, soundSrc: quietSnd},
+    {word: "RABBIT", imgSrc: rabbitImg, soundSrc: rabbitSnd},
+    {word: "SNAKE", imgSrc: snakeImg, soundSrc: snakeSnd},
+    {word: "TRUCK", imgSrc: truckImg, soundSrc: truckSnd},
+    {word: "UNICORN", imgSrc: unicornImg, soundSrc: unicornSnd},
+    {word: "VACUUM", imgSrc: vacuumImg, soundSrc: vacuumSnd},
+    {word: "WORM", imgSrc: wormImg, soundSrc: wormSnd},
+    {word: "XYLOPHONE", imgSrc: xylophoneImg, soundSrc: xylophoneSnd},
+    //{word: "YOYO", imgSrc: yoyoImg, soundSrc: yoyoSnd},
+    //{word: "ZOO", imgSrc: zooImg, soundSrc: zooSnd},
     //SET THREE
-    {word: "ASTRONAUT", imgSrc: astronautImg, soundSrc: appleSnd},
-    {word: "BEAR", imgSrc: bearImg, soundSrc: appleSnd},
-    {word: "CAKE", imgSrc: cakeImg, soundSrc: appleSnd},
-    {word: "DRUM", imgSrc: drumImg, soundSrc: appleSnd},
-    {word: "EAT", imgSrc: eatImg, soundSrc: appleSnd},
-    {word: "FISH", imgSrc: fishImg, soundSrc: appleSnd},
-    {word: "GRAPES", imgSrc: grapesImg, soundSrc: appleSnd},
-    {word: "HAND", imgSrc: handImg, soundSrc: appleSnd},
-    {word: "IGLOO", imgSrc: iglooImg, soundSrc: appleSnd},
-    {word: "JACKET", imgSrc: jacketImg, soundSrc: appleSnd},
-    {word: "KICK", imgSrc: kickImg, soundSrc: appleSnd},
-    {word: "LEMON", imgSrc: lemonImg, soundSrc: appleSnd},
-    {word: "MILK", imgSrc: milkImg, soundSrc: appleSnd},
-    {word: "NEST", imgSrc: nestImg, soundSrc: appleSnd},
-    {word: "ORANGE", imgSrc: orangeImg, soundSrc: appleSnd},
-    {word: "PUMPKIN", imgSrc: pumpkinImg, soundSrc: appleSnd},
-    //{word: "QUILT", imgSrc: quiltImg, soundSrc: appleSnd},
-    {word: "RAIN", imgSrc: rainImg, soundSrc: appleSnd},
-    {word: "STAR", imgSrc: starImg, soundSrc: appleSnd},
-    {word: "TURTLE", imgSrc: turtleImg, soundSrc: appleSnd},
-    {word: "UMBRELLA", imgSrc: umbrellaImg, soundSrc: appleSnd},
-    {word: "VAN", imgSrc: vanImg, soundSrc: appleSnd},
-    {word: "WHALE", imgSrc: whaleImg, soundSrc: appleSnd},
-    {word: "FOX", imgSrc: foxImg, soundSrc: appleSnd},
-    //{word: "YARN", imgSrc: yarnImg, soundSrc: appleSnd},
-    {word: "ZIPPER", imgSrc: zipperImg, soundSrc: appleSnd}
+    {word: "ASTRONAUT", imgSrc: astronautImg, soundSrc: astronautSnd},
+    {word: "BEAR", imgSrc: bearImg, soundSrc: bearSnd},
+    {word: "CAKE", imgSrc: cakeImg, soundSrc: cakeSnd},
+    {word: "DRUM", imgSrc: drumImg, soundSrc: drumSnd},
+    {word: "EAT", imgSrc: eatImg, soundSrc: eatSnd},
+    {word: "FISH", imgSrc: fishImg, soundSrc: fishSnd},
+    {word: "GRAPES", imgSrc: grapesImg, soundSrc: grapesSnd},
+    {word: "HAND", imgSrc: handImg, soundSrc: handSnd},
+    {word: "IGLOO", imgSrc: iglooImg, soundSrc: iglooSnd},
+    {word: "JACKET", imgSrc: jacketImg, soundSrc: jacketSnd},
+    {word: "KICK", imgSrc: kickImg, soundSrc: kickSnd},
+    {word: "LEMON", imgSrc: lemonImg, soundSrc: lemonSnd},
+    {word: "MILK", imgSrc: milkImg, soundSrc: milkSnd},
+    {word: "NUT", imgSrc: nutImg, soundSrc: nutSnd},
+    {word: "ORANGE", imgSrc: orangeImg, soundSrc: orangeSnd},
+    {word: "PUMPKIN", imgSrc: pumpkinImg, soundSrc: pumpkinSnd},
+    //{word: "QUILT", imgSrc: quiltImg, soundSrc: quiltSnd},
+    {word: "RAIN", imgSrc: rainImg, soundSrc: rainSnd},
+    {word: "STAR", imgSrc: starImg, soundSrc: starSnd},
+    {word: "TURTLE", imgSrc: turtleImg, soundSrc: turtleSnd},
+    {word: "UMBRELLA", imgSrc: umbrellaImg, soundSrc: umbrellaSnd},
+    {word: "VAN", imgSrc: vanImg, soundSrc: vanSnd},
+    {word: "WHALE", imgSrc: whaleImg, soundSrc: whaleSnd},
+    {word: "FOX", imgSrc: foxImg, soundSrc: foxSnd},
+    //{word: "YARN", imgSrc: yarnImg, soundSrc: yarnSnd},
+    {word: "ZIPPER", imgSrc: zipperImg, soundSrc: zipperSnd}
 ]
 
 export default gameData
