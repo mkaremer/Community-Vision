@@ -32,7 +32,7 @@ import antImg from "./Images/ant.png"
 import ballImg from "./Images/ball.png"
 import carImg from "./Images/car.png"
 import duckImg from "./Images/duck.png"
-import emailImg from "./Images/email.png"
+import earthImg from "./Images/earth.png"
 import frogImg from "./Images/frog.png"
 import goatImg from "./Images/goat.png"
 import homeImg from "./Images/home.png"
@@ -143,7 +143,7 @@ import antSnd from "./WordSound/ant.wav"
 import ballSnd from "./WordSound/ball.mp3"
 import carSnd from "./WordSound/car.mp3"
 import duckSnd from "./WordSound/duck.mp3"
-//import earthSnd from "./WordSound/earth.mp3"
+import earthSnd from "./WordSound/earth.mp3"
 import frogSnd from "./WordSound/frog.mp3"
 import goatSnd from "./WordSound/goat.mp3"
 import homeSnd from "./WordSound/home.mp3"
@@ -153,12 +153,12 @@ import kiteSnd from "./WordSound/kite.mp3"
 import ladderSnd from "./WordSound/ladder.mp3"
 import monkeySnd from "./WordSound/monkey.mp3"
 import nestSnd from "./WordSound/nest.mp3"
-import octopusSnd from "./WordSound/octupus.mp3"
+import octopusSnd from "./WordSound/octopus.mp3"
 import pigSnd from "./WordSound/pig.mp3"
 import quietSnd from "./WordSound/quiet.mp3"
 import rabbitSnd from "./WordSound/rabbit.mp3"
 import snakeSnd from "./WordSound/snake.mp3"
-import truckSnd from "./WordSound/truck.mp3"
+import truckSnd from "./WordSound/truck.flac"
 import unicornSnd from "./WordSound/unicorn.mp3"
 import vacuumSnd from "./WordSound/vacuum.mp3"
 import wormSnd from "./WordSound/worm.mp3"
@@ -176,7 +176,7 @@ const gameData = [
     {word: "IGLOO", imgSrc: iglooImg, soundSrc: iglooSnd},
     {word: "STAR", imgSrc: starImg, soundSrc: starSnd},
     {word: "HAND", imgSrc: handImg, soundSrc: handSnd},
-    //{word: "EMAIL", imgSrc: emailImg, soundSrc: emailSnd},
+    {word: "EARTH", imgSrc: earthImg, soundSrc: earthSnd},
     {word: "ICE", imgSrc: iceImg, soundSrc: iceSnd},
     {word: "SNAKE", imgSrc: snakeImg, soundSrc: snakeSnd},
     {word: "HOME", imgSrc: homeImg, soundSrc: homeSnd}    
