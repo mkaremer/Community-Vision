@@ -9,6 +9,7 @@ import LearnAlphabetIMG from "./Games/LearnAlphabet.jpg" //test image (pig)
 import dotsIMG from "./Games/Icons/dots.jpg"
 import dashIMG from "./Games/Icons/dash.png"
 import hitIMG from "./Games/Icons/hitIMG.png"
+import threeHitIMG from "./Games/Icons/hitIMG.png" 
 import buttonsImg from "./Games/Icons/explore dot and dash.jpg"
 import alphabetIMG from "./Games/Icons/learn morse patterns.jpg"
 import abceyes from "./Games/Icons/learn morse alphabet.jpg"
@@ -60,8 +61,8 @@ const Games = forwardRef((props, ref) => {
       </Container>
 
       <Container maxWidth='xl' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh', paddingTop: '3vh' }}>
-        <div justify='center' spacing={2} style={{ display: 'grid', 'grid-template-columns' : 'auto auto', 'justify-content' : 'space-around' }}>
-          <div>
+        <div justify='center' spacing={2} style={{ display: 'grid', 'grid-template-columns' : 'auto auto auto auto', 'justify-content' : 'space-around'}}>
+
             <Link className='nav-link' to="/GamesBasics" style={{
               backgroundColor: backgroundColor}}>
               <button style={{
@@ -71,14 +72,13 @@ const Games = forwardRef((props, ref) => {
                 fontWeight: 900,
                 userSelect: 'none',
                 cursor: 'pointer',
-                marginBottom: "5vh",
                 backgroundColor: '#eb6253',
                 borderColor: '#eb6253',
                 color: 'white',
               }}>Learn Morse Basics</button>
             </Link>
-          </div>
-          <div>
+
+
             <Link className='nav-link' to="/GamesLetters" style={{
               backgroundColor: backgroundColor}}>
               <button style={{
@@ -88,14 +88,12 @@ const Games = forwardRef((props, ref) => {
                 fontWeight: 900,
                 userSelect: 'none',
                 cursor: 'pointer',
-                marginBottom: "5vh",
                 backgroundColor: '#21aaa4',
                 borderColor: '#21AAA4',
                 color: 'white',
               }}>Learn Morse Letters and Numbers</button>
             </Link>
-          </div>
-          <div>
+
             <Link className='nav-link' to="/GamesWords" style={{
               backgroundColor: backgroundColor}}>
               <button style={{
@@ -105,14 +103,14 @@ const Games = forwardRef((props, ref) => {
                 fontWeight: 900,
                 userSelect: 'none',
                 cursor: 'pointer',
-                marginBottom: "5vh",
+
                 backgroundColor: '#78c04b',
                 borderColor: '#78c04b',
                 color: 'white',
               }}>Learn Morse Words</button>
             </Link>
-          </div>
-          <div>
+
+
             <Link className='nav-link' to="/GamesThemes" style={{
               backgroundColor: backgroundColor}}>
               <button style={{
@@ -122,13 +120,13 @@ const Games = forwardRef((props, ref) => {
                 fontWeight: 900,
                 userSelect: 'none',
                 cursor: 'pointer',
-                marginBottom: "5vh",
+
                 backgroundColor: '#3b63a2',
                 borderColor: '#3b63a2',
                 color: 'white',
               }}>Themed Morse Games</button>
             </Link>
-          </div>
+
         </div>
       </Container>
 

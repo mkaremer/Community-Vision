@@ -19,7 +19,7 @@ import correctFX from "../Assets/Sounds/correct.mp3"
 
 
 var t;
-var list = "AENT"; //CHANGE ME
+var list = "BCFHJPQVXY"; //CHANGE ME
 var textIndex = 0;
 
 
@@ -74,7 +74,7 @@ function updateTutorial() {
     }
 }
 
-const OneAndTwoHit = forwardRef((props, ref) => { //CHANGE ME
+const FourHit = forwardRef((props, ref) => { //CHANGE ME
 
     const history = useHistory();
     function backToGames() {
@@ -246,7 +246,7 @@ const OneAndTwoHit = forwardRef((props, ref) => { //CHANGE ME
                                         <h1 style={{
                                             marginBottom: '0vh',
                                             fontSize: '8vh'
-                                        }}>Learn Morse Alphaphet With 1 or 2 Hits
+                                        }}>Learn Morse Alphaphet With 4 Hits
                                         </h1>
                                         <br />
                                         <p style={{
@@ -316,7 +316,7 @@ const OneAndTwoHit = forwardRef((props, ref) => { //CHANGE ME
                                             paddingRight: '2vw',
                                             fontSize: '8vh',
                                             marginBottom: '0vh'
-                                        }}>You have learned the alphabet with 1 or 2 hits in Morse.
+                                        }}>You have learned the alphabet with 4 hits in Morse.
                                         </p>
                                     </Card>
                                 </Grid>
@@ -520,4 +520,4 @@ const RadioContent = () => {
     );
 };
 
-export default OneAndTwoHit; //CHANGE ME
+export default FourHit; //CHANGE ME
