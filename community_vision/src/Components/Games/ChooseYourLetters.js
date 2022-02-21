@@ -532,14 +532,12 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                         var ypnp = document.getElementById("pr");
                                         var ysns = document.getElementById("sc");
                                         var lb = document.getElementById("letterButtons");
-                                        var st = document.getElementById("startGame");
-                                        var instru = document.getElementById("ins");
+                                        var st = document.getElementById("doneOptions");
                                         lb.style.display = "none";
                                         done.style.display = "none";
                                         ypnp.style.display = "block";
                                         ysns.style.display = "block";
                                         st.style.display = "block";
-                                        instru.style.display = "block";
                                         
                                         }}>
                                         Done                  
@@ -574,7 +572,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             <h1 style={{
                                                 fontSize: '4vh',
                                                 backgroundColor: 'white'
-                                            }}>Rearrange Letters:
+                                            }}>Randomize Letter Order:
                                             </h1> 
                                             <Grid> 
                                                 <button id = "yesScramble" style={{ border: 'none','margin-left':'30px','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
@@ -595,9 +593,24 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     </Grid> 
                                 </Grid>
                                 <br />
-                                <Grid id = "startGame" item style={{display: 'none', userSelect: 'none' }}>
+                                <Grid item style={{ userSelect: 'none' }}>
                                     <Card>
-                                        <button id = "startGame" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
+                                    <button id = "doneOptions" style={{display: 'none', fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
+                                            onMouseDown={function () {
+                                                var sg = document.getElementById("startGame");
+                                                sg.style.display = "block";
+                                                var instru = document.getElementById("ins");
+                                                instru.style.display = "block";
+                                                var dop = document.getElementById("doneOptions");
+                                                dop.style.display = "none";
+                                                var scramb = document.getElementById("sc");
+                                                scramb.style.display = "none";
+                                                var prom = document.getElementById("pr");
+                                                prom.style.display = "none";
+                                            }}>
+                                            Done
+                                        </button>
+                                        <button id = "startGame" style={{display: 'none', fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                 if (startScreen) {
                                                     setStartScreen(false);
