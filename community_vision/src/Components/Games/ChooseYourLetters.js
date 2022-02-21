@@ -297,36 +297,44 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                             fontSize: '8vh'
                                         }}>Choose Your Letters
                                         </h1>
-                                        <br />
-                                        <p style={{
+                                        <button id = "start" style={{ fontSize: '8vh', height: '100%', cursor: 'pointer' }}
+                                            onMouseDown={function () {
+                                               setToZero();
+                                               var st = document.getElementById("start");
+                                               var d = document.getElementById("Done");
+                                               var lb = document.getElementById("letterButtons");
+                                               var sl = document.getElementById("sl");
+                                               sl.style.display = "block";
+                                               st.style.display = "none";
+                                               lb.style.display = "block";
+                                               d.style.display = "block";
+                                            }}>
+                                            Start
+                                        </button>
+                                        <p id = "ins" style={{
+                                            display: 'none',
                                             marginTop: '0vh',
                                             paddingLeft: '2vw',
                                             paddingRight: '2vw',
                                             fontSize: '4vh'
-                                        }}>Use dot ('space') and dash ('enter') to make letters
+                                        }}>Use dot ('space') and dash ('enter') to make the chosen letters
                                         </p>
-                                        <button id = "clear" style={{ fontSize: '8vh', height: '100%', cursor: 'pointer' }}
-                                            onMouseDown={function () {
-                                               setToZero();
-                                            }}>
-                                            CLEAR
-                                        </button>
                                     </Card>
                                 </Grid>
                                 <br />
-                                <Grid item style={{ userSelect: 'none', cursor: 'default' }}>
+                                <Grid id = "sl" item style={{display: 'none', userSelect: 'none', cursor: 'default' }}>
                                     <Card id= "listDisplay">
                                         <p style={{
                                             marginTop: '0vh',
                                             paddingLeft: '2vw',
                                             paddingRight: '2vw',
                                             fontSize: '4vh'
-                                        }}> <ul id="myList" style={{"list-style-type":'none', margin: 0, padding: 0}}> </ul>
+                                        }}> <ul id="myList" style={{ "list-style-type":'none', margin: 0, padding: 0}}> </ul>
                                         </p>
                                     </Card>
                                 </Grid>
                                 <br />
-                                <Grid container direction='column'>
+                                <Grid id = "letterButtons" style={{display: "none"}} container direction='column'>
                                     <Card id = "row1">
                                     <button id = "a" style={{ fontSize: '8vh', height: '100%', width: '8%', cursor: 'pointer' }}
                                             onMouseDown={function () {
@@ -517,40 +525,79 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                     </Card>
                                 </Grid>
                                 <br/>
-                                <Grid> 
-                                    <button id = "yesPrompts" style={{ border: 'none','margin-right':'30px', 'margin-bottom':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                <Grid container direction = 'row' justify='center' alignItems='center'> 
+                                    <button id = "Done" style={{display: 'none', 'margin-bottom':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', backgroundColor: "White"  }} 
                                     onMouseDown={function () {
-                                        promptsCheck = true;
-                                        buttonClick("yesPrompts","noPrompts");
+                                        var done = document.getElementById("Done");
+                                        var ypnp = document.getElementById("pr");
+                                        var ysns = document.getElementById("sc");
+                                        var lb = document.getElementById("letterButtons");
+                                        var st = document.getElementById("startGame");
+                                        var instru = document.getElementById("ins");
+                                        lb.style.display = "none";
+                                        done.style.display = "none";
+                                        ypnp.style.display = "block";
+                                        ysns.style.display = "block";
+                                        st.style.display = "block";
+                                        instru.style.display = "block";
+                                        
                                         }}>
-                                        Prompts                   
-                                    </button>
+                                        Done                  
+                                    </button>  
+                                    <Grid container direction = 'column' id = "pr" justify='center' alignItems='center' style= {{display: 'none'}}>
+                                        <Grid container direction = 'row' justify='center' alignItems='center'>
+                                            <h1 style={{
+                                                fontSize: '4vh',
+                                                backgroundColor: 'white'
+                                            }}>Morse Prompts:
+                                            </h1> 
+                                            <Grid> 
+                                                <button id = "yesPrompts" style={{ border: 'none','margin-left':'30px','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid','outline-width':'thick'}} 
+                                                onMouseDown={function () {
+                                                    promptsCheck = true;
+                                                    buttonClick("yesPrompts","noPrompts");
+                                                    }}>
+                                                    Yes                  
+                                                </button>
 
-                                    <button id = "noPrompts" style={{ border: 'none','margin-right':'100px', 'margin-bottom':'30px',fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
-                                        promptsCheck = false;
-                                        buttonClick("noPrompts","yesPrompts");
-                                        }}>
-                                        No Prompts                   
-                                    </button> 
-                                    <button id = "yesScramble" style={{ border: 'none','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
-                                    onMouseDown={function () {
-                                        buttonClick("yesScramble","noScramble");
-                                        scramble();
-                                        }}>
-                                        Scramble                  
-                                    </button>
-
-                                    <button id = "noScramble" style={{ border: 'none', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
-                                        buttonClick("noScramble","yesScramble");
-                                        inOrder();
-                                        }}>
-                                        In order                   
-                                    </button>   
+                                                <button id = "noPrompts" style={{ border: 'none',fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                                    promptsCheck = false;
+                                                    buttonClick("noPrompts","yesPrompts");
+                                                    }}>
+                                                    No                   
+                                                </button> 
+                                            </Grid>
+                                        </Grid>
+                                    </Grid> 
+                                    <Grid container direction = "row" id = "sc" justify='center' alignItems='center' style= {{display: 'none'}}>
+                                        <Grid container direction = 'row' justify='center' alignItems='center'>
+                                            <h1 style={{
+                                                fontSize: '4vh',
+                                                backgroundColor: 'white'
+                                            }}>Rearrange Letters:
+                                            </h1> 
+                                            <Grid> 
+                                                <button id = "yesScramble" style={{ border: 'none','margin-left':'30px','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                                onMouseDown={function () {
+                                                    buttonClick("yesScramble","noScramble");
+                                                    scramble();
+                                                }}>
+                                                Yes                 
+                                                </button>
+                                                <button id = "noScramble" style={{border: 'none', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                                    buttonClick("noScramble","yesScramble");
+                                                    inOrder();
+                                                }}>
+                                                No                   
+                                                </button>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid> 
                                 </Grid>
                                 <br />
-                                <Grid item style={{ userSelect: 'none' }}>
+                                <Grid id = "startGame" item style={{display: 'none', userSelect: 'none' }}>
                                     <Card>
-                                        <button id = "start" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
+                                        <button id = "startGame" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                 if (startScreen) {
                                                     setStartScreen(false);
