@@ -50,7 +50,7 @@ function initial(type){
 }
 
 
-const Dots = forwardRef((props, ref) => {
+const Dashes = forwardRef((props, ref) => {
     const history = useHistory();
     function backToGames() {
         history.push("/games");
@@ -251,8 +251,8 @@ const Dots = forwardRef((props, ref) => {
 
     return (
         <div>
-            {start ? <StartScreen level={"beginner"} start={start} setStart={setStart} /> : null}
-            {finished ? <EndGame level='beginner' background={backgroundColor} fontColor={fontColor} end={finished} setEndScreen={setFinished} backToGames={backToGames}/> : null}
+            {start ? <StartScreen name ={"Dashes"} level={"beginner"} start={start} setStart={setStart} /> : null}
+            {finished ? <EndGame name="Dashes" level='beginner' background={backgroundColor} fontColor={fontColor} end={finished} setEndScreen={setFinished} backToGames={backToGames}/> : null}
             <div style={{backgroundColor: backgroundColor, height: '90vh', width: '100vw', display: 'grid', gridTemplate: '8fr 8fr / 1fr', gridTemplateAreas: '"top" "bottom'}}>
                 <div style={{gridArea: 'top'}}>
                     <div style={{ position: 'absolute' }}>
@@ -352,4 +352,4 @@ const Dots = forwardRef((props, ref) => {
     )
 })
 
-export default Dots
+export default Dashes
