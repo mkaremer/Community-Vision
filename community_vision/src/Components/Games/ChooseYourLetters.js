@@ -186,8 +186,10 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                     if (index != list.length - 1) {
                         setIndex(prevState => prevState + 1);
                     } else {
-                        setIndex(0);
-                        setEndScreen(true);
+                        if(!startScreen){
+                            setIndex(0);
+                            setEndScreen(true);
+                        }
                     }
                 }, resetTimer)
             }, resetTimer)
