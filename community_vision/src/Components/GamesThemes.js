@@ -62,10 +62,7 @@ const GamesThemes = forwardRef((props, ref) => {
       <Container maxWidth='xl' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh', paddingTop: '3vh' }}>
         <Grid container justify='center' spacing={2}>
         <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
-            <GameSelection name='Alphabet Race Game' img={raceLevel3} link='/alphabetRacePractice' difficulty='Level 3' />
-          </Grid>
-        <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
-            <GameSelection name='Alphabet Race Game' img={raceLevel4} link='/alphabetRace' difficulty='Level 4' />
+            <GameSelection name='Alphabet Race Game' img={raceLevel4} link='/alphabetRacePractice' difficulty='Level 3' />
           </Grid>
           
         </Grid>

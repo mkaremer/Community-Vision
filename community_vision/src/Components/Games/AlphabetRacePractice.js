@@ -15,6 +15,17 @@ import { Transition } from 'react-spring/renderprops';
 var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var t;
 var interval;
+var promptsCheck = true;
+
+
+function buttonClick (clicked, notClicked){
+    document.getElementById(clicked).style.fontSize = '5vh';
+    document.getElementById(clicked).style.backgroundColor = 'White';
+    document.getElementById(clicked).style.outlineColor = 'Red';
+    document.getElementById(notClicked).style.outlineColor = "Grey";
+    document.getElementById(notClicked).style.fontSize = '4vh';
+    document.getElementById(notClicked).style.backgroundColor = 'Grey';
+}
 
 function getRandomLetter() {
     return alphabet[Math.floor(Math.random() * alphabet.length)]
@@ -188,7 +199,7 @@ const AlphabetRacePractice = forwardRef((props, ref) => {
                 textAlign: 'center',
                 top: fSize
             }}>
-                {charToMorse(letter.letter)}
+                {promptsCheck ? charToMorse(letter.letter) : ""}
             </div>
         </div>
     );
@@ -303,6 +314,29 @@ const AlphabetRacePractice = forwardRef((props, ref) => {
                                         }}>Type the morse of the letters before they reach you.
                                         </p>
                                     </Card>
+                                        <Grid container direction = 'row' justify='center' alignItems='center'>
+                                            <h1 style={{
+                                                fontSize: '4vh',
+                                                backgroundColor: 'white'
+                                            }}>Morse Prompts:
+                                            </h1> 
+                                            <Grid> 
+                                                <button id = "yesPrompts" style={{ border: 'none','margin-left':'30px','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid','outline-width':'thick'}} 
+                                                onMouseDown={function () {
+                                                    promptsCheck = true;
+                                                    buttonClick("yesPrompts","noPrompts");
+                                                    }}>
+                                                    Yes                  
+                                                </button>
+
+                                                <button id = "noPrompts" style={{ border: 'none',fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                                    promptsCheck = false;
+                                                    buttonClick("noPrompts","yesPrompts");
+                                                    }}>
+                                                    No                   
+                                                </button> 
+                                            </Grid>
+                                        </Grid>
                                 </Grid>
                                 <br />
                                 <Grid item style={{ userSelect: 'none' }}>
