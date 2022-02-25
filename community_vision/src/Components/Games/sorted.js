@@ -22,6 +22,17 @@ import correctFX from "../Assets/Sounds/correct.mp3"
 var t;
 var list = "ETIANMSURWDKGOHVFLPJBXCYZQ";
 var textIndex = 0;
+var promptsCheck = true;
+
+
+function buttonClick (clicked, notClicked){
+    document.getElementById(clicked).style.fontSize = '5vh';
+    document.getElementById(clicked).style.backgroundColor = 'White';
+    document.getElementById(clicked).style.outlineColor = 'Red';
+    document.getElementById(notClicked).style.outlineColor = "Grey";
+    document.getElementById(notClicked).style.fontSize = '4vh';
+    document.getElementById(notClicked).style.backgroundColor = 'Grey';
+}
 
 function showImage() {
     var x = document.getElementById("tutorialImage");
@@ -258,6 +269,29 @@ const SortedAlphabet = forwardRef((props, ref) => {
                                     </Card>
                                 </Grid>
                                 <br />
+                                <Grid container direction = 'row' justify='center' alignItems='center'>
+                                        <h1 style={{
+                                            fontSize: '4vh',
+                                            backgroundColor: 'white'
+                                        }}>Morse Prompts:
+                                        </h1> 
+                                        <Grid> 
+                                            <button id = "yesPrompts" style={{ border: 'none','margin-left':'30px','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid','outline-width':'thick'}} 
+                                            onMouseDown={function () {
+                                                promptsCheck = true;
+                                                buttonClick("yesPrompts","noPrompts");
+                                                }}>
+                                                Yes                  
+                                            </button>
+
+                                            <button id = "noPrompts" style={{ border: 'none',fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                                promptsCheck = false;
+                                                buttonClick("noPrompts","yesPrompts");
+                                                }}>
+                                                No                   
+                                            </button> 
+                                        </Grid>
+                                    </Grid>
                                 <Grid item style={{ userSelect: 'none' }}>
                                     <Card>
                                         <button id = "start" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
@@ -372,7 +406,7 @@ const SortedAlphabet = forwardRef((props, ref) => {
                         pointer: 'default',
                         userSelect: 'none',
                         opacity: x.interpolate({ range: [0, 1], output: [0, 1] })
-                    }}>{currentMorse}</animated.p>
+                    }}>{promptsCheck ? currentMorse : ""}</animated.p>
                 </div>
             </div>
             <Buttons

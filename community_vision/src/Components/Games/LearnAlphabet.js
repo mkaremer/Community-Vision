@@ -293,36 +293,51 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                     </Card>
                                 </Grid>
                                 <br />
-                                <Grid> 
-                                    <button id = "yesPrompts" style={{ border: 'none','margin-right':'30px', 'margin-bottom':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
-                                    onMouseDown={function () {
-                                        promptsCheck = true;
-                                        buttonClick("yesPrompts","noPrompts");
-                                        }}>
-                                        Prompts                   
-                                    </button>
+                                    <Grid container direction = 'row' justify='center' alignItems='center'>
+                                        <h1 style={{
+                                            fontSize: '4vh',
+                                            backgroundColor: 'white'
+                                        }}>Morse Prompts:
+                                        </h1> 
+                                        <Grid> 
+                                            <button id = "yesPrompts" style={{ border: 'none','margin-left':'30px','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid','outline-width':'thick'}} 
+                                            onMouseDown={function () {
+                                                promptsCheck = true;
+                                                buttonClick("yesPrompts","noPrompts");
+                                                }}>
+                                                Yes                  
+                                            </button>
 
-                                    <button id = "noPrompts" style={{ border: 'none','margin-right':'100px', 'margin-bottom':'30px',fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
-                                        promptsCheck = false;
-                                        buttonClick("noPrompts","yesPrompts");
-                                        }}>
-                                        No Prompts                   
-                                    </button> 
-                                    <button id = "yesScramble" style={{ border: 'none','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
-                                    onMouseDown={function () {
-                                        buttonClick("yesScramble","noScramble");
-                                        scramble();
-                                        }}>
-                                        Scramble                  
-                                    </button>
-
-                                    <button id = "noScramble" style={{ border: 'none', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
-                                        buttonClick("noScramble","yesScramble");
-                                        inOrder();
-                                        }}>
-                                        In order                   
-                                    </button>   
-                                </Grid>
+                                            <button id = "noPrompts" style={{ border: 'none',fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                                promptsCheck = false;
+                                                buttonClick("noPrompts","yesPrompts");
+                                                }}>
+                                                No                   
+                                            </button> 
+                                        </Grid>
+                                    </Grid>
+                                    <Grid container direction = 'row' justify='center' alignItems='center'>
+                                        <h1 style={{
+                                            fontSize: '4vh',
+                                            backgroundColor: 'white'
+                                        }}>Randomize Letter Order:
+                                        </h1> 
+                                        <Grid> 
+                                            <button id = "yesScramble" style={{ border: 'none','margin-left':'30px','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick' }} 
+                                            onMouseDown={function () {
+                                                buttonClick("yesScramble","noScramble");
+                                                scramble();
+                                            }}>
+                                            Yes                 
+                                            </button>
+                                            <button id = "noScramble" style={{border: 'none', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
+                                                buttonClick("noScramble","yesScramble");
+                                                inOrder();
+                                            }}>
+                                            No                   
+                                            </button>
+                                        </Grid>
+                                    </Grid>
                                 <br />    
                                 <Grid item style={{ userSelect: 'none' }}>
                                     <Card>
