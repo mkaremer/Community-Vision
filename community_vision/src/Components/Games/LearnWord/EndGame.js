@@ -32,8 +32,15 @@ function EndGame(props) {
         currLevel = props.level;
     }
 
+    var currName = currLevel;
     //Complete level message display
-    const msg = 'Congratulations, you completed ' + currLevel + ' level!!'
+    if (props.name === undefined){
+         currName = currLevel 
+    }else{
+        currName = props.name;
+    }
+
+    const msg = 'Congratulations, you completed ' + props.name + ' level!!'
 
     const endScreen = props.end;
     const backToGames = props.backToGames;

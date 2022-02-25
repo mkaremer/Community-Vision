@@ -169,8 +169,7 @@ import zooSnd from "./WordSound/zoo.mp3"
 //data to use for learn words
 const gameData = [
     //SET ONE
-    {word: "ANT", imgSrc: antImg, soundSrc: antSnd},
-
+    
     {word: "APPLE", imgSrc: appleImg, soundSrc: appleSnd},
     {word: "BOOKS", imgSrc: booksImg, soundSrc: booksSnd},
     {word: "CAT", imgSrc: catImg, soundSrc: catSnd},
@@ -198,6 +197,7 @@ const gameData = [
     {word: "YELLOW", imgSrc: yellowImg, soundSrc: yellowSnd},
     {word: "ZEBRA", imgSrc: zebraImg, soundSrc: zebraSnd},
     //SET TWO
+    {word: "ANT", imgSrc: antImg, soundSrc: antSnd},
     {word: "BALL", imgSrc: ballImg, soundSrc: ballSnd},
     {word: "CAR", imgSrc: carImg, soundSrc: carSnd},
     {word: "DUCK", imgSrc: duckImg, soundSrc: duckSnd},
