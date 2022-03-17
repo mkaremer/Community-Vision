@@ -13,6 +13,7 @@ import { Buttons, initial } from "./Games/Common/Functions";
 import { Link } from 'react-router-dom';
 import { CardActionArea } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
+import Block from 'react-color/lib/components/block/Block';
 
 
 const Settings = forwardRef((props, ref) => {
@@ -83,6 +84,20 @@ const Settings = forwardRef((props, ref) => {
         }
         return false;
     };
+
+    const backgroundPreview = {
+        rectangle: {
+            width: '1000px',
+            height: '600px',
+            color: 'black',
+            background: backgroundColor,
+            margin: '50px',
+            zIndex: 3
+        }
+    };
+
+    
+
     var playGames = <div></div>;
     if (window.location.href.slice(-8) === 'settings') {
         playGames =
@@ -110,6 +125,38 @@ const Settings = forwardRef((props, ref) => {
             </div>
     }
 
+    const dotPreview = {
+        rectangle: {
+            width: '300px',
+            height: '120px',
+            color: 'black',
+            background: dotButtonColor,
+            marginTop: '-500px',
+            marginLeft: '-60px',
+            zIndex: 5
+        }
+    };
+
+    const dashPreview = {
+        rectangle: {
+            width: '300px',
+            height: '120px',
+            color: 'black',
+            background: dashButtonColor,
+            marginTop: '-500px',
+            marginLeft: '20px',
+            zIndex: 5
+        }
+    };
+
+    const blankSpace = {
+        rectangle: {
+            width: '100px',
+            height: '120px',
+            color: 'black'
+        }
+    };
+
     useImperativeHandle(
         ref,
         () => ({
@@ -133,8 +180,10 @@ const Settings = forwardRef((props, ref) => {
             width: '100vw'
         }}>
             <Card borderRadius='1vh'>
-                <Grid style={{ marginBottom: '1vh' }} container>
-                    <Grid style={{ marginLeft: '2px' }} container direction='column' xs={6} spacing={1}>
+                <Grid style={{ marginBottom: '40vh', paddingTop: '50px'}} container> 
+                
+                    <Grid style={{ marginLeft: '2px' }} container direction='column' xs={6} spacing={1}> 
+                    
                         <Grid item>
                             <h1 style={{ fontSize: '3vh', marginTop: '-0.2vh', cursor: 'default', userSelect: 'none' }}>Game Volume</h1>
                             <Grid container spacing={0} alignItems='center' style={{ marginTop: '-1vh' }}>
@@ -182,11 +231,18 @@ const Settings = forwardRef((props, ref) => {
                                 <Grid item xs={1} />
                                 <Grid item xs={2} />
                                 <Grid item xs={4}>
-                                    <h1 style={{ fontSize: fSize, margin: fMargin, paddingTop: 70, cursor: 'default', userSelect: 'none' }}>a</h1>
+                                    <h1 style={{ fontSize: fSize, margin: fMargin, cursor: 'default', userSelect: 'none', paddingTop: 200}}>A</h1>
                                 </Grid>
                                 <Grid item xs={4}>
-                                    <h1 style={{ fontSize: fSize, margin: fMargin, paddingTop: 70, cursor: 'default', userSelect: 'none' }}>A</h1>
+                                    <h1 style={{ fontSize: fSize, margin: fMargin, cursor: 'default', userSelect: 'none' , paddingTop: 200}}>a</h1>
                                 </Grid>
+                                <div style={backgroundPreview.rectangle}></div>
+                                <div style={blankSpace.rectangle}></div>
+                                <div style={dashPreview.rectangle}></div>
+                                <div style={blankSpace.rectangle}></div>
+                                <div style={blankSpace.rectangle}></div>
+                                <div style={blankSpace.rectangle}></div>
+                                <div style={dotPreview.rectangle}></div>
                                 <Grid item xs={2} />
                             </Grid>
                         </Grid>
@@ -196,7 +252,7 @@ const Settings = forwardRef((props, ref) => {
                         <Grid item>
                             <Grid container direction='row' alignItems='center' justify='center'>
                                 <Grid item>
-                                    <input style={{ cursor: 'pointer' }} checked={isChecked('theme', 'default')} type="radio" id="defaultTheme" name="theme" value="default"
+                                    <input style={{ cursor: 'pointer'  }} checked={isChecked('theme', 'default')} type="radio" id="defaultTheme" name="theme" value="default"
                                         onClick={() => {
                                             changeBackgroundColor('#e8e8e8');
                                             changeFontColor('black');
@@ -219,7 +275,7 @@ const Settings = forwardRef((props, ref) => {
                                         changeDashButtonColor('red');
                                     }}>
                                         <button style={{ gridArea: '1', backgroundColor: '#e8e8e8', width: '3vh', height: '3vh', borderStyle: 'solid', cursor: 'pointer' }} />
-                                        <button style={{ gridArea: '1', backgroundColor: 'black', width: '3vh', height: '3vh', borderStyle: 'solid', cursor: 'pointer' }} />
+                                        <button style={{ gridArea: '1', backgroundColor: 'black', width: '3vh', height: '3vh', borderStyle: 'solid', cursor: 'pointer'  }} />
                                         <button style={{ gridArea: '2', backgroundColor: 'yellow', width: '3vh', height: '3vh', borderStyle: 'solid', cursor: 'pointer' }} />
                                         <button style={{ gridArea: '2', backgroundColor: 'red', width: '3vh', height: '3vh', borderStyle: 'solid', cursor: 'pointer' }} />
                                     </div>
@@ -236,8 +292,8 @@ const Settings = forwardRef((props, ref) => {
                         </Grid>
                         <Grid item>
                             <Grid container xs={0} direction='column' alignItems='center'>
-                            <h1 style={{ fontSize: '3vh', marginTop: '-0.2vh', cursor: 'default', userSelect: 'none' }}>Background Color</h1>
-                            <Grid container direction='column' style={{ marginTop: '-1vh' }}>
+                            <h1 style={{ fontSize: '3vh', marginTop: '-0.2vh', cursor: 'default', userSelect: 'none' , paddingTop: '50px', paddingBottom: '25px' }}>Background Color</h1>
+                            <Grid container direction='column' style={{ marginTop: '-1vh'}}>
                                     <Grid item>
                                         <ColorPicker style={{ cursor: 'pointer' }} color={backgroundColor} onColorChange={(value) => changeBackgroundColor(value)} />
                                     </Grid>
@@ -248,7 +304,7 @@ const Settings = forwardRef((props, ref) => {
                             </Grid>
                         </Grid>
                         <Grid item>
-                            <h1 style={{ gridArea: '1', fontSize: '3vh', marginTop: '-0.2vh', cursor: 'default', userSelect: 'none' }}>Dot Button Color</h1>
+                            <h1 style={{ gridArea: '1', fontSize: '3vh', marginTop: '-0.2vh', cursor: 'default', userSelect: 'none', paddingTop: '50px', paddingBottom: '25px' }}>Dot Button Color</h1>
                             <Grid container direction='row' style={{ marginTop: '-1vh' }}>
                                 <Grid container xs={0} direction='column' alignItems='center'>
                                     <Grid item>
@@ -261,7 +317,7 @@ const Settings = forwardRef((props, ref) => {
                             </Grid>
                         </Grid>
                         <Grid item>
-                            <h1 style={{ gridArea: '2', fontSize: '3vh', marginTop: '-0.2vh', cursor: 'default', userSelect: 'none' }}>Dash Button Color</h1>
+                            <h1 style={{ gridArea: '2', fontSize: '3vh', marginTop: '-0.2vh', cursor: 'default', userSelect: 'none' , paddingTop: '50px', paddingBottom: '25px'}}>Dash Button Color</h1>
                             <Grid container direction='row' style={{ marginTop: '-1vh' }}>
                                 <Grid container xs={0} direction='column' alignItems='center'>
                                     <Grid item>
@@ -274,7 +330,7 @@ const Settings = forwardRef((props, ref) => {
                             </Grid>
                         </Grid>
                         <Grid item>
-                            <h1 style={{ gridArea: '2', fontSize: '3vh', marginTop: '-0.2vh', cursor: 'default', userSelect: 'none' }}>Text Color</h1>
+                            <h1 style={{ gridArea: '2', fontSize: '3vh', marginTop: '-0.2vh', cursor: 'default', userSelect: 'none', paddingTop: '50px' , paddingBottom: '25px'}}>Text Color</h1>
                             <Grid container direction='row' style={{ marginTop: '-1vh' }}>
                                 <Grid container xs={0} direction='column' alignItems='center'>
                                     <Grid item>
