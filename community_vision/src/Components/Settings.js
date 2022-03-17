@@ -231,10 +231,10 @@ const Settings = forwardRef((props, ref) => {
                                 <Grid item xs={1} />
                                 <Grid item xs={2} />
                                 <Grid item xs={4}>
-                                    <h1 style={{ fontSize: fSize, margin: fMargin, cursor: 'default', userSelect: 'none', paddingTop: 200}}>A</h1>
+                                    <h1 style={{ fontSize: fSize, margin: fMargin, cursor: 'default', userSelect: 'none', paddingTop: 200, color: fontColor}}>A</h1>
                                 </Grid>
                                 <Grid item xs={4}>
-                                    <h1 style={{ fontSize: fSize, margin: fMargin, cursor: 'default', userSelect: 'none' , paddingTop: 200}}>a</h1>
+                                    <h1 style={{ fontSize: fSize, margin: fMargin, cursor: 'default', userSelect: 'none' , paddingTop: 200, color: fontColor}}>a</h1>
                                 </Grid>
                                 <div style={backgroundPreview.rectangle}></div>
                                 <div style={blankSpace.rectangle}></div>
