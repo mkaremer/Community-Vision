@@ -3,15 +3,16 @@ import '../../App.css';
 import Grid from '@material-ui/core/Grid';
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import { Container, List, ListItemAvatar } from '@material-ui/core';
+import { Container /*,List, ListItemAvatar*/ } from '@material-ui/core';
 import { useSpring, animated } from 'react-spring';
-import { charToMorse, morseToChar } from "./charMorseConv";
+import { charToMorse /*,morseToChar*/ } from "./charMorseConv";
 import useSound from 'use-sound';
 import dashSound from '../Assets/Sounds/dash.mp3'
 import dotSound from '../Assets/Sounds/dot.mp3'
-import spacebar from '../Assets/Images/spacebar.png'
-import enterButton from '../Assets/Images/enterButton.png'
-import { initial, Buttons, resetInputTime, resetInputLength, BackButton } from "./Common/Functions";
+//import spacebar from '../Assets/Images/spacebar.png'
+//import enterButton from '../Assets/Images/enterButton.png'
+//import { Buttons} from "./Common/Functions";
+import { initial, resetInputTime, resetInputLength, BackButton } from "./Common/Functions";
 import { useHistory } from "react-router-dom";
 import { Transition } from 'react-spring/renderprops';
 import sounds from "./LetterSounds";
@@ -19,7 +20,8 @@ import correctFX from "../Assets/Sounds/correct.mp3"
 
 
 var t;
-var textIndex = 0;
+//var textIndex = 0;
+
 //list to keep track of inputted letters
 var list = [];
 var orderedList = [];
@@ -33,10 +35,6 @@ function setToZero() {
     myUl.innerHTML = "";
 }
 
-{/*document.getElementById("first").ontransitionstart = () => {
-    setToZero();
-}*/}
-
 function buttonClick (clicked, notClicked){
     document.getElementById(clicked).style.fontSize = '5vh';
     document.getElementById(clicked).style.backgroundColor = 'White';
@@ -46,6 +44,7 @@ function buttonClick (clicked, notClicked){
     document.getElementById(notClicked).style.backgroundColor = 'Grey';
 }
 
+//randomly rearrange order of letters
 function scramble (){
     var tempList = orderedList.join('');
     var result = [];
@@ -57,6 +56,8 @@ function scramble (){
     }
 list= result;
 }
+
+//keep the list in order of input
 function inOrder (){
 list= orderedList;
 }
@@ -72,7 +73,7 @@ function addToDisplayList(ltr){
     myUl.appendChild(li);
 }
 
-function showImage() {
+/*function showImage() {
     var x = document.getElementById("tutorialImage");
     if (x.style.display === "none") {
         x.style.display = "block";
@@ -121,7 +122,7 @@ function updateTutorial() {
         textIndex = 0;
         document.getElementById("tutorialMenu").onMouseDown();
     }
-}
+}*/
 
 const ChooseYourLetters = forwardRef((props, ref) => {
 
@@ -566,6 +567,16 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                                     }}>
                                                     No                   
                                                 </button> 
+                                                <button id = "help" style={{ border: 'none',fontSize: '3vh', 'margin-left':'30px',cursor: 'pointer', width: '15px', 'word-wrap': 'normal'}} 
+                                                    onMouseDown={function () {
+                                                        if(document.getElementById("help").innerHTML == "?"){
+                                                            document.getElementById("help").innerHTML = "Choose whether or not you want the morse code pattern displayed or not";
+                                                        }else{
+                                                            document.getElementById("help").innerHTML = "?";
+                                                        }
+                                                    }}>
+                                                    ?                  
+                                                </button> 
                                             </Grid>
                                         </Grid>
                                     </Grid> 
@@ -816,7 +827,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
     );
 })
 
-const Radio = () => {
+/*const Radio = () => {
     const [isToggled, setToggle] = useState(false);
     const menubg = useSpring({ background: isToggled ? "#6ce2ff" : "#ebebeb" });
     const { y } = useSpring({
@@ -852,11 +863,11 @@ const Radio = () => {
             </animated.div>
         </div>
     );
-};
+};*/
 
 
 // use state object and set it to 0 initially 
-const RadioContent = () => {
+/*const RadioContent = () => {
     return (
         <div className="radiocontent" >
             <a href="#" alt="Home">
@@ -869,6 +880,6 @@ const RadioContent = () => {
             <img src={enterButton} alt="Enter Button" id="enterImage" style={{ display: "none" }}></img>
         </div>
     );
-};
+};*/
 
 export default ChooseYourLetters;

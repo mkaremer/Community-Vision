@@ -9,7 +9,7 @@ import SettingsPage from './Components/SettingsPage'
 import LearnAlphabet from './Components/Games/LearnAlphabet';
 import Dots from './Components/Games/LearnWord/Dots';
 import Dashes from './Components/Games/LearnWord/Dashes';
-import OneAndTwoHit from './Components/Games/oneAndTwoHit';
+import OneAndTwoHit from './Components/Games/LearnWord/oneAndTwoHits2';
 import ThreeHit from './Components/Games/threeHit';
 import FourHit from './Components/Games/fourHit';
 import ChooseYourLetters from './Components/Games/ChooseYourLetters';

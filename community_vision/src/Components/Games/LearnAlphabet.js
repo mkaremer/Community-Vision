@@ -283,13 +283,6 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                             fontSize: '4vh'
                                         }}>Look for the dot ('space') and dash ('enter') patterns to make a letter
                                         </p>
-                                        <p style={{
-                                            marginTop: '0vh',
-                                            paddingLeft: '2vw',
-                                            paddingRight: '2vw',
-                                            fontSize: '4vh'
-                                        }}>Please select Prompts (less difficulty) or No Prompts (more difficulty)
-                                        </p>
                                     </Card>
                                 </Grid>
                                 <br />
