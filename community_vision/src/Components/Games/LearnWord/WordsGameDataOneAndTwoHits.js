@@ -168,10 +168,31 @@ import zooSnd from "./WordSound/zoo.mp3"
 
 //data to use for learn words
 const gameData = [
-    {word: "A", imgSrc: appleImg, soundSrc: appleSnd},
-    {word: "E", imgSrc: moonImg, soundSrc: moonSnd},
-    {word: "N", imgSrc: owlImg, soundSrc: owlSnd},
-    {word: "T", imgSrc: truckImg, soundSrc: truckSnd},
+    // {word: "A", imgSrc: appleImg, soundSrc: appleSnd},
+    // {word: "E", imgSrc: moonImg, soundSrc: moonSnd},
+    // {word: "N", imgSrc: owlImg, soundSrc: owlSnd},
+    // {word: "T", imgSrc: truckImg, soundSrc: truckSnd},
+
+    {word: "A"},
+    {word: "E"},
+    {word: "N"},
+    {word: "T"},
+
+    {word: "A"},
+    {word: "E"},
+    {word: "N"},
+    {word: "T"},
+
+    {word: "A"},
+    {word: "E"},
+    {word: "N"},
+    {word: "T"},
+    
+    {word: "A"},
+    {word: "E"},
+    {word: "N"},
+    {word: "T"},
+
  
 ]
 

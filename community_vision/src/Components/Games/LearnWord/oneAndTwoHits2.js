@@ -12,23 +12,12 @@ import Tutorial from './WordGameTutorial';
 import EndGame from './EndGame';
 import Picture from './Picture';
 import {BackButton} from "../Common/Functions";
-import gameDataDashes from "./WordsGameDataDashes";
+// import gameDataDashes from "./WordsGameDataDashes";
 import gameDataHits from "./WordsGameDataOneAndTwoHits";
 import sounds from "../LetterSounds";
-import StartScreen from "./LearnWordsStartDashes";
+import StartScreen from "./LearnWordsStartOneAndTwoHit";
 import correctFX from "../../Assets/Sounds/correct.mp3";
 import { useHistory } from "react-router-dom";
-
-
-/*
-* Game that shows a picture and word that associates with that picture
-* The user have to put in the correct sequence of morse code for the first letter
-*
-* 
-* Created : 10/18/2020
-* Modified: 11/08/2021
-* JJH
-*/
 
 //Variables for time
 var t;
@@ -73,7 +62,7 @@ const oneAndTwoHits2 = forwardRef((props, ref) => {
     var [start, setStart] = useState(true);
 
     //Get the image source
-    var img = gameDataHits[gameIndex].imgSrc;
+    // var img = gameDataHits[gameIndex].imgSrc;
 
     //Word that the user needs to type
     var currentWord = gameDataHits[gameIndex].word;
@@ -100,13 +89,13 @@ const oneAndTwoHits2 = forwardRef((props, ref) => {
     const notCurrLetterSize = (size - sizeAdjust - 7) + 'vh';
 
     //Get the sound of current word
-    var soundSrc = gameDataDashes[gameIndex].soundSrc;
+    // var soundSrc = gameDataDashes[gameIndex].soundSrc;
     //Get the sound of current letter
     var letterSoundSrc = sounds[currentLetter];
 
     //Sound hooks
     var [playCurrLetterSound] = useSound(letterSoundSrc, {volume: volume/100});
-    var [playCurrWordSound] = useSound(soundSrc, {volume: volume/100});
+    // var [playCurrWordSound] = useSound(soundSrc, {volume: volume/100});
     const [playCorrectSoundFX] = useSound(correctFX, {volume: volume / 100});
     const [playDash] = useSound(dashSound, {volume: volume/100});
     const [playDot] = useSound(dotSound, {volume: volume/100});
@@ -135,7 +124,7 @@ const oneAndTwoHits2 = forwardRef((props, ref) => {
                 playCurrLetterSound();
                 setTimeout(() => {
                     //Play current sound of word
-                    playCurrWordSound();
+                    // playCurrWordSound();
                     //Move to the next word
                     setTimeout(() => {
                         // clearTimeout(t);
@@ -269,14 +258,14 @@ const oneAndTwoHits2 = forwardRef((props, ref) => {
                     <div style={{width: '100vw', height:'40vh'}}>
                         <Container>
                             <Grid container justify='center' spacing={0}>
-                                <Grid item xs={12} sm={4} xl={6} style={{userSelect: 'none'}}>
+                                {/* <Grid item xs={12} sm={4} xl={6} style={{userSelect: 'none'}}>
                                     <Picture 
                                         img={img} 
                                         currentWord={currentWord}
                                         picWidth={picWidth}
                                         picHeight={picHeight}
                                     />
-                                </Grid>
+                                </Grid> */}
                                 <Grid item xs={12} sm={4} xl={6} style={{userSelect: 'none'}}>
                                     <div>
                                         {isCorrect
