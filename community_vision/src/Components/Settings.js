@@ -88,6 +88,8 @@ const Settings = forwardRef((props, ref) => {
 
     const backgroundPreview = {
         rectangle: {
+            position: 'absolute',
+            marginTop: '300px',
             width: '700px',
             height: '400px',
             color: 'black',
@@ -128,13 +130,14 @@ const Settings = forwardRef((props, ref) => {
 
     const dotPreview = {
         rectangle: {
+            position: 'absolute',
             width: '200px',
             height: '70px',
-            color: 'black',
-            
+            color: fontColor,
+            fontSize: '70px',
             background: dotButtonColor,
-            marginTop: '-400px',
-            marginLeft: '-60px',
+            marginTop: '500px',
+            marginLeft: '450px',
             zIndex: 5
             
         },
@@ -150,22 +153,29 @@ const Settings = forwardRef((props, ref) => {
 
     const dashPreview = {
         rectangle: {
+            position: 'absolute',
             width: '200px',
             height: '70px',
-            color: 'black',
-           
+            color: fontColor,
+            fontSize: '70px',
             background: dashButtonColor,
-            marginTop: '-400px',
-            marginLeft: '20px',
+            marginTop: '500px',
+            marginLeft: '120px',
             zIndex: 5
-        },
-        text:{
-            width: '200px',
+        }
+    };
+
+    const textPreview = {
+        text: {
+            width: '300px',
             height: '70px',
-            text: "-",
-            color: 'black',
-            marginTop: '-400px',
-            marginLeft: '20px'
+            color: fontColor,
+            marginTop: '0',
+            marginLeft: '100px',
+            text: "A a",
+            fontSize: fSize,
+            zIndex: 7
+        
         }
     };
 
@@ -251,18 +261,14 @@ const Settings = forwardRef((props, ref) => {
                                 <Grid item xs={1} />
                                 <Grid item xs={2} />
                                 
-                                <Grid item xs={4}>
-                                    <h1 style={{ fontSize: fSize, margin: fMargin, cursor: 'default', userSelect: 'none',  color: fontColor, padding: 20}}>  A</h1>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <h1 style={{  fontSize: fSize, margin: fMargin, cursor: 'default', userSelect: 'none' ,  color: fontColor, padding: 20}}>a  </h1>
-                                </Grid>
+                                <div style={textPreview.text}>A a</div>
                                 <div style={backgroundPreview.rectangle}></div>
+                                
                                 <div style={blankSpace.rectangle}></div>
-                                <div style={dashPreview.rectangle}></div>
+                                <div style={dashPreview.rectangle}>-</div>
                                 <div style={blankSpace.rectangle}></div>
                                 <div style={blankSpace.rectangle}></div>
-                                <div style={dotPreview.rectangle}></div>
+                                <div style={dotPreview.rectangle}>.</div>
                                 <Grid item xs={2} />
                             </Grid>
                         </Grid>
