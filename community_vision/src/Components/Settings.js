@@ -89,13 +89,12 @@ const Settings = forwardRef((props, ref) => {
     const backgroundPreview = {
         rectangle: {
             position: 'absolute',
-            marginTop: '338px',
+            marginTop: '250px',
             width: '700px',
-            height: '370px',
+            height: '400px',
             color: 'black',
-            marginLeft: '10px',
             background: backgroundColor,
-            margin: '50px',
+            
             zIndex: 3
         }
     };
@@ -161,19 +160,18 @@ const Settings = forwardRef((props, ref) => {
             fontSize: '70px',
             background: dashButtonColor,
             marginTop: '500px',
-            marginLeft: '90px',
+            marginLeft: '120px',
             zIndex: 5
         }
     };
 
     const textPreview = {
         text: {
-            position: 'absolute',
-            width: '400px',
+            width: '300px',
             height: '70px',
             color: fontColor,
             marginTop: '0',
-            marginLeft: '180px',
+            marginLeft: '100px',
             text: "A a",
             fontSize: fSize,
             zIndex: 7
@@ -452,3 +450,4 @@ class ColorPicker extends React.Component {
 
 
 export default Settings;
+
