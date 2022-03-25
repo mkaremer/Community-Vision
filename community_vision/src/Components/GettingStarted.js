@@ -84,45 +84,46 @@ const GettingStarted = forwardRef((props, ref) => {
 
       <ol style={{ paddingLeft: "10vw", paddingRight: "15vw", textAlign: "left", fontSize: "25px" }}>
         <li>Color of background, buttons, and text</li>
-        <li>Size of Text</li>
-        <li>Sound Level (volume)</li>
+        <li>Size of text</li>
+        <li>Sound level (volume)</li>
         <li>How quickly switches or keys need to be hit to make a letter</li>
       </ol>
 
       <h2 style={{ fontweight: 900, fontSize: "40px", textAlign: "left", paddingLeft: "10vw" }}>Description of the Games</h2>
 
-      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px" }}>Morse code cues (hints) are provided for every game in Levels 1-3.
-        Level 4 games do not give any hints, so you will need to rely on memory/knowledge of Morse code.</p>
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px" }}>In most activities, you can choose to include Morse code prompts (visual cues for correct Morse combination) 
+        or turn them off to make the activity more challenging after you have practiced for a while. In some activities you can choose to ‘scramble’ the order of the letters.</p>
 
-      <h2 style={{ fontweight: 600, color: "blue", textAlign: "Left", paddingLeft: "10vw", fontSize: "30px" }}>Level 1, To Start:</h2>
+      <h2 style={{ fontweight: 600, color: "blue", textAlign: "Left", paddingLeft: "10vw", fontSize: "30px" }}>Learn Morse Basics:</h2>
 
-      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px" }}>'Explore Dot and Dash' gives a player opportunities to discover how
-        to make 'dot' and 'dash; using a keyboard or switches. This is a good place to start to learn how switches (or keystrokes) work on this website.</p>
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px" }}>‘Explore Dot & Dash’ gives a player opportunities to discover how to make a ‘dot’ and ‘dash’ using a keyboard or switches. This is a good place to start to learn how switches (or keystrokes) work on this website.</p>
 
-      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px" }}>'Learn Morse Patterns' introduces a player to using Morse code to make
-        letters. It starts with the simpliest Morse patterns (example: one 'dot' to make the letter E) and progresses through more complex patterns.</p>
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px" }}>‘Dot’ and ‘Dash’ games allow you to focus on letters that have only dots in their pattern or only dashes. This may be helpful if you need to focus on using one switch at a time.</p>
 
-      <h2 style={{ fontweight: 900, color: "blue", fontSize: "30px", textAlign: "left", paddingLeft: "10vw" }}>Level 1, Next Steps:</h2>
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px" }}>‘1 – 2 Hits’ only asks for letters that use either one or two switch hits (activations). This is helpful for beginners since the Morse patterns are simpler and can be more accessible if performing multiple switch hits is challenging.</p>
+
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px" }}>‘3 Hits’ and ‘4 Hits’ ask for letters that use three or four hits, accordingly.</p>
+
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px" }}>‘Learn Morse Patterns’ includes the entire alphabet but presents the letters in order of Morse pattern complexity. It starts with the simplest Morse patterns (example, one ‘dot’ to make the letter E) and progresses through more complex patterns (up to 4 switch hits).</p>
+
+
+      <h2 style={{ fontweight: 900, color: "blue", fontSize: "30px", textAlign: "left", paddingLeft: "10vw" }}>Learn Letters:</h2>
 
       <p style={{ paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px" }}>'Learn the Alphabet' and 'Learn Numbers' each walks a player
         through using Morse code to type the whole alphabet or numbers 0-9.</p>
 
-      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", textAlign: "left", fontSize: "25px" }}>'Sandbox' games let you explore making 'dot' and 'dash'
-        combinations to see what letter you type. There are no target letters or words to produce, only experimentation!</p>
 
-      <h2 style={{ fontweight: 900, color: "blue", fontSize: "30px", textAlign: "left", paddingLeft: "10vw" }}>Levels 2 & 3:</h2>
+      <h2 style={{ fontweight: 900, color: "blue", fontSize: "30px", textAlign: "left", paddingLeft: "10vw" }}>Learn Words: </h2>
 
-      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "25px", textAlign: "left" }}>'Learn Words' introduces a player to
-        Morse code to type whole word. Level 2 asks a player to only type the first letter of the word; Level 3 asks to spell the whole word.</p>
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "25px", textAlign: "left" }}>‘Learn Words’ introduces a player to Morse code to type whole words. </p>
 
-      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "25px", textAlign: "left" }}>'Race Game' is a game that allow a player
-      type in the correct Morse code before the letter reaches the end of the screen. Each time a letter reaches the end of the screen, the
-        player will lose a life. Try your best to beat your own high score every time!</p>
 
-      <h2 style={{ fontweight: 900, color: "blue", fontSize: "30px", textAlign: "left", paddingLeft: "10vw" }}>Level 4:</h2>
+      <h2 style={{ fontweight: 900, color: "blue", fontSize: "30px", textAlign: "left", paddingLeft: "10vw" }}>Themed Games:</h2>
 
-      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "25px", textAlign: "left" }}>Many of the games in Level 4 are similar
-        to earlier levels but there are no hints on Level 4, so you need to remember Morse code on your own or have a paper guide beside you to play!</p>
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "25px", textAlign: "left" }}>Car Race Game presents randomized letters that need to be entered with the correct Morse pattern before the letter crossed the screen. This is for an advanced player since there are no prompts and it has a timed element!</p>
+
+      <p style={{ paddingLeft: "10vw", paddingRight: "10vw", fontSize: "25px", textAlign: "left" }}>‘Sandbox’ games let you explore making any ‘dot’ and ‘dash’ combinations to see what letter or word you type. There are no target letters or words to produce, only experimentation!</p>
+
 
       <Link className='nav-link' to="/" style={{
         backgroundColor: backgroundColor
