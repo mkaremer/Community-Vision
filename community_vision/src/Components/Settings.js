@@ -89,11 +89,11 @@ const Settings = forwardRef((props, ref) => {
     const backgroundPreview = {
         rectangle: {
             position: 'absolute',
-            marginTop: '200px',
+            marginTop: '338px',
             width: '700px',
             height: '370px',
             color: 'black',
-            marginLeft: '25px',
+            marginLeft: '10px',
             background: backgroundColor,
             margin: '50px',
             zIndex: 3
@@ -137,7 +137,7 @@ const Settings = forwardRef((props, ref) => {
             color: fontColor,
             fontSize: '70px',
             background: dotButtonColor,
-            marginTop: '400px',
+            marginTop: '500px',
             marginLeft: '450px',
             zIndex: 5
             
@@ -160,19 +160,20 @@ const Settings = forwardRef((props, ref) => {
             color: fontColor,
             fontSize: '70px',
             background: dashButtonColor,
-            marginTop: '400px',
-            marginLeft: '120px',
+            marginTop: '500px',
+            marginLeft: '90px',
             zIndex: 5
         }
     };
 
     const textPreview = {
         text: {
-            width: '300px',
+            position: 'absolute',
+            width: '400px',
             height: '70px',
             color: fontColor,
             marginTop: '0',
-            marginLeft: '100px',
+            marginLeft: '180px',
             text: "A a",
             fontSize: fSize,
             zIndex: 7
