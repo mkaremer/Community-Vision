@@ -300,9 +300,9 @@ const FourHit = forwardRef((props, ref) => { //CHANGE ME
                                                 var start = document.getElementById("start");
                                                 start.style.display = "block";
                                                 var done = document.getElementById("doneOptions");
-                                                done.style.dispaly = "none";
+                                                done.style.display = "none";
                                                 var instructions = document.getElementById("instructions");
-                                                done.style.dispaly = "block";
+                                                instructions.style.display = "block";
                                                 var prom = document.getElementById("pr");
                                                 prom.style.display = "none";
                                             }}>

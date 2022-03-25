@@ -368,9 +368,9 @@ const LearnNumbers = forwardRef((props, ref) => {
                                                 var start = document.getElementById("start");
                                                 start.style.display = "block";
                                                 var done = document.getElementById("doneOptions");
-                                                done.style.dispaly = "none";
+                                                done.style.display = "none";
                                                 var instructions = document.getElementById("instructions");
-                                                done.style.dispaly = "block";
+                                                instructions.style.display = "block";
                                                 var scramb = document.getElementById("sc");
                                                 scramb.style.display = "none";
                                                 var prom = document.getElementById("pr");
