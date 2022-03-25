@@ -183,7 +183,7 @@ const ButtonsTutorial = forwardRef((props, ref) => {
                                                         setStartScreen(false);
                                                     }
                                                 }}>
-                                            Start (-)
+                                            Press Enter ('dash') to Start
                                         </button>
                                     </Card>
                                 </Grid>

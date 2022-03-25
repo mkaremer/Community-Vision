@@ -306,15 +306,16 @@ const AlphabetRacePractice = forwardRef((props, ref) => {
                                         }}>Alphabet Race Practice
                                         </h1>
                                         <br />
-                                        <p style={{
+                                        <p id= "instructions" style={{
                                             marginTop: '0vh',
                                             paddingLeft: '2vw',
                                             paddingRight: '2vw',
-                                            fontSize: '4vh'
+                                            fontSize: '4vh',
+                                            display = 'none'
                                         }}>Type the morse of the letters before they reach you.
                                         </p>
                                     </Card>
-                                        <Grid container direction = 'row' justify='center' alignItems='center'>
+                                        <Grid id = "pr" container direction = 'row' justify='center' alignItems='center'>
                                             <h1 style={{
                                                 fontSize: '4vh',
                                                 backgroundColor: 'white'
@@ -340,8 +341,23 @@ const AlphabetRacePractice = forwardRef((props, ref) => {
                                 </Grid>
                                 <br />
                                 <Grid item style={{ userSelect: 'none' }}>
+                                <Card>
+                                    <button id = "doneOptions" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
+                                            onMouseDown={function () {
+                                                var start = document.getElementById("start");
+                                                start.style.display = "block";
+                                                var done = document.getElementById("doneOptions");
+                                                done.style.dispaly = "none";
+                                                var instructions = document.getElementById("instructions");
+                                                done.style.dispaly = "block";
+                                                var prom = document.getElementById("pr");
+                                                prom.style.display = "none";
+                                            }}>
+                                            Done
+                                        </button>
+                                        </Card>
                                     <Card>
-                                        <button style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
+                                        <button id= "start" style={{display: 'none', fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                 if (startScreen) {
                                                     interval = setInterval(() => {
@@ -350,7 +366,7 @@ const AlphabetRacePractice = forwardRef((props, ref) => {
                                                     setStartScreen(false);
                                                 }
                                             }}>
-                                            Start (-)
+                                            Press Enter ('dash') to Start
                                         </button>
                                     </Card>
                                 </Grid>

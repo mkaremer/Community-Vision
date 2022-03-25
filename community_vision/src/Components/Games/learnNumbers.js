@@ -304,17 +304,18 @@ const LearnNumbers = forwardRef((props, ref) => {
                                         }}>Learn Morse Numbers
                                         </h1>
                                         <br />
-                                        <p style={{
+                                        <p id= "instructions" style={{
                                             marginTop: '0vh',
                                             paddingLeft: '2vw',
                                             paddingRight: '2vw',
-                                            fontSize: '4vh'
-                                        }}>Look for the dot ('space') and dash ('enter') pattern to make a number
+                                            fontSize: '4vh',
+                                            display: 'none'
+                                        }}>Look for the dot ('space') and dash ('enter') patterns to make a number
                                         </p>
                                     </Card>
                                 </Grid>
                                 <br />
-                                <Grid container direction = 'row' justify='center' alignItems='center'>
+                                    <Grid id= "pr" container direction = 'row' justify='center' alignItems='center'>
                                         <h1 style={{
                                             fontSize: '4vh',
                                             backgroundColor: 'white'
@@ -336,8 +337,8 @@ const LearnNumbers = forwardRef((props, ref) => {
                                                 No                   
                                             </button> 
                                         </Grid>
-                                </Grid>
-                                <Grid container direction = 'row' justify='center' alignItems='center'>
+                                    </Grid>
+                                    <Grid id= "sc" container direction = 'row' justify='center' alignItems='center'>
                                         <h1 style={{
                                             fontSize: '4vh',
                                             backgroundColor: 'white'
@@ -359,9 +360,27 @@ const LearnNumbers = forwardRef((props, ref) => {
                                             </button>
                                         </Grid>
                                     </Grid>
+                                <br />    
                                 <Grid item style={{ userSelect: 'none' }}>
+                                <Card>
+                                    <button id = "doneOptions" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
+                                            onMouseDown={function () {
+                                                var start = document.getElementById("start");
+                                                start.style.display = "block";
+                                                var done = document.getElementById("doneOptions");
+                                                done.style.dispaly = "none";
+                                                var instructions = document.getElementById("instructions");
+                                                done.style.dispaly = "block";
+                                                var scramb = document.getElementById("sc");
+                                                scramb.style.display = "none";
+                                                var prom = document.getElementById("pr");
+                                                prom.style.display = "none";
+                                            }}>
+                                            Done
+                                        </button>
+                                        </Card>
                                     <Card>
-                                        <button id = "start" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
+                                        <button id = "start" style={{display: 'none', fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                 if (startScreen) {
                                                     setStartScreen(false);

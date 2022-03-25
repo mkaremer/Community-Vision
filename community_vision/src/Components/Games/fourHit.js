@@ -259,17 +259,18 @@ const FourHit = forwardRef((props, ref) => { //CHANGE ME
                                         }}>Learn Morse Alphaphet With 4 Hits
                                         </h1>
                                         <br />
-                                        <p style={{
+                                        <p id= "instructions" style={{
                                             marginTop: '0vh',
                                             paddingLeft: '2vw',
                                             paddingRight: '2vw',
-                                            fontSize: '4vh'
+                                            fontSize: '4vh',
+                                            display: 'none'
                                         }}>Look for the dot ('space') and dash ('enter') patterns to make a letter
                                         </p>
                                     </Card>
                                 </Grid>
                                 <br />
-                                <Grid container direction = 'row' justify='center' alignItems='center'>
+                                <Grid id= "pr" container direction = 'row' justify='center' alignItems='center'>
                                         <h1 style={{
                                             fontSize: '4vh',
                                             backgroundColor: 'white'
@@ -293,8 +294,23 @@ const FourHit = forwardRef((props, ref) => { //CHANGE ME
                                         </Grid>
                                     </Grid>
                                 <Grid item style={{ userSelect: 'none' }}>
+                                <Card>
+                                    <button id = "doneOptions" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
+                                            onMouseDown={function () {
+                                                var start = document.getElementById("start");
+                                                start.style.display = "block";
+                                                var done = document.getElementById("doneOptions");
+                                                done.style.dispaly = "none";
+                                                var instructions = document.getElementById("instructions");
+                                                done.style.dispaly = "block";
+                                                var prom = document.getElementById("pr");
+                                                prom.style.display = "none";
+                                            }}>
+                                            Done
+                                        </button>
+                                        </Card>
                                     <Card>
-                                        <button id = "start" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
+                                        <button id = "start" style={{display: 'none', fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
                                             onMouseDown={function () {
                                                 if (startScreen) {
                                                     setStartScreen(false);
