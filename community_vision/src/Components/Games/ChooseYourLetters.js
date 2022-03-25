@@ -567,16 +567,7 @@ const ChooseYourLetters = forwardRef((props, ref) => {
                                                     }}>
                                                     No                   
                                                 </button> 
-                                                <button id = "help" style={{ border: 'none',fontSize: '3vh', 'margin-left':'30px',cursor: 'pointer', width: '15px', 'word-wrap': 'normal'}} 
-                                                    onMouseDown={function () {
-                                                        if(document.getElementById("help").innerHTML == "?"){
-                                                            document.getElementById("help").innerHTML = "Choose whether or not you want the morse code pattern displayed or not";
-                                                        }else{
-                                                            document.getElementById("help").innerHTML = "?";
-                                                        }
-                                                    }}>
-                                                    ?                  
-                                                </button> 
+                                                
                                             </Grid>
                                         </Grid>
                                     </Grid> 
