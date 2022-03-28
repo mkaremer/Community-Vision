@@ -135,7 +135,7 @@ const Settings = forwardRef((props, ref) => {
             height: '70px',
             color: fontColor,
             fontSize: '70px',
-            background: dotButtonColor,
+            background: dashButtonColor,
             marginTop: '500px',
             marginLeft: '450px',
             zIndex: 5
@@ -158,7 +158,7 @@ const Settings = forwardRef((props, ref) => {
             height: '70px',
             color: fontColor,
             fontSize: '70px',
-            background: dashButtonColor,
+            background: dotButtonColor,
             marginTop: '500px',
             marginLeft: '120px',
             zIndex: 5
@@ -167,7 +167,7 @@ const Settings = forwardRef((props, ref) => {
 
     const textPreview = {
         text: {
-            width: '300px',
+            width: '400px',
             height: '70px',
             color: fontColor,
             marginTop: '0',
@@ -265,10 +265,10 @@ const Settings = forwardRef((props, ref) => {
                                 <div style={backgroundPreview.rectangle}></div>
                                 
                                 <div style={blankSpace.rectangle}></div>
-                                <div style={dashPreview.rectangle}>-</div>
+                                <div style={dashPreview.rectangle}>.</div>
                                 <div style={blankSpace.rectangle}></div>
                                 <div style={blankSpace.rectangle}></div>
-                                <div style={dotPreview.rectangle}>.</div>
+                                <div style={dotPreview.rectangle}>-</div>
                                 <Grid item xs={2} />
                             </Grid>
                         </Grid>
