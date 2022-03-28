@@ -270,8 +270,8 @@ const LearnWordAdvanced = forwardRef((props, ref) => {
 
     return (
         <div>
-            {start ? <StartScreen level={"advanced"} start={start} setStart={setStart}/> : null}
-            {finished ? <EndGame level='advanced' background={backgroundColor} fontColor={fontColor} end={finished} setEndScreen={setFinished} backToGames={backToGames}/> : null}
+            {start ? <StartScreen level={"wordNP"} start={start} setStart={setStart}/> : null}
+            {finished ? <EndGame name = "Whole Word - No Prompts" level='advanced' background={backgroundColor} fontColor={fontColor} end={finished} setEndScreen={setFinished} backToGames={backToGames}/> : null}
             <div style={{backgroundColor: backgroundColor, height: '90vh', width: '100vw', display: 'grid', gridTemplate: '8fr 8fr / 1fr', gridTemplateAreas: '"top" "bottom'}}>
                 <div style={{gridArea: 'top'}}>
                     <div style={{ position: 'absolute' }}>

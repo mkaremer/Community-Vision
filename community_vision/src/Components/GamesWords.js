@@ -60,13 +60,16 @@ const GamesWords = forwardRef((props, ref) => {
       <Container maxWidth='xl' style={{ backgroundColor: backgroundColor, paddingBottom: '2vh', paddingTop: '3vh' }}>
         <Grid container justify='center' spacing={2}>
         <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
-            <GameSelection name='Learn Words Beginner' img={LearnABCIMG} link='/learnWordBeginner' difficulty='Level 2' />
-          </Grid>
-          <Grid id ="medWords" item xs={6} sm={4} md={3} lg={2} xl={1}>
-            <GameSelection id="medWords" name='Learn Words Intermediate' img={needleImg} link='/learnWordMedium' difficulty='Level 3' />
+            <GameSelection name='First Letter - Prompts' img={LearnABCIMG} link='/learnWordBeginner' difficulty='Level 2' />
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
-            <GameSelection name='Learn Words Advanced' img={unicycleImg} link='/learnWordAdvanced' difficulty='Level 4' />
+            <GameSelection name='First Letter - No Prompts' img={LearnABCIMG} link='/learnWordBeginner2' difficulty='Level 2' />
+          </Grid>
+          <Grid id ="medWords" item xs={6} sm={4} md={3} lg={2} xl={1}>
+            <GameSelection id="medWords" name='Whole Word - Prompts' img={needleImg} link='/learnWordMedium' difficulty='Level 3' />
+          </Grid>
+          <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
+            <GameSelection name='Whole Word - No Prompts' img={unicycleImg} link='/learnWordAdvanced' difficulty='Level 4' />
           </Grid>
         </Grid>
       </Container>

@@ -67,10 +67,16 @@ const GamesBasics = forwardRef((props, ref) => {
             <GameSelection name='Explore Dot and Dash' img={buttonsImg} link='/buttons' difficulty='Level 1' />
           </Grid>
         <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
-            <GameSelection name='Dots' img={dotsIMG} link='/dots' difficulty='Level 1'/>
+            <GameSelection name='Dots - Prompts' img={dotsIMG} link='/dots' difficulty='Level 1'/>
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
-            <GameSelection name='Dashes' img={dashIMG} link='/dashes' difficulty='Level 1'/>
+            <GameSelection name='Dots - No Prompts' img={dotsIMG} link='/DotsNoPrompt' difficulty='Level 1'/>
+          </Grid>
+          <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
+            <GameSelection name='Dashes - Prompts' img={dashIMG} link='/dashes' difficulty='Level 1'/>
+          </Grid>
+          <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
+            <GameSelection name='Dashes - No Prompts' img={dashIMG} link='/dashesNoPrompt' difficulty='Level 1'/>
           </Grid>
           <Grid item xs={6} sm={4} md={3} lg={2} xl={1}>
             <GameSelection name='1 and 2 Hit Letters' img={hitIMG} link='/oneAndTwoHit' difficulty='Level 1'/>

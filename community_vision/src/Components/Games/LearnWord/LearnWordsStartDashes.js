@@ -10,14 +10,14 @@ const LearnWordsStart = (props) => {
     //Set game title and messages to display
     let gameTitle;
     let message;
-    if(props.level === "beginner") {
+    if(props.level === "dashesP") {
         //Message and title for level 1
-        gameTitle = "Learn Dashes!"
+        gameTitle = "Dashes - Prompts"
         message = "Type the Morse of the first letter of each word to learn dashes."
     }
-    else if(props.level === "medium") {
+    else if(props.level === "dashesNP") {
         //Message and title for level 2
-        gameTitle = "Learn Words Intermediate"
+        gameTitle = "Dashes - No Prompts"
         message = "Type the Morse of all the character of the word for all 26 words."
     }
     else if(props.level === "advanced") {

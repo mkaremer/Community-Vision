@@ -12,9 +12,9 @@ import Tutorial from './WordGameTutorial';
 import EndGame from './EndGame';
 import Picture from './Picture';
 import {BackButton} from "../Common/Functions";
-import gameDataDashes from "./WordsGameDataDashes";
+import gameData from "./WordsGameData";
 import sounds from "../LetterSounds";
-import StartScreen from "./LearnWordsStartDashes";
+import StartScreen from "./LearnWordsStart";
 import correctFX from "../../Assets/Sounds/correct.mp3";
 import { useHistory } from "react-router-dom";
 
@@ -25,8 +25,7 @@ import { useHistory } from "react-router-dom";
 *
 * 
 * Created : 10/18/2020
-* Modified: 11/08/2021
-* JJH
+* Modified: 10/11/2020
 */
 
 //Variables for time
@@ -50,7 +49,7 @@ function initial(type){
 }
 
 
-const Dashes = forwardRef((props, ref) => {
+const LearnWordBeginner2 = forwardRef((props, ref) => {
     const history = useHistory();
     function backToGames() {
         history.push("/games");
@@ -72,10 +71,10 @@ const Dashes = forwardRef((props, ref) => {
     var [start, setStart] = useState(true);
 
     //Get the image source
-    var img = gameDataDashes[gameIndex].imgSrc;
+    var img = gameData[gameIndex].imgSrc;
 
     //Word that the user needs to type
-    var currentWord = gameDataDashes[gameIndex].word;
+    var currentWord = gameData[gameIndex].word;
 
     //Current letter to be type(first letter)
     var currentLetter = currentWord[0];
@@ -99,7 +98,7 @@ const Dashes = forwardRef((props, ref) => {
     const notCurrLetterSize = (size - sizeAdjust - 7) + 'vh';
 
     //Get the sound of current word
-    var soundSrc = gameDataDashes[gameIndex].soundSrc;
+    var soundSrc = gameData[gameIndex].soundSrc;
     //Get the sound of current letter
     var letterSoundSrc = sounds[currentLetter];
 
@@ -138,11 +137,11 @@ const Dashes = forwardRef((props, ref) => {
                     //Move to the next word
                     setTimeout(() => {
                         // clearTimeout(t);
-                        if(gameIndex < 8) {
+                        if(gameIndex < 25) {
                             setGameIndex(prevState => prevState + 1);
                         }
                         else {
-                            setGameIndex(8);
+                            setGameIndex(25);
                             setFinished(true);
                         }
                         setOutput('');
@@ -251,8 +250,8 @@ const Dashes = forwardRef((props, ref) => {
 
     return (
         <div>
-            {start ? <StartScreen name ={"Dashes"} level={"dashesP"} start={start} setStart={setStart} /> : null}
-            {finished ? <EndGame name="Dashes" level='beginner' background={backgroundColor} fontColor={fontColor} end={finished} setEndScreen={setFinished} backToGames={backToGames}/> : null}
+            {start ? <StartScreen level={"firstNP"} start={start} setStart={setStart} /> : null}
+            {finished ? <EndGame name = "First Letter - No Prompts" level='beginner' background={backgroundColor} fontColor={fontColor} end={finished} setEndScreen={setFinished} backToGames={backToGames}/> : null}
             <div style={{backgroundColor: backgroundColor, height: '90vh', width: '100vw', display: 'grid', gridTemplate: '8fr 8fr / 1fr', gridTemplateAreas: '"top" "bottom'}}>
                 <div style={{gridArea: 'top'}}>
                     <div style={{ position: 'absolute' }}>
@@ -280,14 +279,14 @@ const Dashes = forwardRef((props, ref) => {
                                     <div>
                                         {isCorrect
                                         ?
-                                        <h1 style={{lineHeight: 0, color: '#00FF00', fontSize: fSize, textShadow: "-2px 2px 2px #000, 2px 2px 2px #000, 2px -2px 2px #000, -2px -2px 2px #000"}}>{currentWord}</h1>
+                                        <h1 style={{lineHeight: 0, color: '#00FF00', fontSize: fSize, textShadow: "-2px 2px 6px #000, 2px 2px 6px #000, 2px -2px 6px #000, -2px -2px 6px #000"}}>{currentWord}</h1>
                                         :
                                         <h1 style={{lineHeight: 0, fontSize: fSize}}>
                                             <span style={{color: fontColor}}>{currentLetter}</span>
                                             <span style={{color: fontColor, opacity: 0.5, fontSize: notCurrLetterSize}}>{currentWord.substr(1)}</span>
                                         </h1>
                                         }
-                                        <p id="sampleMorse" style={{lineHeight: 0, color: fontColor, fontSize: fSize, margin: 0}}>{currentMorse}</p>
+                                        <p id="sampleMorse" style={{lineHeight: 0, color: fontColor, fontSize: fSize, margin: 0}}></p>
                                     </div>
                                 </Grid>
                             </Grid>
@@ -352,4 +351,4 @@ const Dashes = forwardRef((props, ref) => {
     )
 })
 
-export default Dashes
+export default LearnWordBeginner2

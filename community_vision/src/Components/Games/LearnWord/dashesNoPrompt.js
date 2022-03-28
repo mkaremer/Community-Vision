@@ -50,7 +50,7 @@ function initial(type){
 }
 
 
-const Dashes = forwardRef((props, ref) => {
+const DashesNoPrompt = forwardRef((props, ref) => {
     const history = useHistory();
     function backToGames() {
         history.push("/games");
@@ -251,8 +251,8 @@ const Dashes = forwardRef((props, ref) => {
 
     return (
         <div>
-            {start ? <StartScreen name ={"Dashes"} level={"dashesP"} start={start} setStart={setStart} /> : null}
-            {finished ? <EndGame name="Dashes" level='beginner' background={backgroundColor} fontColor={fontColor} end={finished} setEndScreen={setFinished} backToGames={backToGames}/> : null}
+            {start ? <StartScreen name ={"Dashes"} level={"dashesNP"} start={start} setStart={setStart} /> : null}
+            {finished ? <EndGame name="Dashes - No Prompts" level='beginner' background={backgroundColor} fontColor={fontColor} end={finished} setEndScreen={setFinished} backToGames={backToGames}/> : null}
             <div style={{backgroundColor: backgroundColor, height: '90vh', width: '100vw', display: 'grid', gridTemplate: '8fr 8fr / 1fr', gridTemplateAreas: '"top" "bottom'}}>
                 <div style={{gridArea: 'top'}}>
                     <div style={{ position: 'absolute' }}>
@@ -287,7 +287,7 @@ const Dashes = forwardRef((props, ref) => {
                                             <span style={{color: fontColor, opacity: 0.5, fontSize: notCurrLetterSize}}>{currentWord.substr(1)}</span>
                                         </h1>
                                         }
-                                        <p id="sampleMorse" style={{lineHeight: 0, color: fontColor, fontSize: fSize, margin: 0}}>{currentMorse}</p>
+                                        <p id="sampleMorse" style={{lineHeight: 0, color: fontColor, fontSize: fSize, margin: 0}}></p>
                                     </div>
                                 </Grid>
                             </Grid>
@@ -352,4 +352,4 @@ const Dashes = forwardRef((props, ref) => {
     )
 })
 
-export default Dashes
+export default DashesNoPrompt

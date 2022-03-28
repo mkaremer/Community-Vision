@@ -9,7 +9,7 @@ import SettingsPage from './Components/SettingsPage'
 import LearnAlphabet from './Components/Games/LearnAlphabet';
 import Dots from './Components/Games/LearnWord/Dots';
 import Dashes from './Components/Games/LearnWord/Dashes';
-import OneAndTwoHit from './Components/Games/LearnWord/oneAndTwoHits2';
+import OneAndTwoHit from './Components/Games/oneAndTwoHit';
 import ThreeHit from './Components/Games/threeHit';
 import FourHit from './Components/Games/fourHit';
 import ChooseYourLetters from './Components/Games/ChooseYourLetters';
@@ -32,6 +32,9 @@ import GamesBasics from "./Components/GamesBasics";
 import GamesLetters from "./Components/GamesLetters";
 import GamesThemes from "./Components/GamesThemes";
 import GamesWords from "./Components/GamesWords";
+import DotsNoPrompt from './Components/Games/LearnWord/dotsNoPrompt';
+import DashesNoPrompt from './Components/Games/LearnWord/dashesNoPrompt';
+import LearnWordBeginner2 from './Components/Games/LearnWord/LearnWordBeginner2';
 
 function App() {
   const [backgroundColor, setBackgroundColor] = useState(() => '#e8e8e8');
@@ -92,11 +95,20 @@ function App() {
           <Route path="/dots">
             <Dots ref={currentRef} />
           </Route>
+          <Route path="/DotsNoPrompt">
+            <DotsNoPrompt ref={currentRef} />
+          </Route>
           <Route path="/dashes">
             <Dashes ref={currentRef} />
           </Route>
+          <Route path="/DashesNoPrompt">
+            <DashesNoPrompt ref={currentRef} />
+          </Route>
           <Route path="/learnWordBeginner">
             <LearnWordBeginner ref={currentRef} />
+          </Route>
+          <Route path="/learnWordBeginner2">
+            <LearnWordBeginner2 ref={currentRef} />
           </Route>
           <Route path="/learnWordAdvanced">
             <LearnWordAdvanced ref={currentRef} />

@@ -251,7 +251,7 @@ const Dots = forwardRef((props, ref) => {
 
     return (
         <div>
-            {start ? <StartScreen name={"Dots"} level={"beginner"} start={start} setStart={setStart} /> : null}
+            {start ? <StartScreen name={"Dots"} level={"dotsP"} start={start} setStart={setStart} /> : null}
             {finished ? <EndGame name ="Dots" level='beginner' background={backgroundColor} fontColor={fontColor} end={finished} setEndScreen={setFinished} backToGames={backToGames}/> : null}
             <div style={{backgroundColor: backgroundColor, height: '90vh', width: '100vw', display: 'grid', gridTemplate: '8fr 8fr / 1fr', gridTemplateAreas: '"top" "bottom'}}>
                 <div style={{gridArea: 'top'}}>
