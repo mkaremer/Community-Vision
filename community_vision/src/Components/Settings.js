@@ -88,14 +88,14 @@ const Settings = forwardRef((props, ref) => {
 
     const backgroundPreview = {
         rectangle: {
-            position: 'absolute',
-            marginTop: '250px',
-            width: '700px',
-            height: '400px',
+            width: '70vh',
+            height: '50vh',
             color: 'black',
+            color: fontColor,
+            fontSize: fSize,
             background: backgroundColor,
-            
-            zIndex: 3
+            margin: 'auto',
+            zIndex: 2
         }
     };
 
@@ -130,60 +130,31 @@ const Settings = forwardRef((props, ref) => {
 
     const dotPreview = {
         rectangle: {
-            position: 'absolute',
-            width: '200px',
-            height: '70px',
+            width: '20vh',
+            height: '10vh',
             color: fontColor,
-            fontSize: '70px',
-            background: dashButtonColor,
-            marginTop: '500px',
-            marginLeft: '450px',
-            zIndex: 5
-            
-        },
-        text:{
-            width: '200px',
-            height: '70px',
-            text: ".",
-            color: 'black',
-            marginTop: '-400px',
-            marginLeft: '20px'
+            fontSize: '15vh',
+            display: 'flex',
+            'justify-content': 'center',
+            'align-items': 'center',
+            'vertical-align': 'top',
+            'vertical-align': 'middle',
+            background: dotButtonColor,
         }
     };
 
     const dashPreview = {
         rectangle: {
-            position: 'absolute',
-            width: '200px',
-            height: '70px',
+            width: '20vh',
+            height: '10vh',
+            marginLeft: '10vh',
             color: fontColor,
-            fontSize: '70px',
-            background: dotButtonColor,
-            marginTop: '500px',
-            marginLeft: '120px',
-            zIndex: 5
-        }
-    };
-
-    const textPreview = {
-        text: {
-            width: '400px',
-            height: '70px',
-            color: fontColor,
-            marginTop: '0',
-            marginLeft: '100px',
-            text: "A a",
-            fontSize: fSize,
-            zIndex: 7
-        
-        }
-    };
-
-    const blankSpace = {
-        rectangle: {
-            width: '100px',
-            height: '120px',
-            color: 'black'
+            fontSize: '15vh',
+            display: 'flex',
+            'justify-content': 'center',
+            'align-items': 'center',
+            'vertical-align': 'middle',
+            background: dashButtonColor,
         }
     };
 
@@ -258,21 +229,15 @@ const Settings = forwardRef((props, ref) => {
                                         valueLabelDisplay='auto' marks
                                         step={1} min={19} max={29} />
                                 </Grid>
-                                <Grid item xs={1} />
-                                <Grid item xs={2} />
-                                
-                                <div style={textPreview.text}>A a</div>
-                                <div style={backgroundPreview.rectangle}></div>
-                                
-                                <div style={blankSpace.rectangle}></div>
-                                <div style={dashPreview.rectangle}>.</div>
-                                <div style={blankSpace.rectangle}></div>
-                                <div style={blankSpace.rectangle}></div>
-                                <div style={dotPreview.rectangle}>-</div>
-                                <Grid item xs={2} />
                             </Grid>
                         </Grid>
-                        {playGames}
+                        <Grid item >
+                            <div style={backgroundPreview.rectangle}>A a</div>
+                            <Grid alignItems ='center' container direction= 'row' style={{zIndex: 1, marginLeft: '20%', marginTop: '-15vh'}}>
+                                <div style={dotPreview.rectangle}>•</div>
+                                <div style={dashPreview.rectangle}>-</div>
+                            </Grid>
+                        </Grid> 
                     </Grid>
                     <Grid style={{ }} container direction='column' xs={6} spacing={1}>
                         <Grid item>
@@ -368,6 +333,9 @@ const Settings = forwardRef((props, ref) => {
                                     </Grid>
                                 </Grid>
                             </Grid>
+                        </Grid>
+                        <Grid item>
+                            {playGames}
                         </Grid>
                     </Grid>
                 </Grid>
