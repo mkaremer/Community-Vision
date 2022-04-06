@@ -12,18 +12,6 @@ import hit3IMG from "./Games/Icons/hit3IMG.png"
 import hit4IMG from "./Games/Icons/hit4IMG.png"
 import buttonsImg from "./Games/Icons/explore dot and dash.jpg"
 import alphabetIMG from "./Games/Icons/learn morse patterns.jpg"
-import abceyes from "./Games/Icons/learn morse alphabet.jpg"
-import numbersIMG from "./Games/Icons/learn morse numbers.jpg"
-import sandboxIMG from "./Games/Icons/sandbox letters.png"
-import sandBocWords from "./Games/Icons/sandbox words.png"
-import LearnABCIMG from "./Games/Icons/learn words.png"
-import chooseLettersIMG from "./Games/Icons/choose your letters.jpg"
-import needleImg from "./Games/Icons/learn words 2.jpg"
-import raceLevel3 from "./Games/Icons/alphabet race game.jpg"
-import stackABC from "./Games/Icons/learn morse alphabet 2.jpg"
-import unicycleImg from "./Games/Icons/learn words 3.jpg"
-import raceLevel4 from "./Games/Icons/alphabet race game 2.jpg"
-import { initial } from "./Games/Common/Functions"
 import { Container } from '@material-ui/core';
 
 /**
@@ -132,16 +120,6 @@ const GamesBasics = forwardRef((props, ref) => {
 
 class GameSelection extends React.Component {
   render() {
-   /* var color;
-    if (this.props.difficulty === 'Level 4') {
-      color = '#FF0000'
-    } else if (this.props.difficulty === 'Level 3') {
-      color = 'yellow'
-    } else if (this.props.difficulty === 'Level 2') {
-      color = '#39ff14'
-    } else if (this.props.difficulty === 'Level 1') {
-      color = '#0cbfe9'
-    } */
     return (
       <div>
         <Link style={{ textDecoration: 'none' }} to={this.props.link}>

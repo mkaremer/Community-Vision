@@ -9,10 +9,12 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import { Container } from '@material-ui/core';
 import Settings from './Settings';
-import { initial } from "./Games/Common/Functions";
 import Hidden from '@material-ui/core/Hidden';
 import { useHistory } from "react-router-dom";
-
+/*
+* Nav.js
+* Contains Logo (home button), About, Instructions, and Settings Pages
+*/
 const Nav = forwardRef((props, ref) => {
 
   const history = useHistory();
@@ -29,9 +31,6 @@ const Nav = forwardRef((props, ref) => {
     to: { x: dropdownState ? 1 : 0 },
     config: { duration: 500 }
   })
-  // const [volume] = useState(() => initial('volume'));
-  // const [backgroundColor, setBackgroundColor] = useState(() => initial('backgroundColor'));
-  // const [fontColor, setFontColor] = useState(() => initial('fontColor'));
   var navbarColor = '#FFFFFF'
 
   const dropdownRef = useRef();
@@ -62,8 +61,10 @@ const Nav = forwardRef((props, ref) => {
         background: navbarColor,
         color: 'white'
       }}>
-        <Link to="/">
-          <img style={{ height: '9vh', cursor: 'pointer', userSelect: 'none', paddingLeft: '1.5vw' }} src={logo} alt={logo}></img>
+        <Link style={{height: '9vh', paddingLeft: '1.5vw'}} to="/">
+            <CardActionArea>
+            <img style={{ height: '9vh', cursor: 'pointer', userSelect: 'none', paddingLeft: '1.5vw' }} src={logo} alt={logo}></img>
+            </CardActionArea>
         </Link>
         <div style={{
           width: '100%',
@@ -74,12 +75,12 @@ const Nav = forwardRef((props, ref) => {
           <Container>
             <Hidden smDown>
               <Grid container direction='row' justify='flex-start' alignItems='center' spacing={2}>
-                <Grid item xs={2} />
+                <Grid item xs={1} />
                 <Grid item xs={2}>
                   <Link style={{ textDecoration: 'none' }} to="/about">
-                    <Card style={{ borderRadius: '20px', backgroundColor: '#21AAA4' }}>
+                    <Card style={{ height: '5vh', width: '25vh', borderRadius: '20vh', backgroundColor: '#21AAA4' }}>
                       <CardActionArea>
-                        <div style={{ color: 'white', fontSize: '4vh' }}>
+                        <div style={{ height: '5vh', width: '25vh', borderRadius: '20vh',color: 'white', fontSize: '4vh' }}>
                           About
                         </div>
                       </CardActionArea>
@@ -89,9 +90,9 @@ const Nav = forwardRef((props, ref) => {
                 <Grid item xs={1} />
                 <Grid item xs={2}>
                   <Link style={{ textDecoration: 'none' }} to="/GettingStarted">
-                    <Card style={{ borderRadius: '20px', backgroundColor: '#21AAA4' }}>
+                    <Card style={{ height: '5vh', width: '25vh', borderRadius: '20vh', backgroundColor: '#21AAA4' }}>
                       <CardActionArea>
-                        <div style={{ color: 'white', fontSize: '4vh' }}>
+                        <div style={{ height: '5vh', width: '25vh', borderRadius: '20vh', color: 'white', fontSize: '4vh' }}>
                           Instructions
                         </div>
                       </CardActionArea>
@@ -101,9 +102,9 @@ const Nav = forwardRef((props, ref) => {
                 <Grid item xs={1} />
                 <Grid item xs={2}>
                   <Link style={{ textDecoration: 'none' }} to="/games">
-                    <Card style={{ borderRadius: '20px', backgroundColor: '#21AAA4' }}>
+                    <Card style={{ height: '5vh', width: '25vh', borderRadius: '20vh', backgroundColor: '#21AAA4' }}>
                       <CardActionArea>
-                        <div style={{ color: 'white', fontSize: '4vh' }}>
+                        <div style={{ height: '5vh', width: '25vh', borderRadius: '20vh',color: 'white', fontSize: '4vh' }}>
                           Games
                         </div>
                       </CardActionArea>
@@ -192,9 +193,9 @@ const Nav = forwardRef((props, ref) => {
         <Grid container style={{ paddingTop: '1.25vh', zIndex: 6 }}>
           <Grid item xs={12} style={{ background: 'white' }}>
             <Hidden mdUp>
-              <Grid container direction='row' justify='flex-start' alignItems='center' spacing={1} style={{ paddingLeft: '8px', paddingRight: '8px' }}>
+              <Grid container direction='row' justify='flex-start' alignItems='center' spacing={1} style={{ paddingLeft: '8vh', paddingRight: '8vh' }}>
                 <Grid item xs={4}>
-                  <Card style={{ borderRadius: '20px' }} onMouseUp={() => {
+                  <Card style={{ borderRadius: '20vh' }} onMouseUp={() => {
                     moveTo('/about');
                     toggle(!dropdownState);
                   }}>
@@ -206,7 +207,7 @@ const Nav = forwardRef((props, ref) => {
                   </Card>
                 </Grid>
                 <Grid item xs={4}>
-                  <Card style={{ borderRadius: '20px' }} onMouseUp={() => {
+                  <Card style={{ borderRadius: '20vh' }} onMouseUp={() => {
                     moveTo('/gettingStarted');
                     toggle(!dropdownState);
                   }}>
@@ -218,7 +219,7 @@ const Nav = forwardRef((props, ref) => {
                   </Card>
                 </Grid>
                 <Grid item xs={4}>
-                  <Card style={{ borderRadius: '20px'}} onMouseUp={() => {
+                  <Card style={{ borderRadius: '20vh'}} onMouseUp={() => {
                     moveTo('/games');
                     toggle(!dropdownState);
                   }}>

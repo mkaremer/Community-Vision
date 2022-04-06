@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useImperativeHandle, forwardRef } from 'react';
+import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import '../App.css';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -9,12 +9,13 @@ import hare from '../Components/Assets/Images/hare.png';
 import tortoise from '../Components/Assets/Images/tortoise.png';
 import { SketchPicker } from 'react-color';
 import reactCSS from 'reactcss';
-import { Buttons, initial } from "./Games/Common/Functions";
-import { Link } from 'react-router-dom';
+import { initial } from "./Games/Common/Functions";
 import { CardActionArea } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
-import Block from 'react-color/lib/components/block/Block';
-
+/*
+* Settings.js
+* Settings page contents when pressing gear icon in nav or when pressing 'Play Games!' button in home
+*/
 
 const Settings = forwardRef((props, ref) => {
 
@@ -73,8 +74,6 @@ const Settings = forwardRef((props, ref) => {
         props.updateSettingsPageState(newValue);
     };
     const fSize = size + 'vh';
-    const gSize = 25 + 'vh';
-    const fMargin = -size / 4 + 'vh';
     const isChecked = (type, color) => {
         if (type === color) {
             return true;
@@ -100,7 +99,7 @@ const Settings = forwardRef((props, ref) => {
     };
 
     
-
+    //OPTIONAL PLAY GAMES BUTTON ON SETTINGS PAGE WHEN VIEWING SETTINGS FROM PLAY GAMES BUTTON
     var playGames = <div></div>;
     if (window.location.href.slice(-8) === 'settings') {
         playGames =
@@ -172,16 +171,16 @@ const Settings = forwardRef((props, ref) => {
             }
         }),
     )
-
+        //GRID FOR THE SETTINGS OPTIONS
     return (
         <div style={{
-            marginTop: '1.5vh',
             top: '0vh',
-            marginBottom: '2vh',
-            width: '100vw'
+            height: '81vh',
+            width: '100vw',
+            bottom: '0vh'
         }}>
             <Card borderRadius='3vh'>
-                <Grid style={{ marginBottom: '40vh', paddingTop: '50px'}} container> 
+                <Grid style={{ height: '90vh', paddingTop: '2vh'}} container> 
                 
                     <Grid style={{ marginLeft: '2px' , paddingRight: '50px'}} container direction='column' xs={6} spacing={1}> 
                     

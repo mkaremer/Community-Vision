@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../App.css';
 import Settings from './Settings'
-import Grid from '@material-ui/core/Grid';
-import { Link } from 'react-router-dom';
-import { initial } from "./Games/Common/Functions";
 import pic from './settings.png'
 import Card from '@material-ui/core/Card';
-
+/*
+* SettingsPage.js
+* Settings page header when pressing gear icon in nav or when pressing 'Play Games!' button in home
+*/
 function SettingsPage(props) {
     return (
         <div style={{
-            minHeight: '90vh',
+            height: '86vh',
             marginTop: '-1.5vh',
             backgroundColor: 'white'
         }}>

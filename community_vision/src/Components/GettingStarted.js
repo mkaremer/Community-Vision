@@ -1,9 +1,11 @@
 import React, { forwardRef, useState, useImperativeHandle } from 'react';
 import '../App.css';
 import buttons from '../Components/Assets/Images/buttons.png'
-import { initial } from "./Games/Common/Functions"
 import { Link } from 'react-router-dom';
-
+/*
+* GettingStarted.js
+* The instructions page found by clicking in the nav bar
+*/
 
 const GettingStarted = forwardRef((props, ref) => {
   const [backgroundColor, setBackgroundColor] = useState(() => '#e8e8e8');

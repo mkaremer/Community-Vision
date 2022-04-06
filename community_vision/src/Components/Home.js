@@ -4,10 +4,12 @@ import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
 import studentPhoto from '../Components/Assets/Images/student.png'
 import Brandon_reg from '../Components/Assets/Fonts/Brandon_reg.otf'
-import { initial } from "./Games/Common/Functions";
 import { CardActionArea } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
-
+/*
+* Home.js
+* Starting page with main image and links to About, Instructions, Play Games!, and Give Us Feedback!
+*/
 const Home = forwardRef((props, ref) => {
 
   const history = useHistory();
