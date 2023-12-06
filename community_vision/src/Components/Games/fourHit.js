@@ -67,65 +67,117 @@ function showImage() {
   }
 }
 
+/*  Array of objects representing each step of the tutorial.
+    Each object can specify text, buttonId for highlighting, imageToShow, sampleId for sample text,
+    a flag to reset the tutorial, and a highlight color
+*/
+const tutorialSteps = [
+  {
+    text: "This game consists of two buttons at the bottom of the page",
+  },
+  {
+    text: "This button is used for the dots and can be accessed through the space button or by clicking here!",
+    buttonId: "dotButton",
+    highlightColor: "yellow",
+    imageToShow: "spaceImage",
+  },
+  {
+    text: "This button is used for the dashes and can be accessed through the enter button or by clicking here!",
+    buttonId: "dashButton",
+    highlightColor: "yellow",
+    imageToShow: "enterImage",
+  },
+  {
+    text: "Enter the correct Morse Code shown here!",
+    sampleId: "sampleMorseCode",
+    sampleHighlightColor: "dotButton",
+  },
+  {
+    text: "Enter the correct code and move onto the next letter. Have Fun Learning the Morse Alphabet!",
+    sampleId: "sampleMorseCode",
+    resetColor: true,
+  },
+  {
+    resetTutorial: true,
+    buttonId: "dashButton",
+    sampleId: "sampleMorse",
+  }
+];
+
 /**
- * Advances the tutorial to the next step, updating text and visual elements.
- *
- * The function updates tutorial instructions and highlights relevant UI elements based on
- * the current tutorial step, controlled by the global `tutorialStepIndex`. It manipulates the DOM
- * directly to change text, styles, and toggle visibility of images, assuming the presence of specific
- * elements like "tutorialText", "dotButton", and "sampleMorseCode". It also resets the tutorial
- * after the final step.
- * @param - None
+ * Main function to update the tutorial text and manage tutorial steps.
+ * It uses the global tutorialStepIndex to determine the current step and processes it accordingly.
  */
 function updateTutorialText() {
-  //   let text = document.getElementById("tutorialText").innerHTML;
-  let space = document.getElementById("spaceImage");
-  let enter = document.getElementById("enterImage");
+  const step = tutorialSteps[tutorialStepIndex];
 
-  if (tutorialStepIndex == 0) {
-    document.getElementById("tutorialText").innerHTML =
-      "This game consists of two buttons at the bottom of the page";
+  setTutorialText(step.text);
 
-    tutorialStepIndex++;
-  } else if (tutorialStepIndex == 1) {
-    document.getElementById("tutorialText").innerHTML =
-      "This button is used for the dots and can be accessed through the space button or by clicking here!";
-    document.getElementById("dotButton").style.backgroundColor = "yellow";
-    space.style.display = "block";
-    tutorialStepIndex++;
-  } else if (tutorialStepIndex == 2) {
-    document.getElementById("dotButton").style.backgroundColor =
-      document.getElementById("dashButton").style.backgroundColor;
-    document.getElementById("tutorialText").innerHTML =
-      "This button is used for the dashes and can be accessed through the enter button or by clicking here!";
-    document.getElementById("dashButton").style.backgroundColor = "yellow";
-    space.style.display = "none";
-    enter.style.display = "block";
-    tutorialStepIndex++;
-  } else if (tutorialStepIndex == 3) {
-    document.getElementById("dashButton").style.backgroundColor =
-      document.getElementById("dotButton").style.backgroundColor;
-    document.getElementById("tutorialText").innerHTML =
-      "Enter the correct Morse Code shown here!";
-    document.getElementById("sampleMorseCode").style.color =
-      document.getElementById("dotButton").style.backgroundColor;
-    enter.style.display = "none";
-    tutorialStepIndex++;
-  } else if (tutorialStepIndex == 4) {
-    // change this in your tutorials to change the color of the divs
-    document.getElementById("sampleMorseCode").style.color =
-      document.getElementById("dotButton").style.color;
-    document.getElementById("tutorialText").innerHTML =
-      "Enter the correct code and move onto the next letter. Have Fun Learning the Morse Alphabet!";
-    tutorialStepIndex++;
-    // change color back to regular
-  } else if (tutorialStepIndex == 5) {
-    // changes smaple morse back to normal color
-    document.getElementById("sampleMorse").style.color =
-      document.getElementById("dashButton").style.backgroundColor;
-    tutorialStepIndex = 0;
-    document.getElementById("tutorialMenu").onMouseDown();
+  if (step.buttonId) {
+    highlightButton(step.buttonId, step.highlightColor);
   }
+
+  if (step.imageToShow) {
+    toggleImageDisplay(step.imageToShow, true);
+  }
+
+  if (step.sampleId) {
+    highlightSample(step.sampleId, step.sampleHighlightColor, step.resetColor);
+  }
+
+  if (step.resetTutorial) {
+    resetTutorial();
+  }
+
+  tutorialStepIndex = (tutorialStepIndex + 1) % tutorialSteps.length;
+}
+
+/**
+ * Sets the tutorial text to the provided text.
+ * @param {string} text - Text to be displayed in the tutorial.
+ */
+function setTutorialText(text) {
+  if (text) {
+    document.getElementById("tutorialText").innerHTML = text;
+  }
+}
+
+/**
+ * Highlights a specified button with the given color.
+ * @param {string} buttonId - The ID of the button to highlight.
+ * @param {string} color - The color to highlight the button with.
+ */
+function highlightButton(buttonId, color) {
+  document.getElementById(buttonId).style.backgroundColor = color;
+}
+
+/**
+ * Toggles the display of a specified image.
+ * @param {string} imageId - The ID of the image to toggle.
+ * @param {boolean} show - Determines whether to show or hide the image.
+ */
+function toggleImageDisplay(imageId, show) {
+  document.getElementById(imageId).style.display = show ? "block" : "none";
+}
+
+/**
+ * Highlights the sample text based on the specified button's color.
+ * Can optionally reset the color to the button's color.
+ * @param {string} sampleId - The ID of the sample element to highlight.
+ * @param {string} buttonId - The ID of the button to use for color reference.
+ * @param {boolean} resetColor - Flag to indicate if the color should be reset.
+ */
+function highlightSample(sampleId, buttonId, resetColor) {
+  const sampleElement = document.getElementById(sampleId);
+  const buttonElement = document.getElementById(buttonId);
+  sampleElement.style.color = resetColor ? buttonElement.style.color : buttonElement.style.backgroundColor;
+}
+
+/**
+ * Resets the tutorial by triggering the onMouseDown event on the tutorial menu.
+ */
+function resetTutorial() {
+  document.getElementById("tutorialMenu").onMouseDown();
 }
 
 /**
@@ -163,7 +215,7 @@ const FourHitGame = forwardRef((props, ref) => {
     initial("dotButtonColor")
   );
   const [fontColor, setFontColor] = useState(() => initial("fontColor"));
-  const resetTimer = speed * 1000; //reset timer in milliseconds
+  const resetTimer = speed * 1000; 
   const fontSize = size + "vh";
   const subFontSize = size / 3 + "vh";
 
@@ -713,76 +765,76 @@ const FourHitGame = forwardRef((props, ref) => {
   );
 });
 
-const Radio = () => {
-  const [isToggled, setToggle] = useState(false);
-  const menubg = useSpring({ background: isToggled ? "#6ce2ff" : "#ebebeb" });
-  const { y } = useSpring({
-    y: isToggled ? 180 : 0,
-  });
-  const menuAppear = useSpring({
-    transform: isToggled ? "translate3D(0,0,0)" : "translate3D(0,-40px,0)",
-    opacity: isToggled ? 1 : 0,
-  });
+// const Radio = () => {
+//   const [isToggled, setToggle] = useState(false);
+//   const menubg = useSpring({ background: isToggled ? "#6ce2ff" : "#ebebeb" });
+//   const { y } = useSpring({
+//     y: isToggled ? 180 : 0,
+//   });
+//   const menuAppear = useSpring({
+//     transform: isToggled ? "translate3D(0,0,0)" : "translate3D(0,-40px,0)",
+//     opacity: isToggled ? 1 : 0,
+//   });
 
-  return (
-    <div style={{ position: "relative", width: "300px", margin: "0 auto" }}>
-      <animated.button
-        style={menubg}
-        value="!toggled"
-        className="radiowrapper"
-        onMouseDown={() => setToggle(!isToggled)}
-        id="tutorialMenu"
-      >
-        <div className="radio">
-          <p>Tutorial</p>
-          <animated.p
-            style={{
-              transform: y.interpolate((y) => `rotateX(${y}deg)`),
-            }}
-          >
-            ▼
-          </animated.p>
-        </div>
-      </animated.button>
-      <animated.div style={menuAppear}>
-        {isToggled ? <RadioContent /> : null}
-      </animated.div>
-    </div>
-  );
-};
+//   return (
+//     <div style={{ position: "relative", width: "300px", margin: "0 auto" }}>
+//       <animated.button
+//         style={menubg}
+//         value="!toggled"
+//         className="radiowrapper"
+//         onMouseDown={() => setToggle(!isToggled)}
+//         id="tutorialMenu"
+//       >
+//         <div className="radio">
+//           <p>Tutorial</p>
+//           <animated.p
+//             style={{
+//               transform: y.interpolate((y) => `rotateX(${y}deg)`),
+//             }}
+//           >
+//             ▼
+//           </animated.p>
+//         </div>
+//       </animated.button>
+//       <animated.div style={menuAppear}>
+//         {isToggled ? <RadioContent /> : null}
+//       </animated.div>
+//     </div>
+//   );
+// };
 
-// use state object and set it to 0 initially
-const RadioContent = () => {
-  return (
-    <div className="radiocontent">
-      <a href="#" alt="Home"></a>
-      <button
-        id="4"
-        onMouseDown={function () {
-          updateTutorialText();
-        }}
-        style={{ fontSize: "5vh" }}
-      >
-        Next
-      </button>
-      <p id="tutorialText" value="Change Text">
-        Welcome to the Learn Alphabet Game! This game teaches you the Morse Code
-        Alphabet!{" "}
-      </p>
-      <img
-        src={spacebar}
-        alt="Spacebar"
-        id="spaceImage"
-        style={{ display: "none" }}
-      ></img>
-      <img
-        src={enterButton}
-        alt="Enter Button"
-        id="enterImage"
-        style={{ display: "none" }}
-      ></img>
-    </div>
-  );
-};
+// // use state object and set it to 0 initially
+// const RadioContent = () => {
+//   return (
+//     <div className="radiocontent">
+//       <a href="#" alt="Home"></a>
+//       <button
+//         id="4"
+//         onMouseDown={function () {
+//           updateTutorialText();
+//         }}
+//         style={{ fontSize: "5vh" }}
+//       >
+//         Next
+//       </button>
+//       <p id="tutorialText" value="Change Text">
+//         Welcome to the Learn Alphabet Game! This game teaches you the Morse Code
+//         Alphabet!{" "}
+//       </p>
+//       <img
+//         src={spacebar}
+//         alt="Spacebar"
+//         id="spaceImage"
+//         style={{ display: "none" }}
+//       ></img>
+//       <img
+//         src={enterButton}
+//         alt="Enter Button"
+//         id="enterImage"
+//         style={{ display: "none" }}
+//       ></img>
+//     </div>
+//   );
+// };
 
 export default FourHitGame;
