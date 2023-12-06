@@ -19,11 +19,11 @@ import correctFX from "../Assets/Sounds/correct.mp3"
 import { CollectionsBookmarkRounded } from '@material-ui/icons';
 
 
-var t;
-var list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //CHANGE ME
-var orderedList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var textIndex = 0;
-var promptsCheck = true;
+let timerId;
+let alphabetList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+let orderedList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let tutorialStepIndex = 0;
+let promptsEnabled = true;
 
 
 function buttonClick (clicked, notClicked){
@@ -36,22 +36,22 @@ function buttonClick (clicked, notClicked){
 }
 
 function scramble (){
-        var currentChar= "";
-        var tempList = orderedList;
-        var result = [];
+        let currentChar= "";
+        let tempList = orderedList;
+        let result = [];
         while(tempList != ""){
             currentChar = tempList.charAt(Math.floor(Math.random() * tempList.length));
             tempList = tempList.replace(currentChar,'');
             result += currentChar;
         }
-    list= result;
+    alphabetList= result;
 }
 function inOrder (){
-    list= orderedList;
+    alphabetList= orderedList;
 }
 
 function showImage() {
-    var x = document.getElementById("tutorialImage");
+    let x = document.getElementById("tutorialImage");
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
@@ -60,43 +60,43 @@ function showImage() {
 }
 
 function updateTutorial() {
-    var text = document.getElementById('tutorialText').innerHTML;
-    var space = document.getElementById('spaceImage');
-    var enter = document.getElementById('enterImage');
+    let text = document.getElementById('tutorialText').innerHTML;
+    let space = document.getElementById('spaceImage');
+    let enter = document.getElementById('enterImage');
 
 
-    if (textIndex == 0) {
+    if (tutorialStepIndex == 0) {
         document.getElementById('tutorialText').innerHTML = 'This game consists of two buttons at the bottom of the page';
 
-        textIndex++;
-    } else if (textIndex == 1) {
+        tutorialStepIndex++;
+    } else if (tutorialStepIndex == 1) {
         document.getElementById('tutorialText').innerHTML = 'This button is used for the dots and can be accessed through the space button or by clicking here!';
         document.getElementById('dotButton').style.backgroundColor = "yellow";
         space.style.display = "block";
-        textIndex++;
-    } else if (textIndex == 2) {
+        tutorialStepIndex++;
+    } else if (tutorialStepIndex == 2) {
         document.getElementById('dotButton').style.backgroundColor = document.getElementById('dashButton').style.backgroundColor;
         document.getElementById('tutorialText').innerHTML = 'This button is used for the dashes and can be accessed through the enter button or by clicking here!';
         document.getElementById('dashButton').style.backgroundColor = "yellow";
         space.style.display = "none";
         enter.style.display = "block";
-        textIndex++;
-    } else if (textIndex == 3) {
+        tutorialStepIndex++;
+    } else if (tutorialStepIndex == 3) {
         document.getElementById('dashButton').style.backgroundColor = document.getElementById('dotButton').style.backgroundColor;
         document.getElementById('tutorialText').innerHTML = 'Enter the correct Morse Code shown here!';
         document.getElementById('sampleMorseCode').style.color = document.getElementById('dotButton').style.backgroundColor;
         enter.style.display = "none";
-        textIndex++;
-    } else if (textIndex == 4) {
+        tutorialStepIndex++;
+    } else if (tutorialStepIndex == 4) {
         // change this in your tutorials to change the color of the divs
         document.getElementById('sampleMorseCode').style.color = document.getElementById('dotButton').style.color;
         document.getElementById('tutorialText').innerHTML = 'Enter the correct code and move onto the next letter. Have Fun Learning the Morse Alphabet!';
-        textIndex++;
+        tutorialStepIndex++;
         // change color back to regular
-    } else if (textIndex == 5) {
+    } else if (tutorialStepIndex == 5) {
         // changes smaple morse back to normal color
         document.getElementById('sampleMorse').style.color = document.getElementById('dashButton').style.backgroundColor;
-        textIndex = 0;
+        tutorialStepIndex = 0;
         document.getElementById("tutorialMenu").onMouseDown();
     }
 }
@@ -108,10 +108,10 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
         history.push("/games");
     }
 
-    var [index, setIndex] = useState(0);
-    var currentLetter = list[index];
-    var currentMorse = charToMorse(currentLetter);
-    var [input, setInput] = useState('');
+    let [index, setIndex] = useState(0);
+    let currentLetter = alphabetList[index];
+    let currentMorse = charToMorse(currentLetter);
+    let [input, setInput] = useState('');
     const [anim, setAnim] = useState(true);
 
     const [volume, setVolume] = useState(() => initial('volume'));
@@ -134,7 +134,7 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
         { volume: volume / 100 }
     );
 
-    var soundSrc = sounds[currentLetter];
+    let soundSrc = sounds[currentLetter];
     const [playCurrentLetterSound] = useSound(
         soundSrc,
         { volume: volume / 100 }
@@ -145,23 +145,23 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
         {volume: volume / 100}
     )
 
-    var [startScreen, setStartScreen] = useState(true);
-    var [endScreen, setEndScreen] = useState(false);
+    let [startScreen, setStartScreen] = useState(true);
+    let [endScreen, setEndScreen] = useState(false);
 
     resetInputLength(input, setInput);
 
     React.useEffect(() => {
         if (input === currentMorse) {
             playCorrectSoundFX();
-            clearTimeout(t);
+            clearTimeout(timerId);
             setTimeout(() => {
-                clearTimeout(t);
+                clearTimeout(timerId);
                 playCurrentLetterSound();
                 setTimeout(() => {
-                    clearTimeout(t);
+                    clearTimeout(timerId);
                     setAnim(!anim);
                     setInput('');
-                    if (index != list.length - 1) {
+                    if (index != alphabetList.length - 1) {
                         setIndex(prevState => prevState + 1);
                     } else {
                         setIndex(0);
@@ -187,8 +187,8 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                 setInput(input + '•');
                 playDot();
                 document.getElementById('dotButton').focus();
-                clearTimeout(t);
-                t = resetInputTime(t, input, setInput, resetTimer);
+                clearTimeout(timerId);
+                timerId = resetInputTime(timerId, input, setInput, resetTimer);
             }
         } else if (evt.keyCode === 13) {
             if (startScreen) {
@@ -199,8 +199,8 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                 setInput(input + '-');
                 playDash();
                 document.getElementById('dashButton').focus();
-                clearTimeout(t);
-                t = resetInputTime(t, input, setInput, resetTimer);
+                clearTimeout(timerId);
+                timerId = resetInputTime(timerId, input, setInput, resetTimer);
             }
         }
     };
@@ -209,14 +209,14 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
         document.activeElement.blur(); //
     }; //
 
-    var d = 2000;
+    let d = 2000;
     if (!anim) {
         d = 0;
-        t = setTimeout(function () {
+        timerId = setTimeout(function () {
             setAnim(!anim)
         }, 100);
     }
-    var { x } = useSpring({ from: { x: 0 }, x: anim ? 1 : 0, config: { duration: d } });
+    let { x } = useSpring({ from: { x: 0 }, x: anim ? 1 : 0, config: { duration: d } });
 
     useImperativeHandle(
         ref,
@@ -296,14 +296,14 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                         <Grid> 
                                             <button id = "yesPrompts" style={{ border: 'none','margin-left':'30px','margin-right':'30px', fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid','outline-width':'thick'}} 
                                             onMouseDown={function () {
-                                                promptsCheck = true;
+                                                promptsEnabled = true;
                                                 buttonClick("yesPrompts","noPrompts");
                                                 }}>
                                                 Yes                  
                                             </button>
 
                                             <button id = "noPrompts" style={{ border: 'none',fontSize: '5vh', cursor: 'pointer', 'outline-style':'solid', 'outline-width':'thick'}} onMouseDown={function () {
-                                                promptsCheck = false;
+                                                promptsEnabled = false;
                                                 buttonClick("noPrompts","yesPrompts");
                                                 }}>
                                                 No                   
@@ -337,15 +337,15 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                 <Card>
                                     <button id = "doneOptions" style={{ fontSize: '8vh', height: '100%', width: '100%', cursor: 'pointer' }}
                                             onMouseDown={function () {
-                                                var start = document.getElementById("start");
+                                                let start = document.getElementById("start");
                                                 start.style.display = "block";
-                                                var done = document.getElementById("doneOptions");
+                                                let done = document.getElementById("doneOptions");
                                                 done.style.display = "none";
-                                                var instructions = document.getElementById("instructions");
+                                                let instructions = document.getElementById("instructions");
                                                 instructions.style.display = "block";
-                                                var scramb = document.getElementById("sc");
+                                                let scramb = document.getElementById("sc");
                                                 scramb.style.display = "none";
-                                                var prom = document.getElementById("pr");
+                                                let prom = document.getElementById("pr");
                                                 prom.style.display = "none";
                                             }}>
                                             Done
@@ -460,7 +460,7 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                         userSelect: 'none',
                         opacity: x.interpolate({ range: [0, 1], output: [0, 1] }),
                         marginBottom: '0vh',
-                    }}><b>{promptsCheck ? currentMorse : ""} </b></animated.p>
+                    }}><b>{promptsEnabled ? currentMorse : ""} </b></animated.p>
                 </div>
             </div>
             <div style={{ gridArea: 'middle' }}>
@@ -514,8 +514,8 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                     }} onMouseDown={function () {
                                         setInput(input + '•');
                                         playDot();
-                                        clearTimeout(t);
-                                        t = resetInputTime(t, input, setInput, resetTimer);
+                                        clearTimeout(timerId);
+                                        timerId = resetInputTime(timerId, input, setInput, resetTimer);
                                     }}>
                                         <span
                                         >•
@@ -541,8 +541,8 @@ const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
                                     }} onMouseDown={function () {
                                         setInput(input + '-');
                                         playDash();
-                                        clearTimeout(t);
-                                        t = resetInputTime(t, input, setInput, resetTimer);
+                                        clearTimeout(timerId);
+                                        timerId = resetInputTime(timerId, input, setInput, resetTimer);
                                     }}>
                                         -
                                     </button>
