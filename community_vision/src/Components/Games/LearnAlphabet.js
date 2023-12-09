@@ -59,49 +59,109 @@ function showImage() {
     }
 }
 
-function updateTutorial() {
-    let text = document.getElementById('tutorialText').innerHTML;
-    let space = document.getElementById('spaceImage');
-    let enter = document.getElementById('enterImage');
-
-
-    if (tutorialStepIndex == 0) {
-        document.getElementById('tutorialText').innerHTML = 'This game consists of two buttons at the bottom of the page';
-
-        tutorialStepIndex++;
-    } else if (tutorialStepIndex == 1) {
-        document.getElementById('tutorialText').innerHTML = 'This button is used for the dots and can be accessed through the space button or by clicking here!';
-        document.getElementById('dotButton').style.backgroundColor = "yellow";
-        space.style.display = "block";
-        tutorialStepIndex++;
-    } else if (tutorialStepIndex == 2) {
-        document.getElementById('dotButton').style.backgroundColor = document.getElementById('dashButton').style.backgroundColor;
-        document.getElementById('tutorialText').innerHTML = 'This button is used for the dashes and can be accessed through the enter button or by clicking here!';
-        document.getElementById('dashButton').style.backgroundColor = "yellow";
-        space.style.display = "none";
-        enter.style.display = "block";
-        tutorialStepIndex++;
-    } else if (tutorialStepIndex == 3) {
-        document.getElementById('dashButton').style.backgroundColor = document.getElementById('dotButton').style.backgroundColor;
-        document.getElementById('tutorialText').innerHTML = 'Enter the correct Morse Code shown here!';
-        document.getElementById('sampleMorseCode').style.color = document.getElementById('dotButton').style.backgroundColor;
-        enter.style.display = "none";
-        tutorialStepIndex++;
-    } else if (tutorialStepIndex == 4) {
-        // change this in your tutorials to change the color of the divs
-        document.getElementById('sampleMorseCode').style.color = document.getElementById('dotButton').style.color;
-        document.getElementById('tutorialText').innerHTML = 'Enter the correct code and move onto the next letter. Have Fun Learning the Morse Alphabet!';
-        tutorialStepIndex++;
-        // change color back to regular
-    } else if (tutorialStepIndex == 5) {
-        // changes smaple morse back to normal color
-        document.getElementById('sampleMorse').style.color = document.getElementById('dashButton').style.backgroundColor;
-        tutorialStepIndex = 0;
-        document.getElementById("tutorialMenu").onMouseDown();
+/**
+ * Configuration object for tutorial steps.
+ * Each step contains a 'text' field describing the tutorial step,
+ * and an 'actions' function that defines the UI changes to be made for that step.
+ */
+const TUTORIAL_STEPS = [
+    {
+        text: 'This game consists of two buttons at the bottom of the page',
+        actions: () => {}
+    },
+    {
+        text: 'This button is used for the dots and can be accessed through the space button or by clicking here!',
+        actions: () => {
+            setButtonHighlight('dotButton', true);
+            toggleImageDisplay('spaceImage', true);
+        }
+    },
+    {
+        text: 'This button is used for the dashes and can be accessed through the enter button or by clicking here!',
+        actions: () => {
+            setButtonHighlight('dotButton', false);
+            setButtonHighlight('dashButton', true);
+            toggleImageDisplay('spaceImage', false);
+            toggleImageDisplay('enterImage', true);
+        }
+    },
+    {
+        text: 'Enter the correct Morse Code shown here!',
+        actions: () => {
+            setButtonHighlight('dashButton', false);
+            setColor('sampleMorseCode', BUTTON_COLOR);
+            toggleImageDisplay('enterImage', false);
+        }
+    },
+    {
+        text: 'Enter the correct code and move onto the next letter. Have Fun Learning the Morse Alphabet!',
+        actions: () => setColor('sampleMorseCode', 'originalColor')
+    },
+    {
+        text: '',
+        actions: () => {
+            setColor('sampleMorseCode', 'originalColor');
+            resetTutorial();
+        }
     }
+];
+
+// Constants for colors used in the tutorial
+const BUTTON_HIGHLIGHT_COLOR = "yellow";
+const BUTTON_COLOR = 'originalColor'; // Replace 'originalColor' with the actual color code
+
+/**
+ * Updates the current step of the tutorial.
+ * It sets the tutorial text and performs the corresponding UI actions 
+ * defined in the TUTORIAL_STEPS configuration.
+ */
+function updateTutorialStep() {
+    let currentStep = TUTORIAL_STEPS[tutorialStepIndex];
+    document.getElementById('tutorialText').innerHTML = currentStep.text;
+    currentStep.actions();
+    tutorialStepIndex++;
 }
 
-const LearnAlphabet = forwardRef((props, ref) => { //CHANGE ME
+/**
+ * Highlights or un-highlights a button based on the given flag.
+ * @param {string} buttonId - The ID of the button to be highlighted.
+ * @param {boolean} highlight - Flag to determine whether to highlight or un-highlight the button.
+ */
+function setButtonHighlight(buttonId, highlight) {
+    let buttonElement = document.getElementById(buttonId);
+    buttonElement.style.backgroundColor = highlight ? BUTTON_HIGHLIGHT_COLOR : BUTTON_COLOR;
+}
+
+/**
+ * Toggles the display of an image.
+ * @param {string} imageId - The ID of the image to be shown or hidden.
+ * @param {boolean} display - Flag to determine whether to show or hide the image.
+ */
+function toggleImageDisplay(imageId, display) {
+    let imageElement = document.getElementById(imageId);
+    imageElement.style.display = display ? "block" : "none";
+}
+
+/**
+ * Sets the color of an element.
+ * @param {string} elementId - The ID of the element whose color needs to be set.
+ * @param {string} color - The color to be set on the element.
+ */
+function setColor(elementId, color) {
+    let element = document.getElementById(elementId);
+    element.style.color = color === 'originalColor' ? BUTTON_COLOR : color;
+}
+
+/**
+ * Resets the tutorial to the first step and triggers the tutorial menu's mouse down event.
+ * This function is typically called when the tutorial is completed or restarted.
+ */
+function resetTutorial() {
+    tutorialStepIndex = 0;
+    document.getElementById("tutorialMenu").onMouseDown();
+}
+
+const LearnAlphabet = forwardRef((props, ref) => { 
 
     const history = useHistory();
     function backToGames() {
@@ -603,7 +663,7 @@ const RadioContent = () => {
             <a href="#" alt="Home">
             </a>
             <button id='4' onMouseDown={function () {
-                updateTutorial();
+                updateTutorialStep();
             }} style={{ fontSize: '5vh' }}>Next</button>
             <p id="tutorialText" value="Change Text">Welcome to the Learn Alphabet Game! This game teaches you the Morse Code Alphabet! </p>
             <img src={spacebar} alt="Spacebar" id="spaceImage" style={{ display: "none" }}></img>
